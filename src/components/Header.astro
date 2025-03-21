@@ -1,5 +1,4 @@
 ---
-// SECCIÓN: ARRAY DE SECCIONES DE NAVEGACIÓN
 const sections = [
   { name: "Inicio", link: "/inicio" },
   { name: "Quienes Somos", link: "/quienes-somos" },
@@ -8,10 +7,6 @@ const sections = [
   { name: "Contactenos", link: "/contactenos" },
 ];
 ---
-
-<!-- 
-  SECCIÓN: ESTRUCTURA HTML DEL HEADER
--->
 <header class="header">
   <div class="container">
     <div class="contaninermenor">     <!-- Contenedor menor para logo y título -->
@@ -21,7 +16,7 @@ const sections = [
       </div>
 
       <!-- Título inicial y botón de menú móvil -->
-      <div class="containertexto">
+      <div class="containertext">
         <a href="/" class="logo">
           <div class="content-grup">
             <span class="grupo_id">Calumet</span>
@@ -55,7 +50,6 @@ const sections = [
 </div>
 </div>
 </header>
-
 
 <!-- 
   ============================================
@@ -92,7 +86,7 @@ const sections = [
     height: 80px; /* Altura del contenedor */
   }
 
-  .containertexto {
+  .containertext {
     /* ICONO UIS - CALUMET */
     display: flex; /* Usa flexbox para alinear elementos */
     align-items: center; /* Centra verticalmente los elementos */
@@ -268,7 +262,6 @@ const sections = [
       languageText.textContent = "ES";
     }
 
-    // Aquí puedes agregar lógica para cambiar el contenido de la página según el idioma
     console.log(`Idioma cambiado a: ${currentLanguage}`);
   });
 </script>
