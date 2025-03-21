@@ -1,0 +1,580 @@
+---
+// src/pages/quienes-somos.astro
+import Header from "../components/Header.astro";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiénes Somos</title>
+    <Header />
+    <style>
+      /* Estilos generales */
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      .container {
+        display: flexbox; /* Usa flexbox para alinear elementos */
+        align-items: center; /* Centra verticalmente los elementos */
+        justify-content: space-between; /* Distribuye el espacio entre elementos */
+        height: 80px; /* Altura del contenedor */
+        width: 100%; /* Ancho máximo del contenedor */
+        margin: 10 auto; /* Centra el contenedor horizontalmente */
+      }
+
+      /* Cabecera */
+      .header {
+        background-color: #e0e0e0;
+        padding: 40px 0;
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .header-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .muted-text {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .header-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      /* Historia y misión */
+      .history-mission {
+        padding: 40px 0;
+      }
+
+      .history-mission-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #e0e0e0;
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+
+      .badge .icon {
+        font-size: 1.2rem;
+      }
+
+      .history h2,
+      .mission h2 {
+        font-size: 2rem;
+        margin-top: 20px;
+      }
+
+      /* Visión y objetivos */
+      .vision {
+        background-color: #e0e0e0;
+        padding: 40px 0;
+      }
+
+      .vision-content {
+        text-align: center;
+      }
+
+      .vision h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+      }
+
+      .card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .card-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      /* Línea de tiempo */
+      .timeline {
+        padding: 40px 0;
+      }
+
+      .timeline-content {
+        text-align: center;
+      }
+
+      .timeline-items {
+        position: relative;
+        margin-top: 40px;
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #ccc;
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .timeline-dot {
+        width: 16px;
+        height: 16px;
+        background-color: #007bff;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .timeline-text {
+        width: 45%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-text .year {
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      .timeline-text h3 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+
+      <style>
+  /* Áreas de investigación */
+  .research-areas {
+    padding: 40px 0;
+  }
+
+  .research-areas-content {
+    text-align: center;
+  }
+
+  .research-areas h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+  }
+
+  .tab.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* Reconocimientos */
+  .recognition {
+    padding: 40px 0;
+  }
+
+  .recognition-content {
+    text-align: center;
+  }
+
+  .recognition h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .recognition-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .recognition-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .recognition-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  /* Llamada a la acción */
+  .cta {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .cta p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .cta-button {
+    background-color: #fff;
+    color: #78b1ee;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .cta-button.outline {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #78b1ee;
+  }
+</style>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Cabecera de la página -->
+      <section class="header">
+        <div class="header-content">
+          <div class="header-text">
+            <h1>Quiénes Somos</h1>
+            <p class="muted-text">
+              Somos un grupo multidisciplinar de investigadores dedicados a
+              desarrollar soluciones innovadoras para los desafíos actuales en
+              ciencia y tecnología.
+            </p>
+          </div>
+          <div class="header-image">
+            <img alt="Equipo de investigación" class="responsive-image" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Historia y misión -->
+      <section class="history-mission">
+        <div class="history-mission-content">
+          <div class="history">
+            <div class="badge">
+              <span class="icon">🕒</span>
+              <span>Nuestra Historia</span>
+            </div>
+            <h2>Trayectoria y Evolución</h2>
+            <p class="muted-text">
+              Fundado en 2010, nuestro grupo de investigación nació con el
+              objetivo de abordar los desafíos energéticos del siglo XXI. Lo que
+              comenzó como un pequeño equipo de tres investigadores en la
+              Facultad de Ciencias, ha crecido hasta convertirse en un referente
+              internacional en investigación multidisciplinar.
+            </p>
+            <p class="muted-text">
+              A lo largo de los años, hemos expandido nuestras líneas de
+              investigación para incluir inteligencia artificial, biotecnología
+              y ciencia de materiales, manteniendo siempre nuestro compromiso
+              con la sostenibilidad y la innovación responsable.
+            </p>
+          </div>
+          <div class="mission">
+            <div class="badge">
+              <span class="icon">💡</span>
+              <span>Nuestra Misión</span>
+            </div>
+            <h2>Propósito y Valores</h2>
+            <p class="muted-text">
+              Nuestra misión es generar conocimiento científico de vanguardia y
+              desarrollar tecnologías innovadoras que contribuyan a un futuro
+              más sostenible y equitativo. Nos esforzamos por traducir la
+              investigación básica en soluciones prácticas que beneficien a la
+              sociedad.
+            </p>
+            <p class="muted-text">
+              Nuestros valores fundamentales incluyen la excelencia científica,
+              la colaboración interdisciplinaria, la integridad en la
+              investigación, la mentoría de nuevas generaciones de científicos y
+              el compromiso con la divulgación del conocimiento.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visión y objetivos -->
+      <section class="vision">
+        <div class="vision-content">
+          <h2>Nuestra Visión</h2>
+          <p class="muted-text">
+            Aspiramos a ser un centro de referencia mundial en investigación
+            interdisciplinar, reconocido por su contribución a la resolución de
+            los grandes desafíos globales.
+          </p>
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon">🎯</div>
+              <h3>Excelencia Científica</h3>
+              <p class="muted-text">
+                Buscamos alcanzar los más altos estándares de calidad en nuestra
+                investigación, publicando en revistas de alto impacto y
+                participando en conferencias internacionales.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">👥</div>
+              <h3>Formación de Talento</h3>
+              <p class="muted-text">
+                Nos comprometemos a formar a la próxima generación de
+                investigadores, proporcionando un entorno estimulante para
+                estudiantes de doctorado y jóvenes científicos.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">📚</div>
+              <h3>Transferencia de Conocimiento</h3>
+              <p class="muted-text">
+                Trabajamos para que nuestros descubrimientos trasciendan el
+                ámbito académico, colaborando con la industria y la sociedad
+                para implementar soluciones prácticas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- Áreas de investigación -->
+            <section class="research-areas">
+                <div class="research-areas-content">
+                  <h2>Áreas de Investigación</h2>
+                  <p class="muted-text">
+                    Nuestro enfoque multidisciplinar nos permite abordar problemas complejos desde diferentes perspectivas.
+                  </p>
+                  <div class="tabs">
+                    <div class="tab active">Energía</div>
+                    <div class="tab">Inteligencia Artificial</div>
+                    <div class="tab">Biotecnología</div>
+                    <div class="tab">Materiales</div>
+                  </div>
+                  <div class="tab-content active">
+                    <div class="grid">
+                      <div class="space-y-4">
+                        <h3>Energías Renovables y Sostenibilidad</h3>
+                        <p class="muted-text">
+                          Investigamos nuevas tecnologías para la generación, almacenamiento y distribución de energía
+                          renovable, con especial énfasis en energía solar fotovoltaica, almacenamiento de energía y redes
+                          inteligentes.
+                        </p>
+                        <ul class="space-y-2">
+                          <li>Células solares de alta eficiencia</li>
+                          <li>Baterías de nueva generación</li>
+                          <li>Gestión inteligente de la energía</li>
+                        </ul>
+                      </div>
+                      <div class="image">
+                        <img
+                          src="https://via.placeholder.com/400x250"
+                          alt="Investigación en energías renovables"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content">
+                    <div class="grid">
+                      <div class="space-y-4">
+                        <h3>Inteligencia Artificial Aplicada</h3>
+                        <p class="muted-text">
+                          Desarrollamos algoritmos y modelos de IA para resolver problemas en diversos campos, desde la
+                          optimización de procesos industriales hasta aplicaciones en medicina y ciencias ambientales.
+                        </p>
+                        <ul class="space-y-2">
+                          <li>Aprendizaje automático para diagnóstico médico</li>
+                          <li>Optimización de procesos mediante IA</li>
+                          <li>Análisis de datos ambientales</li>
+                        </ul>
+                      </div>
+                      <div class="image">
+                        <img
+                          src="https://via.placeholder.com/400x250"
+                          alt="Investigación en inteligencia artificial"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content">
+                    <div class="grid">
+                      <div class="space-y-4">
+                        <h3>Biotecnología y Salud</h3>
+                        <p class="muted-text">
+                          Exploramos aplicaciones biotecnológicas para la salud humana y el medio ambiente, incluyendo el
+                          desarrollo de biosensores, terapias personalizadas y biorremediación.
+                        </p>
+                        <ul class="space-y-2">
+                          <li>Biosensores para detección temprana de enfermedades</li>
+                          <li>Medicina personalizada</li>
+                          <li>Biorremediación de contaminantes</li>
+                        </ul>
+                      </div>
+                      <div class="image">
+                        <img
+                          src="https://via.placeholder.com/400x250"
+                          alt="Investigación en biotecnología"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content">
+                    <div class="grid">
+                      <div class="space-y-4">
+                        <h3>Ciencia de Materiales Avanzados</h3>
+                        <p class="muted-text">
+                          Diseñamos y caracterizamos nuevos materiales con propiedades específicas para aplicaciones en
+                          energía, electrónica, construcción y medicina.
+                        </p>
+                        <ul class="space-y-2">
+                          <li>Nanomateriales para aplicaciones energéticas</li>
+                          <li>Materiales biocompatibles para implantes</li>
+                          <li>Compuestos avanzados para la industria aeroespacial</li>
+                        </ul>
+                      </div>
+                      <div class="image">
+                        <img
+                          src="https://via.placeholder.com/400x250"
+                          alt="Investigación en ciencia de materiales"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        
+              <!-- Reconocimientos -->
+              <section class="recognition">
+                <div class="recognition-content">
+                  <h2>Reconocimientos</h2>
+                  <p class="muted-text">
+                    Nuestro trabajo ha sido reconocido por diversas instituciones nacionales e internacionales.
+                  </p>
+                  <div class="recognition-cards">
+                    <div class="recognition-card">
+                      <div class="icon">🏆</div>
+                      <h3>Premio Nacional de Investigación</h3>
+                      <p class="muted-text">
+                        Otorgado por el Ministerio de Ciencia e Innovación en reconocimiento a nuestra contribución en el campo
+                        de las energías renovables.
+                      </p>
+                    </div>
+                    <div class="recognition-card">
+                      <div class="icon">🏅</div>
+                      <h3>Centro de Excelencia</h3>
+                      <p class="muted-text">
+                        Designación como Centro de Excelencia en Investigación Sostenible por la Unión Europea.
+                      </p>
+                    </div>
+                    <div class="recognition-card">
+                      <div class="icon">🌟</div>
+                      <h3>Premio a la Innovación</h3>
+                      <p class="muted-text">
+                        Reconocimiento por parte de la industria a nuestras soluciones tecnológicas en el ámbito de la
+                        eficiencia energética.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        
+              <!-- Llamada a la acción -->
+              <section class="cta">
+                <div class="cta-content">
+                  <h2>Únete a Nuestro Equipo</h2>
+                  <p class="muted-text">
+                    Estamos siempre en busca de talento apasionado por la ciencia y la innovación. Descubre las oportunidades
+                    para estudiantes, investigadores y colaboradores.
+                  </p>
+                  <div class="cta-buttons">
+                    <a href="/oportunidades" class="cta-button">Ver oportunidades</a>
+                    <a href="/contacto" class="cta-button outline">Contactar</a>
+                  </div>
+                </div>
+              </section>
+    </div>
+  </body>
+</html>

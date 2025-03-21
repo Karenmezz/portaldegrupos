@@ -1,0 +1,474 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo de Investigación</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+
+     /* Espacios */
+    .section {
+      padding: 20px 0;
+      background-color: white;
+
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 50px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilos del banner */
+    .banner {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .Fondo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .Fondo.active {
+      opacity: 1;
+    }
+
+    .Fondo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      background-color: rgb(15, 0, 0);
+      padding: 20px;
+      border-radius: 0px;
+      max-width: 800px;
+    }
+
+    .banner-content h1 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .banner-content p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  
+ /* Botones */
+ 
+    .banner-controls { 
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .banner-controls button {
+      background-color: rgba(196, 192, 192, 0.5);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner-controls button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Estilos de las tarjetas de noticias */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-card-content {
+      padding: 20px;
+    }
+
+    .news-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .news-card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .news-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #c0c5c9;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* Estilos de las secciones */
+    .research-lines {
+      background-color: #f1f1f1;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .team-member {
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .team-member h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stats-grid div {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats-grid div span {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .stats-grid div p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Estilos del banner */
+.banner1 {
+  position: relative;
+  height: 300px; /* Ajusta la altura según sea necesario */
+  background-color: white; /* Fondo blanco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left; /* Texto alineado a la izquierda */
+  padding: 0 20px; /* Espaciado lateral */
+}
+
+.banner1-content {
+  max-width: 800px; /* Ajusta el ancho según sea necesario */
+  color: black; /* Texto en negro */
+}
+
+.banner1-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.banner1-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.banner1-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn1 {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn1-black {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  border: 2px solid black;
+}
+
+.btn1-black:hover {
+  background-color: white; /* Fondo blanco al hacer hover */
+  color: rgb(39, 7, 7); /* Texto negro al hacer hover */
+}
+
+.btn1-white {
+  background-color: white; /* Fondo blanco */
+  color: black; /* Texto negro */
+  border: 2px solid black;
+}
+
+.btn1-white:hover {
+  background-color: black; /* Fondo negro al hacer hover */
+  color: white; /* Texto blanco al hacer hover */
+}
+  </style>
+</head>
+<body>
+
+  <!-------------- Banner con carrusel ----------------->
+  <section class="banner">
+    <div class="Fondo active">
+      <img src="src/img/Noticia1.png" alt="Imagen 1">
+      <div class="banner-content">
+        <h1>Candidato a la Dirección en la Escuela de Ingeniería de Sistemas e Informática</h1>
+        <p>En cumplimiento de la Resolución No. 0171 del 12 de febrero de 2025, el Consejo de la E
+          scuela de Ingeniería de Sistemas e Informática informa que, tras el cierre del periodo 
+          de inscripción de candidatos.</p>
+        <a href="#" class="btn">Leer más</a>
+      </div>
+    </div>
+    <div class="Fondo">
+      <img src="src/img/Noticia2.png" alt="Imagen 2">
+      <div class="banner-content">
+        <h1>¡Prepárate para las Pruebas Saber Pro y Saber TyT 2025-1!        </h1>
+        <p>El proceso de inscripción para presentar las pruebas del ICFES ya está en marcha. Asegúrate de cumplir con cada etapa, desde la preinscripción hasta la consulta de resultados. 
+          Revisa la infografía para conocer los plazos y requisitos</p>
+        <a href="#" class="btn">Leer más</a>
+      </div>
+    </div>
+    <div class="Fondo">
+      <img src="src/img/Noticia3.png" alt="Imagen 3">
+      <div class="banner-content">
+        <h1>Estudiantes del doctorado en ciencias de la computación, participaron en la "AI Science and Society"</h1>
+        <p>Esta conferencia se desarrolló en Paris y contó con conferencistas destacados en IA, como: Yann LeCun (turing award), Yoshua Bengio 
+          (turing award), entre otros destacados investigadores de I.A.        </p>
+        <a href="#" class="btn">Leer más</a>
+      </div>
+    </div>
+    <div class="banner-controls">
+      <button onclick="prevSlide()">&#10094;</button>
+      <button onclick="nextSlide()">&#10095;</button>
+    </div>
+  </section>
+
+  <!------------------------Sección de noticias -->
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Noticias Recientes</h2>
+      <p class="section-subtitle">Mantente al día con las últimas novedades y avances de nuestro grupo de investigación.</p>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="src/img/NoticiaReciente1.png" alt="Noticia 1">
+          <div class="news-card-content">
+            <h3>CONVOCATORIA ELECCIÓN DE REPRESENTANTE ESTUDIANTIL 
+              DE POSGRADO AL CONSEJO DE ESCUELA EISI</h3>
+            <p>Teniendo en cuenta la resolución de rectoría N° 1073 de 2016, por la cual se establece el procedimiento para los procesos de elección de los representantes de los estudiantes de pregrado y posgrado ante los distintos Consejos de Escuela de la Universidad, el Decano de la Facultad de Ingenierías Fisicomecánicas convoca a los estudiantes y a las estudiantes de posgrado de la 
+              Escuela de Ingeniería de Sistemas e Informática para participar en el proceso electoral.</p>
+            <a href="#" class="btn">Leer más</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="src/img/NoticiasRecientes2.png" alt="Noticia 2">
+          <div class="news-card-content">
+            <h3>APOYO ECONÓMICO PARA ASISTIR A EVENTOS</h3>
+            <p>La Facultad de Ingenierías Fisicomecánicas le informa que aún se encuentra abierta la convocatoria para postularse y recibir apoyo económico para ASISTIR A EVENTOS NACIONALES E INTERNACIONALES para presentar
+               una ponencia o poster para el presente semestre 2025-1</p>
+            <a href="#" class="btn">Leer más</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="src/img/NoticiaReciente3.png" alt="Noticia 3">
+          <div class="news-card-content">
+            <h3>RECUERDA ASISTIR AL SEGUIMIENTO ACADÉMICO</h3>
+            <p>La Universidad Industrial de Santander ha implementado un acompañamiento y asesoramiento a los estudiantes de pregrado en los semestres: primero, quinto y octavo, 
+              que lo realizará un profesor planta del programa. </p>
+            <a href="#" class="btn">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de líneas de investigación -->
+  <section class="section research-lines">
+    <div class="container">
+      <h2 class="section-title">Líneas de Investigación</h2>
+      <p class="section-subtitle">Exploramos diversas áreas de conocimiento para desarrollar soluciones innovadoras a los desafíos actuales.</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="src/img/1.png" alt="Miembro 1">
+          <h3>Software</h3>
+          <p>Desarrollo de problemas.</p>
+        </div>
+        <div class="team-member">
+          <img src="src/img/2.png" alt="Miembro 2">
+          <h3>Inteligencia artificial</h3>
+          <p>Aplicaciones </p>
+        </div>
+        <div class="team-member">
+          <img src="src/img/3.png" alt="Miembro 3">
+          <h3>Tecnologias</h3>
+          <p>Investigación distintas areas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de estadísticas -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Nuestro Impacto</h2>
+      <div class="stats-grid">
+        <div>
+          <span>45+</span>
+          <p>Publicaciones</p>
+        </div>
+        <div>
+          <span>12</span>
+          <p>Proyectos activos</p>
+        </div>
+        <div>
+          <span>8</span>
+          <p>Patentes</p>
+        </div>
+        <div>
+          <span>20+</span>
+          <p>Investigadores</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Script para el carrusel -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".Fondo");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Autoplay
+    setInterval(nextSlide, 5000);
+  </script>
+</body>
+
+<section class="banner1">
+  <div class="banner1-content">
+    <h1>¿Interesado en colaborar con nosotros?</h1>
+    <p>Estamos abiertos a nuevas colaboraciones con investigadores, instituciones y empresas.</p>
+    <div class="banner1-buttons">
+      <a href="#" class="btn1 btn1-black">Contactar</a>
+      <a href="#" class="btn1 btn1-white">Oportunidades</a>
+    </div>
+  </div>
+</section>
