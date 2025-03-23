@@ -1,12 +1,20 @@
+.container {
+  max-width: 1200px; /* Ancho pagina*/
+  margin: 0 auto;
+}
+
+
 body { /* Cuerpo del css*/
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
 }
 
-h1, h2, h3 { /* Tamaño de letras de Encabezados*/
+h1{
+  color: white;
+}
+
+h2, h3 { /* Tamaño de letras de Encabezados*/
   margin: 0;
   color: #011102;
 }
@@ -15,23 +23,17 @@ a {/* Enlaces de botones*/
   text-decoration: none;
 }
 
-.container {
-  max-width: 1200px; /* Ancho pagina*/
-  margin: 0 auto;
-}
-
-/* Los 3 primero espacios */
+/*---------------- Los 3 primero espacios */
 .section {
   padding: 20px 0;
   background-color: white;
-  border: 1px dotted blue;
+  /*border: 1px dotted blue;*/
 }
 
 .section-title { /* Titulos*/
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 20px;
-  color: #011102;
 }
 
 .section-subtitle { /* Subtitulos*/

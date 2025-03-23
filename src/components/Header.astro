@@ -1,12 +1,13 @@
 ---
 const sections = [
   { name: "Inicio", link: "/inicio" },
-  { name: "Quienes Somos", link: "/quienes-somos" },
+  { name: "Quienes Somos", link: "/Quienessomos" },
   { name: "Investigacion", link: "/investigacion" },
   { name: "Actualidad", link: "/actualidad" },
   { name: "Contactenos", link: "/contactenos" },
 ];
 ---
+
 <header class="header">
   <div class="container">
     <div class="contaninermenor">     <!-- Contenedor menor para logo y título -->
@@ -216,21 +217,6 @@ const sections = [
     }
   }
 </style>
-
-<!-- 
-  ============================================
-  SECCIÓN: SCRIPTS
-  ============================================
--->
-<script>
-  // Script para alternar la visibilidad del menú en pantallas pequeñas
-  const menuButton = document.getElementById("menu-button");
-  const navigation = document.getElementById("navigation");
-
-  menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("open");
-  });
-</script>
 
 <!-- 
   ============================================
