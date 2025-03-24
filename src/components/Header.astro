@@ -1,7 +1,9 @@
 ---
+import '../css/header.css';
+
 const sections = [
-  { name: "Inicio", link: "/inicio" },
-  { name: "Quienes Somos", link: "/Quienessomos" },
+  { name: "Inicio", link: "/" },
+  { name: "Quienes Somos", link: "/quienes-somos" },
   { name: "Investigacion", link: "/investigacion" },
   { name: "Actualidad", link: "/actualidad" },
   { name: "Contactenos", link: "/contactenos" },
@@ -9,7 +11,7 @@ const sections = [
 ---
 
 <header class="header">
-  <div class="container">
+  <div class="header-container">
     <div class="contaninermenor">     <!-- Contenedor menor para logo y título -->
       <div class="icono_superior"> 
         <img src="logouis.png" alt="Logo UIS" />
@@ -52,171 +54,6 @@ const sections = [
 </div>
 </header>
 
-<!-- 
-  ============================================
-  SECCIÓN: ESTILOS CSS
-  ============================================
--->
-<style>
-  .header {
-    position: sticky; /* Fija el header en la parte superior */
-    top: 0; /* Lo coloca en la parte superior de la página */
-    z-index: 50; /* Asegura que el header esté por encima de otros elementos */
-    width: 100%; /* Ocupa todo el ancho de la página */
-    background-color: #fff; /* Fondo blanco */
-    border-bottom: 3px solid #e0e0e0; /* Borde inferior sutil */
-  }
-
-  .icono_superior img {
-    padding: 8px; /* Espaciado interno */
-    width: 80px; /* Ancho */
-    max-height:80px ; /* Altura */
-  }
-
-  .container {
-    display: flex; /* Usa flexbox para alinear elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: space-between; /* Distribuye el espacio entre elementos */
-    height: 80px; /* Altura del contenedor */
-    width: 100%; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-  }
-
-  .contaninermenor {
-    display: flex; /* Usa flexbox para alinear elementos */
-    height: 80px; /* Altura del contenedor */
-  }
-
-  .containertext {
-    /* ICONO UIS - CALUMET */
-    display: flex; /* Usa flexbox para alinear elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-  }
-
-
-  .menu-button {
-    display: none; /* Oculta el botón en pantallas grandes */
-    background: none; /* Sin fondo */
-    border: none; /* Sin borde */
-    margin-left: auto;
-    margin-right: 1rem;
-    cursor: pointer; /* Cambia el cursor a una mano */
-    font-size: 30px; /* Tamaño del ícono */
-    color: #090000; /* Color del ícono */
-  }
-
-  .logo {
-    text-decoration: none; /* Sin subrayado */
-  }
-
-  .content-grup { /* Texto Calumet*/
-    display: flex; /* Usa flexbox para alinear elementos */
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: flex-start; /* Alinea los elementos a la izquierda */
-    font-size: 20px; /* Tamaño del texto */
-    padding: 8px; /* Espaciado interno */
-    font-weight: bold; /* Texto en negrita */
-    color: #010000; /* Color del ícono */
-  }
-
-  .content-grup p { /* Texto Grupo de innovacion*/
-    font-weight: lighter; /* Texto en negrita */
-    font-size: 10px; /* Tamaño del texto */
-    color: rgb(12, 0, 0); /* Color del texto */
-    margin: 0.5rem 0 0; /* Margen superior */
-  }
-
-  /* Navegación  Inicio*/
-  .navigation {
-    display: flex; /* Usa flexbox para alinear elementos */
-    gap: 16px; /* Espacio entre elementos */
-  }
-
-  .secciones-pag {
-    text-decoration: none; /* Sin subrayado */
-    color: #bab2b2; /* Color del texto */
-    font-size: 14px; /* Tamaño del texto */
-    transition: color 0.3s ease; /* Transición suave del color */
-    text-align: center;
-  }
-
-  .secciones-pag:hover {
-    color: #000000; /* Cambia el color al pasar el mouse */
-  }
-
-  /* Acciones (botones) */
-  .actions {
-    display: flex; /* Usa flexbox para alinear elementos */
-    gap: 8px; /* Espacio entre elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-  }
-
-  .boton-ingresar {
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
-    border: none; /* Sin borde */
-    padding: 8px 16px; /* Espaciado interno */
-    font-size: 14px; /* Tamaño del texto */
-    cursor: pointer; /* Cambia el cursor a una mano */
-    border-radius: 4px; /* Bordes redondeados */
-    margin-right: 20PX;
-  }
-
-  
-  /* Estilos para el botón de idioma */
-.language-button {
-  background-color: white; /* Fondo negro */
-  color: #c8c6c6; /* Texto blanco */
-  border: 1px solid #e5e7eb;
-  padding: 6px 12px; /* Espaciado interno */
-  font-size: 14px; /* Tamaño del texto */
-  font-weight: 500; /* Texto en negrita */
-  border-radius: 6px; /* Bordes redondeados */
-  text-decoration: none; /* Sin subrayado */
-  transition: background-color 0.3s ease; /* Transición suave */}
-
-.language-button:hover {
-  color: black; /* Cambia el color al pasar el mouse */
-}
-
-/* Ajustes para los botones en pantallas pequeñas */
-@media (max-width: 768px) {
-  .language-button {
-    display: none; /* Oculta el botón de idioma en pantallas pequeñas */
-  }
-}
-
-  /* Estilos para pantallas pequeñas */
-  @media (max-width: 768px) {
-    .menu-button {
-      display: block; /* Muestra el botón en pantallas pequeñas */
-    }
-
-    .navigation {
-      display: none; /* Oculta la navegación en pantallas pequeñas */
-      flex-direction: column; /* Coloca los elementos en columna */
-      position: absolute; /* Posiciona la navegación de manera absoluta */
-      top: 80px; /* Distancia desde la parte superior */
-      right: 0; /* Alinea a la derecha */
-      background-color: #fff; /* Fondo blanco */
-      width: 100%; /* Ocupa todo el ancho */
-      padding: 16px; /* Espaciado interno */
-      border-bottom: 1px solid #e0e0e0; /* Borde inferior */
-    }
-
-    .navigation.open {
-      display: flex; /* Muestra la navegación cuando tiene la clase "open" */
-    }
-
-    .actions {
-      display: none; /* Oculta los botones de acción en pantallas pequeñas */
-    }
-
-    .contaninermenor {
-      justify-content: space-between; /* Distribuye el espacio entre elementos */
-    }
-  }
-</style>
 
 <!-- 
   ============================================

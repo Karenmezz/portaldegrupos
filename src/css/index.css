@@ -3,26 +3,6 @@
   margin: 0 auto;
 }
 
-
-body { /* Cuerpo del css*/
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-h1{
-  color: white;
-}
-
-h2, h3 { /* Tamaño de letras de Encabezados*/
-  margin: 0;
-  color: #011102;
-}
-
-a {/* Enlaces de botones*/
-  text-decoration: none;
-}
-
 /*---------------- Los 3 primero espacios */
 .section {
   padding: 20px 0;

@@ -1,33 +1,25 @@
 ---
 // src/components/Quienessomos.astro
-import Header from "../components/Header.astro";
-import '../css/quienes-somos.css';
-import Footer from "../components/Footer.astro";
+import TextSection from '@components/TextSection.astro';
+import '@css/quienes-somos.css';
+import Layout from "@layouts/Layout.astro";
 
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiénes Somos</title>
-    <Header />
-  </head>
-
-  <body>
+<Layout>
     <div class="container">
       <!-------------------------- Cabecera de la página ---------------->
-      <section class="header">
-        <div class="header-img">
-          <div class="header-text">
-            <h1>Quiénes Somos</h1>
+      <section class="page-header">
+        <div class="page-header-img">
+          <div class="page-header-text">
+            <h2>Quiénes Somos</h2>
             <p class="text-header">
               Somos un grupo multidisciplinar de investigadores dedicados a
               desarrollar soluciones innovadoras para los desafíos actuales en
               ciencia y tecnología.
             </p>
           </div>
-          <div class="header-image">
+          <div class="page-header-image">
             <img src="src/img/quienessomos.png" alt="Quienes somos" class="img-quienesomos" />  
         </div>
       </section>
@@ -41,19 +33,19 @@ import Footer from "../components/Footer.astro";
               <span>Nuestra Historia</span>
             </div>
             <h2>Trayectoria y Evolución</h2>
-            <p class="text-header">
+            <TextSection>
               Fundado en 2010, nuestro grupo de investigación nació con el
               objetivo de abordar los desafíos energéticos del siglo XXI. Lo que
               comenzó como un pequeño equipo de tres investigadores en la
               Facultad de Ciencias, ha crecido hasta convertirse en un referente
               internacional en investigación multidisciplinar.
-            </p>
-            <p class="text-header">
+            </TextSection>
+            <TextSection>
               A lo largo de los años, hemos expandido nuestras líneas de
               investigación para incluir inteligencia artificial, biotecnología
               y ciencia de materiales, manteniendo siempre nuestro compromiso
               con la sostenibilidad y la innovación responsable.
-            </p>
+            </TextSection>
           </div>
           <div class="mission">
             <div class="badge">
@@ -61,19 +53,19 @@ import Footer from "../components/Footer.astro";
               <span>Nuestra Misión</span>
             </div>
             <h2>Propósito y Valores</h2>
-            <p class="text-header">
+            <TextSection>
               Nuestra misión es generar conocimiento científico de vanguardia y
               desarrollar tecnologías innovadoras que contribuyan a un futuro
               más sostenible y equitativo. Nos esforzamos por traducir la
               investigación básica en soluciones prácticas que beneficien a la
               sociedad.
-            </p>
-            <p class="text-header">
+            </TextSection>
+            <TextSection>
               Nuestros valores fundamentales incluyen la excelencia científica,
               la colaboración interdisciplinaria, la integridad en la
               investigación, la mentoría de nuevas generaciones de científicos y
               el compromiso con la divulgación del conocimiento.
-            </p>
+            </TextSection>
           </div>
         </div>
       </section>
@@ -274,5 +266,4 @@ import Footer from "../components/Footer.astro";
                 </div>
               </section>
     </div>
-  </body>
-</html>
+  </Layout>

@@ -12,7 +12,11 @@ body {
 }
 
 /*--------------------- Inicio Quienes Somos ---------------------*/
-.header {
+h2 {
+  font-size: 32px;
+}
+
+.page-header {
   background-color: white;
   padding: 15px 20px;
 }
@@ -20,19 +24,15 @@ body {
   max-width: 100%;
   height: auto;
 }
-.header-text h1 {
+.page-header-text h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
-.text-header {
-  color: black;
-  font-size: 1.1rem;
-}
-.header-image img {
+.page-header-image img {
   width: 100%;
   border-radius: 20px;
 }
-.header-img {
+.page-header-img {
   /* Encierra todo */
   display: flex;
   align-items: center;

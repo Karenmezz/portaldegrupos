@@ -1,0 +1,68 @@
+
+
+<section class="banner">
+    <div class="background active">
+      <img src="src/img/Noticia1.png" alt="Imagen 1" />
+      <div class="banner-content">
+        <h1>
+          Candidato a la Dirección en la Escuela de Ingeniería de Sistemas e Informática
+        </h1>
+        <p>
+          En cumplimiento de la Resolución No. 0171 del 12 de febrero de 2025,
+          el Consejo de la Escuela de Ingeniería de Sistemas e Informática informa que, tras el cierre del periodo de inscripción de candidatos.
+        </p>
+        <a href="#" class="btn">Leer más</a>
+      </div>
+    </div>
+    <div class="background">
+      <img src="src/img/Noticia2.png" alt="Imagen 2" />
+      <div class="banner-content">
+        <h1>¡Prepárate para las Pruebas Saber Pro y Saber TyT 2025-1!</h1>
+        <p>
+          El proceso de inscripción para presentar las pruebas del ICFES ya
+          está en marcha. Asegúrate de cumplir con cada etapa, desde la
+          preinscripción hasta la consulta de resultados. Revisa la infografía
+          para conocer los plazos y requisitos.
+        </p>
+        <a href="#" class="btn">Leer más</a>
+      </div>
+    </div>
+    <div class="background">
+      <img src="src/img/Noticia3.png" alt="Imagen 3" />
+      <div class="banner-content">
+        <h1>
+          Estudiantes del doctorado en ciencias de la computación, participaron en la "AI Science and Society"
+        </h1>
+        <p>
+          Esta conferencia se desarrolló en Paris y contó con conferencistas destacados en IA, como: Yann LeCun (turing award), Yoshua Bengio
+          (turing award), entre otros destacados investigadores de I.A.
+        </p>
+        <a href="#" class="btn">Leer más</a>
+      </div>
+    </div>
+    <div class="banner-controls">
+      <button onclick="prevSlide()">&#10094;</button>
+      <button onclick="nextSlide()">&#10095;</button>
+    </div>
+  </section>
+  
+  <script defer>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.background');
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+  
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+  
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+  </script>
