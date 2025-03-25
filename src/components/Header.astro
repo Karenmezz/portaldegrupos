@@ -1,10 +1,10 @@
 ---
-import '../css/header.css';
+import "../css/header.css";
 
 const sections = [
   { name: "Inicio", link: "/" },
-  { name: "Quienes Somos", link: "/quienes-somos" },
-  { name: "Investigacion", link: "/investigacion" },
+  { name: "Quienes Somos", link: "/whoweare" },
+  { name: "Investigacion", link: "/investigation" },
   { name: "Actualidad", link: "/actualidad" },
   { name: "Contactenos", link: "/contactenos" },
 ];
@@ -12,13 +12,14 @@ const sections = [
 
 <header class="header">
   <div class="header-container">
-    <div class="contaninermenor">     <!-- Contenedor menor para logo y título -->
-      <div class="icono_superior"> 
+    <div class="contaninermenor">
+      <!-- Contenedor menor para logo y título -->
+      <div class="icono_superior">
         <img src="logouis.png" alt="Logo UIS" />
         <img src="/logo-calumet.png" alt="Logo Calumet" />
       </div>
 
-      <!-- Título inicial y botón de menú móvil -->
+      <!--- Título inicial y botón de menú móvil -->
       <div class="containertext">
         <a href="/" class="logo">
           <div class="content-grup">
@@ -33,33 +34,30 @@ const sections = [
       <span class="menu-icon">&#9776;</span>
     </button>
 
-    <!-- Navegación -->
+    <!-------- -----Navegación -------->
     <nav class="navigation" id="navigation">
-      {sections.map((section) => (
-        <a href={section.link} class="secciones-pag">
-          {section.name}
-        </a>
-      ))}
+      {
+        sections.map((section) => (
+          <a href={section.link} class="secciones-pag">
+            {section.name}
+          </a>
+        ))
+      }
     </nav>
 
-
-<!-- Botón de Idioma y Botón de Iniciar Sesión -->
-<div class="actions">
-  <button class="language-button" id="language-button">
-    <span class="language-text">ES</span> <!-- Texto del idioma -->
-    <span class="language-icon">🌐</span> <!-- Ícono de idioma -->
-  </button>
-  <button class="boton-ingresar">Iniciar Sesión</button>
-</div>
-</div>
+    <!-- ---Botón de Idioma y Botón de Iniciar Sesión ----->
+    <div class="actions">
+      <button class="language-button" id="language-button">
+        <span class="language-text">ES</span>
+        <!-- Texto del idioma -->
+        <span class="language-icon">🌐</span>
+        <!-- Ícono de idioma -->
+      </button>
+      <button class="boton-ingresar">Iniciar Sesión</button>
+    </div>
+  </div>
 </header>
 
-
-<!-- 
-  ============================================
-  SECCIÓN: SCRIPTS
-  ============================================
--->
 <script>
   // Script para alternar la visibilidad del menú en pantallas pequeñas
   const menuButton = document.getElementById("menu-button");
