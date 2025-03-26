@@ -1,0 +1,123 @@
+---
+// src/components/investigation/Events.astro
+import "../../css/investigation.css";
+
+// Datos de ejemplo
+const noticias = [
+  {
+    id: 1,
+    titulo: "Nuevo proyecto de investigación aprobado",
+    fecha: "15 Mar 2025",
+    contenido: "Nuestro grupo ha recibido financiación para un nuevo proyecto sobre cargajas renovables que permitan ganarse en el desarrollo de celebrados.",
+    categoria: "proyectos"
+  },
+  {
+    id: 2,
+    titulo: "Publicación en revista internacional",
+    fecha: "10 Mar 2025",
+    contenido: "El último estudio del grupo ha sido publicado en una prestigiosa revista científica, destacando los aparatos de nuestra investigación sobre materia.",
+    categoria: "publicaciones"
+  }
+];
+
+const eventos = [
+  {
+    id: 1,
+    titulo: "Conferencia internacional",
+    fecha: "8 Mar 2025",
+    contenido: "Miembros del grupo presentarán sus investigaciones en la conferencia anual del sector energético, compartiendo conocimientos con...",
+    categoria: "eventos"
+  }
+];
+---
+<div class="container">
+  <h1>Produccion Intelectual</h1>
+  
+  <!-- Barra de búsqueda y filtros -->
+  <div class="controls">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Buscar noticias o eventos..." />
+      <button id="search-button">Buscar</button>
+    </div>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="noticias">Noticias</button>
+      <button class="tab-button" data-tab="eventos">Eventos</button>
+      <button class="tab-button" data-tab="eventos">Libros</button>
+      <button class="tab-button" data-tab="eventos">Software</button>
+      <button class="tab-button" data-tab="eventos">Trabajo Dirigido</button>
+    </div>
+  </div>
+  
+  <!-- Contenedor de noticias/eventos -->
+  <div class="content">
+    <div id="noticias-container" class="tab-content active">
+      {noticias.map(noticia => (
+        <div class="card">
+          <h2>{noticia.titulo}</h2>
+          <div class="date">{noticia.fecha}</div>
+          <p>{noticia.contenido}</p>
+          <a href="#" class="read-more" data-id={noticia.id}>Leer más</a>
+        </div>
+      ))}
+    </div>
+    
+    <div id="eventos-container" class="tab-content">
+      {eventos.map(evento => (
+        <div class="card">
+          <h2>{evento.titulo}</h2>
+          <div class="date">{evento.fecha}</div>
+          <p>{evento.contenido}</p>
+          <a href="#" class="read-more" data-id={evento.id}>Leer más</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  // JavaScript para manejar las pestañas y búsqueda
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    
+    // Cambiar entre pestañas
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        
+        document.getElementById(`${button.dataset.tab}-container`).classList.add('active');
+      });
+    });
+    
+    // Función de búsqueda simplificada
+    function buscar() {
+      const termino = searchInput.value.toLowerCase();
+      const activeTab = document.querySelector('.tab-button.active').dataset.tab;
+      const cards = document.querySelectorAll(`#${activeTab}-container .card`);
+      
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(termino) ? 'block' : 'none';
+      });
+    }
+    
+    searchButton.addEventListener('click', buscar);
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') buscar();
+    });
+    
+    // Simulación de "Leer más"
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('read-more')) {
+        e.preventDefault();
+        alert(`Mostrar detalles completos del item con ID: ${e.target.dataset.id}`);
+      }
+    });
+  });
+</script>

@@ -1,6 +1,7 @@
 .container {
   max-width: 1200px; /* Ancho pagina*/
   margin: 0 auto;
+  padding: 10px 50px;
 }
 
 body {
@@ -15,7 +16,6 @@ body {
 h2 {
   font-size: 32px;
 }
-
 .page-header {
   background-color: white;
   padding: 15px 20px;
@@ -27,6 +27,7 @@ h2 {
 .page-header-text h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+
 }
 .page-header-image img {
   width: 100%;
@@ -40,8 +41,11 @@ h2 {
 
 /*--------------------------- Historia y misión------------------- */
 .history-mission {
-  padding: 40px 15px;
-  background-color: white;
+/* Ancho pagina*/
+  margin: 0 auto;
+  padding: 10px 50px;
+  background-color: #e0e0e05e;
+  padding: 20px 50px;
 }
 
 .history-mission-content {
@@ -54,7 +58,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #e0e0e0;
+  background-color: white;
   padding: 8px 12px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -72,8 +76,10 @@ h2 {
 
 /* ------------------------------Visión y objetivos--------------- */
 .vision {
-  background-color: #e0e0e05e;
-  padding: 20px 15px;
+  background-color: white;
+  max-width: 1200px; /* Ancho pagina*/
+  margin: 0 auto;
+  padding: 40px 50px;
 }
 
 .vision-content {
@@ -90,13 +96,14 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 40px;
+
 }
 
 .card {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 6px 6px rgba(19, 222, 49, 0.1);
+  box-shadow: 0 6px 6px #e0e0e0;
   text-align: center;
 }
 
@@ -112,7 +119,9 @@ h2 {
 
 /* ----------------------Áreas de investigación------------------------ */
 .research-areas {
-  padding: 40px 15px;
+  margin: 0 auto;
+  padding: 30px 50px;
+  background-color: #e0e0e05e;
 }
 
 .research-areas-content {
@@ -167,7 +176,9 @@ h2 {
 
 /* -----------------Reconocimientos ------------------*/
 .recognition {
-  padding: 40px 0;
+  max-width: 1200px; /* Ancho pagina*/
+  margin: 0 auto;
+  padding: 40px 50px;
 }
 
 .recognition-content {
@@ -184,13 +195,14 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 40px;
+  /*border-top: 1px solid #e0e0e0; linea de decoracion*/
 }
 
 .recognition-card {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(145, 40, 40, 0.1);
   text-align: center;
 }
 
@@ -199,22 +211,24 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Llamada a la acción */
+/*------------ Llamada a la acción -------*/
 .cta {
-  background-color: #ffffff;
+  background-color: black;
   color: #fff;
-  padding: 40px 0;
+  margin: 0 auto;
+  padding: 40px 50px;
   text-align: center;
 }
 
 .cta h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  color: white;
 }
 
 .cta p {
+  color: white;
   font-size: 1.1rem;
-  margin-bottom: 20px;
 }
 
 .cta-buttons {
@@ -224,16 +238,17 @@ h2 {
 }
 
 .cta-button {
-  background-color: #fff;
-  color: #78b1ee;
-  padding: 10px 20px;
+  background-color: #e0e0e0;
+  color: black;
+  padding: 10px 10px;
   border-radius: 5px;
+  border: 1px solid #0f0101;
   text-decoration: none;
   font-size: 1rem;
 }
 
 .cta-button.outline {
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #78b1ee;
+  background-color: #e0e0e0;
+  border: 1px solid #0f0101;
+  color: black;
 }

@@ -1,6 +1,7 @@
 .container {
   max-width: 1200px; /* Ancho pagina*/
   margin: 0 auto;
+  padding: 10px 50px;
 }
 
 /*---------------- Los 3 primero espacios --------------------*/
@@ -86,7 +87,7 @@
   margin-bottom: 20px;
 }
 
-/* Botones del banner */
+/* ----------Botones del banner */
 .banner-controls {
   position: absolute;
   bottom: 20px;
@@ -111,7 +112,7 @@
   background-color: rgba(73, 67, 67, 0.581);
 }
 
-/* Estilos de las tarjetas de noticias */
+/*-------- Estilos de las tarjetas de noticias */
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -162,7 +163,8 @@
 
 /*----------------- Seccion de Investigacion----------------*/
 .research-lines {
-  background-color:white;
+  background-color:#e0e0e05e;
+  padding: 10px 50px;
 }
 
 .team-grid {
@@ -223,7 +225,7 @@
 .banner1 {
   position: relative;
   height: 300px;
-  background-color: white;
+  background-color: #e0e0e05e;
   display: flex;
   align-items: center;
   justify-content: center;
