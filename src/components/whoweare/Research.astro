@@ -7,11 +7,12 @@
       desde diferentes perspectivas.
     </p>
     <div class="tabs">
-      <div class="tab active">Energía</div>
-      <div class="tab">Inteligencia Artificial</div>
-      <div class="tab">Biotecnología</div>
-      <div class="tab">Materiales</div>
+      <div class="tab active" data-tab="0">Energía</div>
+      <div class="tab" data-tab="1">Inteligencia Artificial</div>
+      <div class="tab" data-tab="2">Biotecnología</div>
+      <div class="tab" data-tab="3">Materiales</div>
     </div>
+
     <div class="tab-content active">
       <div class="grid">
         <div class="space-y-4">
@@ -28,36 +29,32 @@
           </ul>
         </div>
         <div class="image">
-          <img
-            src="https://via.placeholder.com/400x250"
-            alt="Investigación en energías renovables"
-          />
+          <img src="src/img/teconologia.jpg" alt="Tecnología de energía renovable" />
         </div>
       </div>
     </div>
+
     <div class="tab-content">
       <div class="grid">
-        <div class="space-y-4">
+        <div class="space-y-1">
           <h3>Inteligencia Artificial Aplicada</h3>
           <p class="text-header">
             Desarrollamos algoritmos y modelos de IA para resolver problemas en
             diversos campos, desde la optimización de procesos industriales
             hasta aplicaciones en medicina y ciencias ambientales.
           </p>
-          <ul class="space-y-2">
+          <ul class="space-y-9">
             <li>Aprendizaje automático para diagnóstico médico</li>
             <li>Optimización de procesos mediante IA</li>
             <li>Análisis de datos ambientales</li>
           </ul>
         </div>
         <div class="image">
-          <img
-            src="https://via.placeholder.com/400x250"
-            alt="Investigación en inteligencia artificial"
-          />
+          <img src="src/img/ia.png" alt="Inteligencia Artificial" />
         </div>
       </div>
     </div>
+
     <div class="tab-content">
       <div class="grid">
         <div class="space-y-4">
@@ -74,13 +71,11 @@
           </ul>
         </div>
         <div class="image">
-          <img
-            src="https://via.placeholder.com/400x250"
-            alt="Investigación en biotecnología"
-          />
+          <img src="src/img/cience.png" alt="Biotecnología" />
         </div>
       </div>
     </div>
+
     <div class="tab-content">
       <div class="grid">
         <div class="space-y-4">
@@ -97,12 +92,40 @@
           </ul>
         </div>
         <div class="image">
-          <img
-            src="https://via.placeholder.com/400x250"
-            alt="Investigación en ciencia de materiales"
-          />
+          <img src="src/img/bio.png" alt="Materiales avanzados" />
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Esperar a que el DOM esté completamente cargado
+  document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionar todos los tabs
+    const tabs = document.querySelectorAll('.tab');
+    
+    // Añadir event listener a cada tab
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Obtener el índice del tab clickeado
+        const tabIndex = this.getAttribute('data-tab');
+        
+        // Remover clase active de todos los tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        
+        // Añadir clase active al tab clickeado
+        this.classList.add('active');
+        
+        // Seleccionar todos los contenidos
+        const contents = document.querySelectorAll('.tab-content');
+        
+        // Remover clase active de todos los contenidos
+        contents.forEach(content => content.classList.remove('active'));
+        
+        // Añadir clase active al contenido correspondiente
+        contents[tabIndex].classList.add('active');
+      });
+    });
+  });
+</script>
