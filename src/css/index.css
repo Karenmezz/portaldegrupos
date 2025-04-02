@@ -1,14 +1,99 @@
 .container {
-  max-width: 1200px; /* Ancho pagina*/
   margin: 0 auto;
   padding: 10px 50px;
+  position: relative;
 }
 
-/*---------------- Los 3 primero espacios --------------------*/
+.background.active {
+  opacity: 1;
+}
+
+.banner-content h1 {
+  font-size: 15px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  color: white;
+}
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenedor del banner (flexbox) */
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  padding: 20px;
+  background-color: rgba(248, 239, 239, 0.323);
+  box-sizing: border-box;
+  text-align: left;
+
+  /* Flexbox para organizar el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrado vertical */
+  align-items: flex-start; /* Alineación a la izquierda */
+}
+
+/* Estilos para el botón "Leer más" */
+a.btn {
+  padding: 5px 10px;       /* Tamaño pequeño (ajustable) */
+  font-size: 10px;         /* Texto pequeño */
+  color: white;            /* Color del texto */
+  background-color: rgba(248, 239, 239, 0.323);
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;        /* Espacio entre el párrafo y el botón */
+  width: auto;             /* Ancho según su contenido (no ocupa el 100%) */
+  display: inline-block;   /* Permite que el ancho se ajuste al texto */
+}
+
+/* Efecto hover opcional */
+a.btn:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+  transform: scale(1.02);   /* Efecto de zoom sutil */
+  transition: all 0.2s;
+}
+
+/* ----------Botones del banner */
+.banner-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.banner-controls button {
+  background-color: rgba(196, 192, 192, 0.5);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.banner-controls button:hover {
+  background-color: rgba(73, 67, 67, 0.581);
+}
+
+/*---------------- Noticias recientes --------------------*/
 .section {
   padding: 20px 0;
   background-color: white;
-  /*border: 1px dotted blue;*/
 }
 
 .section-title { /* --------------Titulos---------------*/
@@ -54,63 +139,6 @@
   transition: opacity 1s ease;
 }
 
-.background.active {
-  opacity: 1;
-}
-
-.background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.banner-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  background-color: rgba(248, 241, 241, 0.323);
-  padding: 50px;
-  border-radius: 10px;
-  max-width: 1000px;
-}
-
-.banner-content h1 {
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.banner-content p {
-  font-size: 15px;
-  margin-bottom: 20px;
-}
-
-/* ----------Botones del banner */
-.banner-controls {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.banner-controls button {
-  background-color: rgba(196, 192, 192, 0.5);
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease;
-}
-
-.banner-controls button:hover {
-  background-color: rgba(73, 67, 67, 0.581);
-}
 
 /*-------- Estilos de las tarjetas de noticias */
 .news-grid {
@@ -221,7 +249,7 @@
   color: #666;
 }
 
-/* Estilos del banner adicional */
+/* interesados en colaborar con nostros */
 .banner1 {
   position: relative;
   height: 300px;
@@ -285,3 +313,128 @@
   background-color: rgb(4, 0, 0);
   color: white;
 }
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block; /* Muestra el botón en pantallas pequeñas */
+    }
+  
+    .navigation {
+      display: none; /* Oculta la navegación en pantallas pequeñas */
+      flex-direction: column; /* Coloca los elementos en columna */
+      position: absolute; /* Posiciona la navegación de manera absoluta */
+      top: 80px; /* Distancia desde la parte superior */
+      right: 0; /* Alinea a la derecha */
+      background-color: #fff; /* Fondo blanco */
+      width: 100%; /* Ocupa todo el ancho */
+      padding: 16px; /* Espaciado interno */
+      border-bottom: 1px solid #e0e0e0; /* Borde inferior */
+    }
+  
+    .navigation.open {
+      display: flex; /* Muestra la navegación cuando tiene la clase "open" */
+    }
+  
+    .actions {
+      display: none; /* Oculta los botones de acción en pantallas pequeñas */
+    }
+  
+    .contaninermenor {
+      justify-content: space-between; /* Distribuye el espacio entre elementos */
+    }
+  }
+
+  /* Media Queries para tamaños de texto responsivos */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px 30px;
+      padding: 1rem;
+      margin: 1rem;
+     }
+  
+  .section-title {
+    font-size: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .banner-content {
+    padding: 30px;
+  }
+  
+  .banner-content h1 {
+    font-size: 15px;
+  }
+  
+  .banner-content p {
+    font-size: 10px;
+  }
+  
+  .banner1-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .banner1-content p {
+    font-size: 0.9rem;
+  }
+  
+  .news-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .news-card p {
+    font-size: 0.9rem;
+  }
+  
+  .team-member h3 {
+    font-size: 1.1rem;
+  }
+  
+  .team-member p {
+    font-size: 0.9rem;
+  }
+  
+  .stats-grid div span {
+    font-size: 2rem;
+  }
+  
+  .stats-grid div p {
+    font-size: 0.9rem;
+  }
+  
+  .menu-button {
+    display: block; /* Muestra el botón en pantallas pequeñas */
+  }
+
+  .navigation {
+    display: none; /* Oculta la navegación en pantallas pequeñas */
+    flex-direction: column; /* Coloca los elementos en columna */
+    position: absolute; /* Posiciona la navegación de manera absoluta */
+    top: 80px; /* Distancia desde la parte superior */
+    right: 0; /* Alinea a la derecha */
+    background-color: #fff; /* Fondo blanco */
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 16px; /* Espaciado interno */
+    border-bottom: 1px solid #e0e0e0; /* Borde inferior */
+  }
+
+  .navigation.open {
+    display: flex; /* Muestra la navegación cuando tiene la clase "open" */
+  }
+
+  .actions {
+    display: none; /* Oculta los botones de acción en pantallas pequeñas */
+  }
+
+  .contaninermenor {
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+  }
+}
+
+/* Media Query para pantallas GRANDES (escritorio) */
+@media (min-width: 992px) {
+  .banner-content h1 {
+    font-size: 40px; /* Tamaño para escritorio */
+  }

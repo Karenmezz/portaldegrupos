@@ -74,7 +74,7 @@
   
   .secciones-pag {
     text-decoration: none; /* Sin subrayado */
-    color: #bab2b2; /* Color del texto */
+    color: #b2b2ba; /* Color del texto */
     font-size: 14px; /* Tamaño del texto */
     transition: color 0.3s ease; /* Transición suave del color */
     text-align: center;
@@ -119,13 +119,7 @@
   color: black; /* Cambia el color al pasar el mouse */
   }
   
-  /* Ajustes para los botones en pantallas pequeñas */
-  @media (max-width: 768px) {
-  .language-button {
-    display: none; /* Oculta el botón de idioma en pantallas pequeñas */
-  }
-  }
-  
+
   /* Estilos para pantallas pequeñas */
   @media (max-width: 768px) {
     .menu-button {
@@ -152,6 +146,11 @@
       display: none; /* Oculta los botones de acción en pantallas pequeñas */
     }
   
+    .icono_superior img {
+      padding: 8px; /* Espaciado interno */
+      width: 50px; /* Ancho */
+      max-height:50px ; /* Altura */
+      }
     .contaninermenor {
       justify-content: space-between; /* Distribuye el espacio entre elementos */
     }
