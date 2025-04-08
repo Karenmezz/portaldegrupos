@@ -81,7 +81,7 @@
   }
   
   .secciones-pag:hover {
-    color: #000000; /* Cambia el color al pasar el mouse */
+    color: --primary-text-color; /* Cambia el color al pasar el mouse */
   }
   
   /* Acciones (botones) */
@@ -116,7 +116,7 @@
   transition: background-color 0.3s ease; /* Transición suave */}
   
   .language-button:hover {
-  color: black; /* Cambia el color al pasar el mouse */
+  color: --primary-text-color; /* Cambia el color al pasar el mouse */
   }
   
 

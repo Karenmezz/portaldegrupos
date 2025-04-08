@@ -10,7 +10,7 @@
 
 .banner-content h1 {
   font-size: 15px;
-  color: white;
+  color: --primary-color;
   font-size: 15px;
   margin-bottom: 10px;
 }
@@ -32,7 +32,7 @@
   width: 100%; 
   height: 100%;
   padding: 20px;
-  background-color: rgba(248, 239, 239, 0.323);
+  background-color: --primary-color;
   box-sizing: border-box;
   text-align: left;
 
@@ -48,7 +48,7 @@ a.btn {
   padding: 5px 10px;       /* Tamaño pequeño (ajustable) */
   font-size: 10px;         /* Texto pequeño */
   color: white;            /* Color del texto */
-  background-color: rgba(248, 239, 239, 0.323);
+  background-color: --primary-color;
   border: none;
   border-radius: 3px;
   text-decoration: none;
@@ -60,7 +60,7 @@ a.btn {
 
 /* Efecto hover opcional */
 a.btn:hover {
-  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+  background-color: black; /* Color más oscuro al pasar el mouse */
   transform: scale(1.02);   /* Efecto de zoom sutil */
   transition: all 0.2s;
 }
@@ -93,7 +93,7 @@ a.btn:hover {
 /*---------------- Noticias recientes --------------------*/
 .section {
   padding: 20px 0;
-  background-color: white;
+  background-color: --primary-color;
 }
 
 .section-title { /* --------------Titulos---------------*/
@@ -115,7 +115,7 @@ a.btn:hover {
   display: inline-block;
   padding: 10px 50px;
   background-color: rgba(192, 185, 185, 0.455);
-  color: white;
+  color: --primary-color;
   border-radius: 5px;
   transition: background-color 0.5s ease;
 }
@@ -148,7 +148,7 @@ a.btn:hover {
 }
 
 .news-card {
-  background-color: white;
+  background-color: --primary-color;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -184,7 +184,7 @@ a.btn:hover {
   display: inline-block;
   padding: 10px 20px;
   background-color: #c0c5c9;
-  color: white;
+  color: --primary-color;
   border-radius: 5px;
   text-align: center;
 }
@@ -232,7 +232,7 @@ a.btn:hover {
 }
 
 .stats-grid div {
-  background-color: white;
+  background-color: --primary-color;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -241,7 +241,7 @@ a.btn:hover {
 .stats-grid div span {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #011102;
+  color: --primary-text-color;
 }
 
 .stats-grid div p {
@@ -263,7 +263,7 @@ a.btn:hover {
 
 .banner1-content {
   max-width: 800px;
-  color: black;
+  color: --primary-text-color;
 }
 
 .banner1-content h1 {
@@ -291,27 +291,27 @@ a.btn:hover {
 }
 /* --------------------Boton de Contactar----------------------*/
 .btn1-black {/* Sin Tocar*/
-  background-color: white;
+  background-color: --primary-color;
   color: black;
-  border: 2px solid black;
+  border: 2px solid --primary-text-color;
 }
 
 .btn1-black:hover { /* Con accion*/
-  background-color: black;
-  color: white;
+  background-color: --primary-text-color;
+  color: black;
 }
 
 
 /*----------------------- Boton de opotunidades ----------------------*/
 .btn1-white { /* Sin Tocar*/
-  background-color: white;
-  color: rgb(12, 1, 1);
-  border: 2px solid black;
+  background-color: --primary-color;
+  color: black;
+  border: 2px solid --primary-text-color;
 }
 
 .btn1-white:hover { /* Con accion*/
-  background-color: rgb(4, 0, 0);
-  color: white;
+  background-color: --primary-text-color;
+  color: black;
 }
   /* Estilos para pantallas pequeñas */
   @media (max-width: 768px) {
@@ -325,7 +325,7 @@ a.btn:hover {
       position: absolute; /* Posiciona la navegación de manera absoluta */
       top: 80px; /* Distancia desde la parte superior */
       right: 0; /* Alinea a la derecha */
-      background-color: #fff; /* Fondo blanco */
+      background-color: --primary-color; /* Fondo blanco */
       width: 100%; /* Ocupa todo el ancho */
       padding: 16px; /* Espaciado interno */
       border-bottom: 1px solid #e0e0e0; /* Borde inferior */
@@ -414,7 +414,7 @@ a.btn:hover {
     position: absolute; /* Posiciona la navegación de manera absoluta */
     top: 80px; /* Distancia desde la parte superior */
     right: 0; /* Alinea a la derecha */
-    background-color: #fff; /* Fondo blanco */
+    background-color: --primary-color; /* Fondo blanco */
     width: 100%; /* Ocupa todo el ancho */
     padding: 16px; /* Espaciado interno */
     border-bottom: 1px solid #e0e0e0; /* Borde inferior */

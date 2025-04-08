@@ -8,8 +8,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: white;
-  color: #333;
+  background-color: --primary-color;
+  color: --primary-text-color;
 }
 
 /*--------------------- Inicio Quienes Somos ---------------------*/
@@ -17,7 +17,7 @@ h2 {
   font-size: 32px;
 }
 .page-header {
-  background-color: white;
+  background-color: --primary-color;
   padding: 15px 20px;
 }
 .img-quienesomos {
@@ -60,7 +60,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: white;
+  background-color: --primary-color;
   padding: 8px 12px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -78,7 +78,7 @@ h2 {
 
 /* ------------------------------Visión y objetivos--------------- */
 .vision {
-  background-color: white;
+  background-color: --primary-color;
   max-width: 1200px; /* Ancho pagina*/
   margin: 0 auto;
   padding: 40px 50px;
@@ -102,7 +102,7 @@ h2 {
 }
 
 .card {
-  background-color: #fff;
+  background-color: --primary-color;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 6px 6px #e0e0e0;
@@ -148,13 +148,13 @@ h2 {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  color: black;
+  color: --primary-text-color;
   background-color: #e0e0e0;
 }
 
 .tab.active {
   background-color: #e0e0e0;
-  color: black;
+  color: --primary-text-color;
 }
 
 .tab-content {
@@ -208,7 +208,7 @@ h2 {
 }
 
 .recognition-card {
-  background-color: #fff;
+  background-color: --primary-color;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(145, 40, 40, 0.1);
@@ -222,8 +222,8 @@ h2 {
 
 /*------------ Llamada a la acción -------*/
 .cta {
-  background-color: black;
-  color: #fff;
+  background-color: --primary-text-color;
+  color: --primary-color;
   margin: 0 auto;
   padding: 40px 50px;
   text-align: center;
@@ -232,11 +232,11 @@ h2 {
 .cta h2 {
   font-size: 2.5rem;
   margin-bottom: 0px;
-  color: white;
+  color: --primary-color;
 }
 
 .cta p {
-  color: white;
+  color: --primary-color;
   font-size: 1.1rem;
 }
 
@@ -251,15 +251,15 @@ h2 {
   color: black;
   padding: 10px 10px;
   border-radius: 5px;
-  border: 1px solid #0f0101;
+  border: 1px solid --primary-text-color;
   text-decoration: none;
   font-size: 1rem;
 }
 
 .cta-button.outline {
   background-color: #e0e0e0;
-  border: 1px solid #0f0101;
-  color: black;
+  border: 1px solid --primary-text-color;
+  color: --primary-text-color;
 }
 
 
@@ -277,8 +277,8 @@ h2 {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
-    color: #333;
+    background-color: --primary-color;
+    color: --primary-text-color;
     overflow-x: hidden; /* Previene scroll horizontal */
   }
 
@@ -288,7 +288,7 @@ h2 {
   }
   
   .page-header {
-    background-color: white;
+    background-color: --primary-color;
     padding: 15px;
   }
   
