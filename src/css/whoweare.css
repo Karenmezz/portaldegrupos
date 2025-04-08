@@ -1,9 +1,9 @@
+
 .container {
-  max-width: 1200px; /* Ancho pagina*/
   margin: 0 auto;
   padding: 10px 50px;
+  position: relative;
 }
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -44,12 +44,14 @@ h2 {
 /* Ancho pagina*/
   background-color: #e0e0e05e;
   padding: 10px 50px;
+  position: relative;
 }
 
 .history-mission-content {
   display: grid;
   margin: 0 auto;
-  max-width: 1200px;/* Ancho pagina*/
+  padding: 10px 50px;
+  position: relative;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
@@ -258,4 +260,157 @@ h2 {
   background-color: #e0e0e0;
   border: 1px solid #0f0101;
   color: black;
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) { 
+  .container {
+    margin: 0 auto;
+    padding: 10px 15px; /* Reducido el padding para móviles */
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+    overflow-x: hidden; /* Previene scroll horizontal */
+  }
+
+  /*--------------------- Inicio Quienes Somos ---------------------*/
+  h2 {
+    font-size: 24px; /* Tamaño más adecuado para móviles */
+  }
+  
+  .page-header {
+    background-color: white;
+    padding: 15px;
+  }
+  
+  .img-quienesomos {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .page-header-text h1 {
+    font-size: 1.8rem; /* Tamaño reducido para móviles */
+    margin-bottom: 10px;
+  }
+  
+  .page-header-image img {
+    width: 100%;
+    border-radius: 10px; /* Radio más pequeño para móviles */
+  }
+  
+  .page-header-img {
+    flex-direction: column; /* Cambio a columna para móviles */
+  }
+
+  /*--------------------------- Historia y misión------------------- */
+  .history-mission {
+    background-color: #e0e0e05e;
+    padding: 10px 15px; /* Padding reducido */
+  }
+
+  .history-mission-content {
+    display: block; /* Cambio de grid a bloque para móviles */
+    padding: 10px 0;
+  }
+
+  .badge {
+    padding: 6px 10px; /* Tamaño reducido */
+    font-size: 0.8rem;
+  }
+
+  .history h2,
+  .mission h2 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+
+  /* ------------------------------Visión y objetivos--------------- */
+  .vision {
+    padding: 20px 15px; /* Padding reducido */
+  }
+
+  .vision h2 {
+    font-size: 28px; /* Tamaño reducido */
+  }
+
+  .cards {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  /* ----------------------Áreas de investigación------------------------ */
+  .research-areas {
+    padding: 10px 15px;
+  }
+
+  .research-areas h2 {
+    font-size: 1.8rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap; /* Permite que los tabs se envuelvan */
+    gap: 10px;
+  }
+
+  .tab {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+  }
+
+  .image img {
+    width: 100%; /* Imagen más adaptable */
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* -----------------Reconocimientos ------------------*/
+  .recognition {
+    padding: 20px 15px;
+  }
+
+  .recognition h2 {
+    font-size: 1.8rem;
+  }
+
+  .recognition-cards {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  /*------------ Llamada a la acción -------*/
+  .cta {
+    padding: 20px 15px;
+  }
+
+  .cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column; /* Botones en columna */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 100%; /* Botones de ancho completo */
+    max-width: 250px;
+    padding: 12px;
+  }
 }
