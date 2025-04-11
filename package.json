@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astropub/config-to-alias": "^1.0.1",
     "astro": "^5.5.2"
   }
 }
