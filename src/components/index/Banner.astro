@@ -1,68 +1,122 @@
-
-
 <section class="banner">
-    <div class="background active">
-      <img src="src/img/Noticia1.png" alt="Imagen 1" />
-      <div class="banner-content">
-        <h1>
-          Candidato a la Dirección en la Escuela de Ingeniería de Sistemas e Informática
-        </h1>
-        <p>
-          En cumplimiento de la Resolución No. 0171 del 12 de febrero de 2025,
-          el Consejo de la Escuela de Ingeniería de Sistemas e Informática informa que, tras el cierre del periodo de inscripción de candidatos.
-        </p>
-        <a class="btn">Leer más</a>
-      </div>
+  <div class="background active">
+    <img src="src/img/Noticia1.png" alt="Imagen 1" />
+    <div class="banner-content">
+      <h1>
+        Candidato a la Dirección en la Escuela de Ingeniería de Sistemas e Informática
+      </h1>
+      <p>
+        En cumplimiento de la Resolución No. 0171 del 12 de febrero de 2025,
+        el Consejo de la Escuela de Ingeniería de Sistemas e Informática informa que, tras el cierre del periodo de inscripción de candidatos.
+      </p>
+      <div class="fecha"><span>📅</span> <span class="fecha-hoy"></span></div>
+      <a class="btn">Leer más</a>
     </div>
-    <div class="background">
-      <img src="src/img/Noticia2.png" alt="Imagen 2" />
-      <div class="banner-content">
-        <h1>¡Prepárate para las Pruebas Saber Pro y Saber TyT 2025-1!</h1>
-        <p>
-          El proceso de inscripción para presentar las pruebas del ICFES ya
-          está en marcha. Asegúrate de cumplir con cada etapa, desde la
-          preinscripción hasta la consulta de resultados. Revisa la infografía
-          para conocer los plazos y requisitos.
-        </p>
-        <a  class="btn">Leer más</a>
-      </div>
+  </div>
+  <div class="background">
+    <img src="src/img/Noticia2.png" alt="Imagen 2" />
+    <div class="banner-content">
+      <h1>¡Prepárate para las Pruebas Saber Pro y Saber TyT 2025-1!</h1>
+      <p>
+        El proceso de inscripción para presentar las pruebas del ICFES ya
+        está en marcha. Asegúrate de cumplir con cada etapa, desde la
+        preinscripción hasta la consulta de resultados. Revisa la infografía
+        para conocer los plazos y requisitos.
+      </p>
+      <div class="fecha">📅</span> <span class="fecha-hoy"></span></div>
+      <a class="btn">Leer más</a>
     </div>
-    <div class="background">
-      <img src="src/img/Noticia3.png" alt="Imagen 3" />
-      <div class="banner-content">
-        <h1>
-          Estudiantes del doctorado en ciencias de la computación, participaron en la "AI Science and Society"
-        </h1>
-        <p>
-          Esta conferencia se desarrolló en Paris y contó con conferencistas destacados en IA, como: Yann LeCun (turing award), Yoshua Bengio
-          (turing award), entre otros destacados investigadores de I.A.
-        </p>
-        <a class="btn">Leer más</a>
-      </div>
+  </div>
+  <div class="background">
+    <img src="src/img/Noticia3.png" alt="Imagen 3" />
+    <div class="banner-content">
+      <h1>
+        Estudiantes del doctorado en ciencias de la computación, participaron en la "AI Science and Society"
+      </h1>
+      <p>
+        Esta conferencia se desarrolló en Paris y contó con conferencistas destacados en IA, como: Yann LeCun (turing award), Yoshua Bengio
+        (turing award), entre otros destacados investigadores de I.A.
+      </p>
+      <div class="fecha">📅<span class="fecha-hoy"></span></div>
+      <a class="btn">Leer más</a>
     </div>
-    <div class="banner-controls">
-      <button onclick="prevSlide()">&#10094;</button>
-      <button onclick="nextSlide()">&#10095;</button>
-    </div>
-  </section>
-  
-  <script defer>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.background');
-  
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-  
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-  
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-  </script>
+  </div>
+  <div class="banner-controls">
+    <button onclick="prevSlide()">&#10094;</button>
+    <div class="dots-container" id="dots-container"></div>
+    <button onclick="nextSlide()">&#10095;</button>
+  </div>
+</section>
+
+<script defer>
+  // Función para formatear la fecha como "15 Mar 2025"
+  function formatFecha() {
+    const meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+    const hoy = new Date();
+    const dia = hoy.getDate();
+    const mes = meses[hoy.getMonth()];
+    const año = hoy.getFullYear();
+    return `${dia} ${mes} ${año}`;
+  }
+
+  // Variables para el slider
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.background');
+  const dotsContainer = document.getElementById('dots-container');
+  let dots = [];
+
+  // Crear los puntos indicadores
+  function createDots() {
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if(index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    });
+  }
+
+  // Ir a un slide específico
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlider();
+  }
+
+  // Actualizar slider y puntos
+  function updateSlider() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentSlide);
+    });
+    
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  // Inicializar
+  document.addEventListener('DOMContentLoaded', function() {
+    // Configurar fechas
+    const fechas = document.querySelectorAll('.fecha-hoy');
+    const fechaFormateada = formatFecha();
+    fechas.forEach(fecha => {
+      fecha.textContent = fechaFormateada;
+    });
+    
+    // Crear puntos indicadores
+    createDots();
+    
+    // Opcional: Auto-avance cada 5 segundos
+    setInterval(nextSlide, 5000);
+  });
+</script>

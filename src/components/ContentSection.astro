@@ -1,0 +1,30 @@
+---
+export interface Props {
+  color: 'gray' | 'white'
+}
+---
+
+<section class=`${Astro.props.color}`>
+  <div>
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 6rem 50px;
+  }
+
+  section div {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .gray {
+    background-color: #e0e0e05e;
+  }
+
+  .white {
+    background-color: #ffffff;
+  }
+</style>

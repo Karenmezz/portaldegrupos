@@ -16,10 +16,7 @@ body {
 h2 {
   font-size: 32px;
 }
-.page-header {
-  background-color: --primary-color;
-  padding: 15px 20px;
-}
+
 .img-quienesomos {
   max-width: 100%;
   height: auto;
@@ -40,13 +37,6 @@ h2 {
 }
 
 /*--------------------------- Historia y misión------------------- */
-.history-mission {
-/* Ancho pagina*/
-  background-color: #e0e0e05e;
-  padding: 10px 50px;
-  position: relative;
-}
-
 .history-mission-content {
   display: grid;
   margin: 0 auto;
@@ -77,12 +67,6 @@ h2 {
 }
 
 /* ------------------------------Visión y objetivos--------------- */
-.vision {
-  background-color: --primary-color;
-  max-width: 1200px; /* Ancho pagina*/
-  margin: 0 auto;
-  padding: 40px 50px;
-}
 
 .vision-content {
   text-align: center;
@@ -120,12 +104,6 @@ h2 {
 }
 
 /* ----------------------Áreas de investigación------------------------ */
-.research-areas {
-  text-align: center;
-  background-color: #e0e0e05e;
-  margin: 0 auto;
-  padding: 10px 50px;
-}
 
 .research-areas-content {
   margin: 0 auto;
@@ -179,11 +157,6 @@ h2 {
 }
 
 /* -----------------Reconocimientos ------------------*/
-.recognition {
-  max-width: 1200px; /* Ancho pagina*/
-  margin: 0 auto;
-  padding: 40px 50px;
-}
 
 .icon{
   font-size: 2rem;
@@ -221,13 +194,6 @@ h2 {
 }
 
 /*------------ Llamada a la acción -------*/
-.cta {
-  background-color: --primary-text-color;
-  color: --primary-color;
-  margin: 0 auto;
-  padding: 40px 50px;
-  text-align: center;
-}
 
 .cta h2 {
   font-size: 2.5rem;

@@ -11,7 +11,6 @@
 .banner-content h1 {
   font-size: 15px;
   color: --primary-color;
-  font-size: 15px;
   margin-bottom: 10px;
 }
 
@@ -24,7 +23,6 @@
   object-fit: cover;
 }
 
-/* Contenedor del banner (flexbox) */
 .banner-content {
   position: absolute;
   top: 0;
@@ -32,9 +30,9 @@
   width: 100%; 
   height: 100%;
   padding: 20px;
-  background-color: --primary-color;
   box-sizing: border-box;
   text-align: left;
+  background-color: rgba(128, 128, 128, 0.35); /* gris con 40% opacidad */
 
   /* Flexbox para organizar el contenido */
   display: flex;
@@ -43,12 +41,12 @@
   align-items: flex-start; /* Alineación a la izquierda */
 }
 
-/* Estilos para el botón "Leer más" */
+/* Botón "Leer más" */
 a.btn {
   padding: 5px 10px;       /* Tamaño pequeño (ajustable) */
-  font-size: 10px;         /* Texto pequeño */
+  font-size: 12px;         /* Texto pequeño */
   color: white;            /* Color del texto */
-  background-color: --primary-color;
+  background-color: rgba(128, 128, 128, 0.3);
   border: none;
   border-radius: 3px;
   text-decoration: none;
@@ -58,14 +56,17 @@ a.btn {
   display: inline-block;   /* Permite que el ancho se ajuste al texto */
 }
 
-/* Efecto hover opcional */
+.fecha {
+  font-size: 12px; 
+  color: white;
+}
+
 a.btn:hover {
   background-color: black; /* Color más oscuro al pasar el mouse */
   transform: scale(1.02);   /* Efecto de zoom sutil */
   transition: all 0.2s;
 }
 
-/* ----------Botones del banner */
 .banner-controls {
   position: absolute;
   bottom: 10px;
@@ -90,45 +91,72 @@ a.btn:hover {
   background-color: rgba(73, 67, 67, 0.581);
 }
 
-/*---------------- Noticias recientes --------------------*/
+  /* -----------Estilos para los puntos indicadores */
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+
+
+/*----------------------- Noticias recientes --------------------*/
 .section {
   padding: 20px 0;
   background-color: --primary-color;
 }
 
-.section-title { /* --------------Titulos---------------*/
+.fechanews {
+  font-size: 15px; 
+  color: #666;
+}
+.section-title { 
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.section-subtitle { /*-------------- Subtitulos-----------*/
+.section-subtitle { 
   font-size: 1.2rem;
   text-align: center;
-  color: #666;
+  color: black;
   margin-bottom: 40px;
 }
 
-
-/* Estilos de botones */
-.btn {
-  display: inline-block;
-  padding: 10px 50px;
-  background-color: rgba(192, 185, 185, 0.455);
-  color: --primary-color;
-  border-radius: 5px;
-  transition: background-color 0.5s ease;
+a.newsbtn {
+  display: flex;
+  padding: 8px 20px;
+  width: 90%; /* Ocupará el 80% del contenedor padre */
+  background-color: white !important;
+  color: black !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  border: 1px solid #2c3e50; /* Grosor | Tipo de línea | Color */
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-
-/* Estilos del banner */
 .banner {
   position: relative;
   height: 400px;
   overflow: hidden;
 }
 
-/* Fondos */
 .background {
   position: absolute;
   top: 0;
@@ -139,8 +167,7 @@ a.btn:hover {
   transition: opacity 1s ease;
 }
 
-
-/*-------- Estilos de las tarjetas de noticias */
+/*---------------- Estilos de las tarjetas de noticias-------------------- */
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -176,7 +203,7 @@ a.btn:hover {
 
 .news-card p {
   font-size: 1rem;
-  color: #666;
+  color: black;
   margin-bottom: 20px;
 }
 
@@ -190,11 +217,6 @@ a.btn:hover {
 }
 
 /*----------------- Seccion de Investigacion----------------*/
-.research-lines {
-  background-color:#e0e0e05e;
-  padding: 10px 50px;
-}
-
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -220,10 +242,11 @@ a.btn:hover {
 
 .team-member p {
   font-size: 1rem;
-  color: #666;
+  color: gray;
 }
 
-/* ------------------Estilos de estadísticas------------------- */
+/* ----------------------------Estilos de estadísticas------------------- */
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -249,20 +272,19 @@ a.btn:hover {
   color: #666;
 }
 
-/* interesados en colaborar con nostros */
-.banner1 {
-  position: relative;
-  height: 300px;
-  background-color: #e0e0e05e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  padding: 0 20px;
-}
 
+/* ----------------------------Publicaciones destacadas------------------- */
+
+
+
+
+
+
+
+
+
+/*-------------------- interesados en colaborar con nostros ------------------*/
 .banner1-content {
-  max-width: 800px;
   color: --primary-text-color;
 }
 
@@ -289,30 +311,17 @@ a.btn:hover {
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* --------------------Boton de Contactar----------------------*/
-.btn1-black {/* Sin Tocar*/
-  background-color: --primary-color;
-  color: black;
-  border: 2px solid --primary-text-color;
-}
-
-.btn1-black:hover { /* Con accion*/
-  background-color: --primary-text-color;
+/* ----------------------Boton de Contactar y Boton de opotunidades--------------------*/
+.btn1-black, .btn1-white {/* Sin Tocar*/
+  background-color: white;
   color: black;
 }
 
-
-/*----------------------- Boton de opotunidades ----------------------*/
-.btn1-white { /* Sin Tocar*/
-  background-color: --primary-color;
-  color: black;
-  border: 2px solid --primary-text-color;
-}
-
-.btn1-white:hover { /* Con accion*/
-  background-color: --primary-text-color;
+.btn1-black:hover, .btn1-white:hover { /* Con accion*/
+  background-color: gray;
   color: black;
 }
+
   /* Estilos para pantallas pequeñas */
   @media (max-width: 768px) {
     .menu-button {

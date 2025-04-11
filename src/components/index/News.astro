@@ -13,6 +13,7 @@
             CONVOCATORIA ELECCIÓN DE REPRESENTANTE ESTUDIANTIL DE POSGRADO AL
             CONSEJO DE ESCUELA EISI
           </h3>
+          <div class="fechanews">📅<span class="fecha-hoy"></span></div>
           <p>
             Teniendo en cuenta la resolución de rectoría N° 1073 de 2016,por la
             cual se establece el procedimiento para los procesos de elección de
@@ -22,35 +23,49 @@
             a las estudiantes de posgrado de la Escuela de Ingeniería de
             Sistemas e Informática para participar en el proceso electoral.
           </p>
-          <a href="#" class="btn">Leer más</a>
+          <a href="#" class="newsbtn">Leer más</a>
         </div>
       </div>
       <div class="news-card">
         <img src="src/img/NoticiasRecientes2.png" alt="Noticia 2" />
         <div class="news-card-content">
           <h3>APOYO ECONÓMICO PARA ASISTIR A EVENTOS</h3>
+          <div class="fechanews">📅<span class="fecha-hoy"></span></div>
+
           <p>
             La Facultad de Ingenierías Fisicomecánicas le informa que aún se
             encuentra abierta la convocatoria para postularse y recibir apoyo
             económico para ASISTIR A EVENTOS NACIONALES E INTERNACIONALES para
             presentar una ponencia o poster para el presente semestre 2025-1
           </p>
-          <a href="#" class="btn">Leer más</a>
+          <a href="#" class="newsbtn">Leer más</a>
         </div>
       </div>
       <div class="news-card">
         <img src="src/img/NoticiaReciente3.png" alt="Noticia 3" />
         <div class="news-card-content">
           <h3>RECUERDA ASISTIR AL SEGUIMIENTO ACADÉMICO</h3>
+          <div class="fechanews">📅<span class="fecha-hoy"></span></div>
           <p>
             La Universidad Industrial de Santander ha implementado un
             acompañamiento y asesoramiento a los estudiantes de pregrado en los
             semestres: primero, quinto y octavo, que lo realizará un profesor
             planta del programa.
           </p>
-          <a href="#" class="btn">Leer más</a>
+          <a href="#" class="newsbtn">Leer más</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script defer>
+  // Función para formatear la fecha como "15 Mar 2025"
+  function formatFecha() {
+    const meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+    const hoy = new Date();
+    const dia = hoy.getDate();
+    const mes = meses[hoy.getMonth()];
+    const año = hoy.getFullYear();
+    return `${dia} ${mes} ${año}`;
+  }
