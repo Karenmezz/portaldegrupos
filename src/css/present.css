@@ -1,0 +1,1164 @@
+/* Estilos generales */
+:root {
+    --primary-color: #e5e8eb;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: white;
+    --dark-color: black;
+    --text-color: #333;
+    --text-light: black;
+    --border-radius: 18px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: white;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Cabecera */
+  .page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .page-header h1 i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+  }
+  
+  /* Pestañas */
+  .tabs-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  .tabs-header {
+    display: flex;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .tab-btn.active {
+    color: var(--secondary-color);
+  }
+  
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+  }
+  
+  /* Filtros */
+  .filters {
+    display: flex;
+    gap: 15px;
+    padding: 15px 20px;
+    background: var(--light-color);
+    border-bottom: 1px solid #eee;
+  }
+  
+  .search-box {
+    flex: 2;
+    position: relative;
+  }
+  
+  .search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+  }
+  
+  select {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  /* Contenido de pestañas */
+  .tab-content {
+    display: none;
+    padding: 20px;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Grid de noticias y eventos */
+  .news-grid,
+  .events-grid,
+  .publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Tarjetas de noticias */
+  .news-card {
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .news-date {
+    min-width: 70px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .news-date .day {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .news-date .month {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin: 5px 0;
+  }
+  
+  .news-date .year {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+  
+  .news-content {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .news-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .news-badge.proyecto {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .news-badge.publicacion {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .news-badge.premio {
+    background-color: #f39c12;
+    color: white;
+  }
+  
+  .news-badge.evento {
+    background-color: #9b59b6;
+    color: white;
+  }
+  
+  .news-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+  }
+  
+  .news-excerpt {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    flex-grow: 1;
+  }
+  
+  .news-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+  
+  .news-meta i {
+    margin-right: 5px;
+  }
+  
+  .read-more {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  
+  .read-more i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+  }
+  
+  .read-more:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Tarjetas de eventos */
+  .event-card {
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-date {
+    min-width: 70px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    text-align: center;
+  }
+  
+  .event-date .day {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .event-date .month {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .event-content {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-type {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .event-type.seminar {
+    background-color: #3498db;
+  }
+  
+  .event-type.workshop {
+    background-color: #2ecc71;
+  }
+  
+  .event-type.conference {
+    background-color: #e74c3c;
+  }
+  
+  .event-type.roundtable {
+    background-color: #9b59b6;
+  }
+  
+  .event-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+  }
+  
+  .event-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    flex-grow: 1;
+  }
+  
+  .event-details {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+  
+  .event-details p {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .event-details i {
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+  }
+  
+  .event-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  
+  .event-btn i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+  }
+  
+  .event-btn:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Tarjetas de publicaciones */
+  .pub-card {
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    transition: var(--transition);
+  }
+  
+  .pub-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pub-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: white;
+  }
+  
+  .pub-badge.journal {
+    background-color: #3498db;
+  }
+  
+  .pub-badge.conference {
+    background-color: #2ecc71;
+  }
+  
+  .pub-badge.thesis {
+    background-color: #f39c12;
+  }
+  
+  .pub-badge.book {
+    background-color: #9b59b6;
+  }
+  
+  .pub-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+  }
+  
+  .pub-authors {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .pub-meta {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+  
+  .pub-meta span {
+    display: block;
+    margin-bottom: 3px;
+  }
+  
+  .pub-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  
+  .pub-btn i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+  }
+  
+  .pub-btn:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Newsletter */
+  .newsletter {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    margin-top: 30px;
+  }
+  
+  .newsletter h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .newsletter h2 i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .newsletter p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .subscribe-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .subscribe-form button {
+    padding: 12px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .subscribe-form button:hover {
+    background-color: var(--primary-color);
+  }
+  
+  .subscribe-form button i {
+    margin-left: 8px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tabs-header {
+      flex-direction: column;
+    }
+    
+    .filters {
+      flex-direction: column;
+    }
+    
+    .news-grid,
+    .events-grid,
+    .publications-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .subscribe-form {
+      flex-direction: column;
+    }
+    
+    .subscribe-form input,
+    .subscribe-form button {
+      width: 100%;
+      border-radius: var(--border-radius);
+    }
+    
+    .subscribe-form input {
+      margin-bottom: 10px;
+      border-radius: var(--border-radius);
+    }
+    
+    .subscribe-form button {
+      border-radius: var(--border-radius);
+    }
+
+    /* Sección de Calendario */
+.calendar-section {
+  margin-top: 50px;
+  padding: 30px 0;
+  border-top: 1px solid #eee;
+}
+
+.calendar-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.calendar-section h2 i {
+  margin-right: 10px;
+  color: var(--secondary-color);
+}
+
+.calendar-section p {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.calendar-item {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.calendar-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-date {
+  min-width: 80px;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+.calendar-day {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.calendar-month {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.calendar-year {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.calendar-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.calendar-badge.workshop {
+  background-color: #2ecc71;
+}
+
+.calendar-badge.seminar {
+  background-color: #3498db;
+}
+
+.calendar-badge.thesis {
+  background-color: #9b59b6;
+}
+
+.calendar-badge.publication {
+  background-color: #e74c3c;
+}
+
+.calendar-badge.book {
+  background-color: #f39c12;
+}
+
+.calendar-badge.conference {
+  background-color: #1abc9c;
+}
+
+.calendar-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.calendar-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.calendar-details {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.calendar-details p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.calendar-details i {
+  margin-right: 10px;
+  width: 16px;
+  text-align: center;
+}
+
+.calendar-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.calendar-btn i {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.calendar-btn:hover {
+  color: var(--primary-color);
+}
+
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calendar-item {
+    flex-direction: column;
+  }
+  
+  .calendar-date {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .calendar-day, 
+  .calendar-month, 
+  .calendar-year {
+    margin: 0 5px;
+  }
+}
+  }
+
+
+  /* Sección de Calendario */
+.calendar-section {
+  margin-top: 50px;
+  padding: 30px 0;
+  border-top: 1px solid #eee;
+}
+
+.calendar-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.calendar-section h2 i {
+  margin-right: 10px;
+  color: var(--secondary-color);
+}
+
+.calendar-section p {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.calendar-item {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.calendar-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-date {
+  min-width: 80px;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+.calendar-day {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.calendar-month {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.calendar-year {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.calendar-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.calendar-badge.workshop {
+  background-color: #2ecc71;
+}
+
+.calendar-badge.seminar {
+  background-color: #3498db;
+}
+
+.calendar-badge.thesis {
+  background-color: #9b59b6;
+}
+
+.calendar-badge.publication {
+  background-color: #e74c3c;
+}
+
+.calendar-badge.book {
+  background-color: #f39c12;
+}
+
+.calendar-badge.conference {
+  background-color: #1abc9c;
+}
+
+.calendar-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.calendar-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.calendar-details {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.calendar-details p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.calendar-details i {
+  margin-right: 10px;
+  width: 16px;
+  text-align: center;
+}
+
+.calendar-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.calendar-btn i {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.calendar-btn:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calendar-item {
+    flex-direction: column;
+  }
+  
+  .calendar-date {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .calendar-day, 
+  .calendar-month, 
+  .calendar-year {
+    margin: 0 5px;
+ }
+
+ /* Sección de Calendario */
+.calendar-section {
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+  }
+  
+  .calendar-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .calendar-section h2 i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .calendar-section p {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 30px;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 20px;
+  }
+  
+  .calendar-item {
+    flex-direction: column;
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  .calendar-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar-date {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    min-width: 80px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .calendar-day {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .calendar-month {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 5px 0;
+  }
+  
+  .calendar-year {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .calendar-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .calendar-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .calendar-badge.workshop {
+    background-color: #2ecc71;
+  }
+  
+  .calendar-badge.seminar {
+    background-color: #3498db;
+  }
+  
+  .calendar-badge.thesis {
+    background-color: #9b59b6;
+  }
+  
+  .calendar-badge.publication {
+    background-color: #e74c3c;
+  }
+  
+  .calendar-badge.book {
+    background-color: #f39c12;
+  }
+  
+  .calendar-badge.conference {
+    background-color: #1abc9c;
+  }
+  
+  .calendar-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+  }
+  
+  .calendar-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    flex-grow: 1;
+  }
+  
+  .calendar-details {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+  
+  .calendar-details p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  .calendar-details i {
+    margin-right: 10px;
+    width: 16px;
+    text-align: center;
+  }
+  
+  .calendar-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  
+  .calendar-btn i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+  }
+  
+  .calendar-btn:hover {
+    color: var(--primary-color);
+  }
+  
+  @media (max-width: 768px) {
+    .calendar-grid {
+    }
+    
+    .calendar-day, 
+    .calendar-month, 
+    .calendar-year {
+      margin: 0 5px;
+    }
+  }
+}

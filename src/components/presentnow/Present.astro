@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualidad - Grupo de Investigación</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1> Actualidad</h1>
+      <p class="subtitle">Mantente al día con las últimas noticias y eventos de nuestro grupo de investigación</p>
+    </header>
+
+    <div class="tabs-container">
+      <div class="tabs-header">
+        <button class="tab-btn active" data-tab="noticias">Noticias</button>
+        <button class="tab-btn" data-tab="eventos">Eventos</button>
+        <button class="tab-btn" data-tab="publicaciones">Publicaciones</button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Buscar...">
+        </div>
+        <select id="category-filter">
+          <option value="todas">Todas las categorías</option>
+          <option value="proyectos">Proyectos</option>
+          <option value="eventos">Eventos</option>
+          <option value="publicaciones">Publicaciones</option>
+          <option value="premios">Premios</option>
+        </select>
+        <select id="date-filter">
+          <option value="todas">Todas las fechas</option>
+          <option value="mes">Este mes</option>
+          <option value="semana">Esta semana</option>
+          <option value="hoy">Hoy</option>
+        </select>
+      </div>
+
+      <!-- Contenido de Noticias -->
+      <div id="noticias-content" class="tab-content active">
+        <div class="news-grid">
+          <!-- Noticia 1 -->
+          <article class="news-card">
+            <div class="news-date">
+              <span class="day">15</span>
+              <span class="month">Mar</span>
+              <span class="year">2025</span>
+            </div>
+            <div class="news-content">
+              <div class="news-badge proyecto">Proyecto</div>
+              <h3>Nuevo proyecto de investigación aprobado</h3>
+              <p class="news-excerpt">Hemos recibido financiación para desarrollar tecnologías innovadoras en energías renovables con aplicación en zonas rurales.</p>
+              <div class="news-meta">
+                <span><i class="fas fa-user"></i> Dr. Carlos Méndez</span>
+                <span><i class="fas fa-clock"></i> 5 min lectura</span>
+              </div>
+              <button class="read-more">Leer más <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Noticia 2 -->
+          <article class="news-card">
+            <div class="news-date">
+              <span class="day">10</span>
+              <span class="month">Mar</span>
+              <span class="year">2025</span>
+            </div>
+            <div class="news-content">
+              <div class="news-badge publicacion">Publicación</div>
+              <h3>Artículo publicado en Nature Energy</h3>
+              <p class="news-excerpt">Nuestro estudio sobre materiales fotovoltaicos ha sido publicado en esta prestigiosa revista científica.</p>
+              <div class="news-meta">
+                <span><i class="fas fa-user"></i> Dra. Laura Gómez</span>
+                <span><i class="fas fa-clock"></i> 8 min lectura</span>
+              </div>
+              <button class="read-more">Leer más <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Noticia 3 -->
+          <article class="news-card">
+            <div class="news-date">
+              <span class="day">28</span>
+              <span class="month">Feb</span>
+              <span class="year">2025</span>
+            </div>
+            <div class="news-content">
+              <div class="news-badge premio">Premio</div>
+              <h3>Premio Nacional a la Innovación</h3>
+              <p class="news-excerpt">Nuestro equipo ha sido galardonado por el desarrollo de un nuevo sistema de almacenamiento energético.</p>
+              <div class="news-meta">
+                <span><i class="fas fa-user"></i> Equipo completo</span>
+                <span><i class="fas fa-clock"></i> 6 min lectura</span>
+              </div>
+              <button class="read-more">Leer más <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Noticia 4 -->
+          <article class="news-card">
+            <div class="news-date">
+              <span class="day">15</span>
+              <span class="month">Feb</span>
+              <span class="year">2025</span>
+            </div>
+            <div class="news-content">
+              <div class="news-badge evento">Evento</div>
+              <h3>Conferencia Internacional</h3>
+              <p class="news-excerpt">Participaremos en la próxima conferencia mundial sobre energías renovables en Berlín.</p>
+              <div class="news-meta">
+                <span><i class="fas fa-user"></i> Dr. Antonio López</span>
+                <span><i class="fas fa-clock"></i> 4 min lectura</span>
+              </div>
+              <button class="read-more">Leer más <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Contenido de Eventos -->
+      <div id="eventos-content" class="tab-content">
+        <div class="events-grid">
+          <!-- Evento 1 -->
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">20</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="event-content">
+              <div class="event-type seminar">Seminario</div>
+              <h3>Avances en Energía Solar</h3>
+              <p class="event-description">Presentación de los últimos desarrollos en tecnología fotovoltaica.</p>
+              <div class="event-details">
+                <p><i class="fas fa-map-marker-alt"></i> Sala de Conferencias A</p>
+                <p><i class="fas fa-clock"></i> 16:00 - 18:00</p>
+                <p><i class="fas fa-user"></i> Dra. María García</p>
+              </div>
+              <button class="event-btn">Más información <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Evento 2 -->
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">27</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="event-content">
+              <div class="event-type workshop">Taller</div>
+              <h3>Programación Científica</h3>
+              <p class="event-description">Introducción al uso de Python para análisis de datos en investigación.</p>
+              <div class="event-details">
+                <p><i class="fas fa-map-marker-alt"></i> Laboratorio 3</p>
+                <p><i class="fas fa-clock"></i> 10:00 - 14:00</p>
+                <p><i class="fas fa-user"></i> Ing. Carlos Pérez</p>
+              </div>
+              <button class="event-btn">Más información <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Evento 3 -->
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">15</span>
+              <span class="month">May</span>
+            </div>
+            <div class="event-content">
+              <div class="event-type conference">Conferencia</div>
+              <h3>Inteligencia Artificial Aplicada</h3>
+              <p class="event-description">Cómo aplicar modelos de machine learning en proyectos de ingeniería.</p>
+              <div class="event-details">
+                <p><i class="fas fa-map-marker-alt"></i> Auditorio Principal</p>
+                <p><i class="fas fa-clock"></i> 09:00 - 11:30</p>
+                <p><i class="fas fa-user"></i> Dr. Roberto Sánchez</p>
+              </div>
+              <button class="event-btn">Más información <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Evento 4 -->
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">22</span>
+              <span class="month">May</span>
+            </div>
+            <div class="event-content">
+              <div class="event-type roundtable">Mesa Redonda</div>
+              <h3>Futuro de las Energías Renovables</h3>
+              <p class="event-description">Discusión con expertos sobre tendencias y desafíos en el sector.</p>
+              <div class="event-details">
+                <p><i class="fas fa-map-marker-alt"></i> Sala de Juntas B</p>
+                <p><i class="fas fa-clock"></i> 15:00 - 17:00</p>
+                <p><i class="fas fa-users"></i> Panel de Expertos</p>
+              </div>
+              <button class="event-btn">Más información <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Contenido de Publicaciones -->
+      <div id="publicaciones-content" class="tab-content">
+        <div class="publications-grid">
+          <!-- Publicación 1 -->
+          <article class="pub-card">
+            <div class="pub-badge journal">Revista</div>
+            <h3>Optimización de redes eléctricas</h3>
+            <p class="pub-authors">Gómez, L., Méndez, C., et al.</p>
+            <p class="pub-meta">
+              <span>Nature Energy, 2025</span>
+              <span>DOI: 10.1038/s41560-025-01340-8</span>
+            </p>
+            <button class="pub-btn">Ver publicación <i class="fas fa-external-link-alt"></i></button>
+          </article>
+
+          <!-- Publicación 2 -->
+          <article class="pub-card">
+            <div class="pub-badge conference">Conferencia</div>
+            <h3>Nuevos materiales superconductores</h3>
+            <p class="pub-authors">López, A., Sánchez, R., et al.</p>
+            <p class="pub-meta">
+              <span>IEEE PowerTech, 2025</span>
+              <span>pp. 1-6</span>
+            </p>
+            <button class="pub-btn">Ver publicación <i class="fas fa-external-link-alt"></i></button>
+          </article>
+
+          <!-- Publicación 3 -->
+          <article class="pub-card">
+            <div class="pub-badge thesis">Tesis</div>
+            <h3>Almacenamiento energético en redes</h3>
+            <p class="pub-authors">Martínez, C. (Dir. Dr. Méndez)</p>
+            <p class="pub-meta">
+              <span>Universidad de Investigación, 2025</span>
+              <span>256 pp.</span>
+            </p>
+            <button class="pub-btn">Ver publicación <i class="fas fa-external-link-alt"></i></button>
+          </article>
+
+          <!-- Publicación 4 -->
+          <article class="pub-card">
+            <div class="pub-badge book">Libro</div>
+            <h3>Energías renovables: Fundamentos</h3>
+            <p class="pub-authors">Equipo de Investigación</p>
+            <p class="pub-meta">
+              <span>Editorial Científica, 2025</span>
+              <span>ISBN: 978-3-16-148410-0</span>
+            </p>
+            <button class="pub-btn">Ver publicación <i class="fas fa-external-link-alt"></i></button>
+          </article>
+        </div>
+      </div>
+    </div>
+
+        <!-- Sección de Calendario -->
+        <section class="calendar-section">
+            <h2><i class="fas fa-calendar-alt"></i> Calendario de Actividades</h2>
+            <p>Consulta todos nuestros eventos, publicaciones y actividades programadas</p>
+            
+            <div class="calendar-grid">
+              <!-- Evento 1 -->
+              <article class="calendar-item">
+                <div class="calendar-date">
+                  <div class="calendar-day">15</div>
+                  <div class="calendar-month">May</div>
+                  <div class="calendar-year">2025</div>
+                </div>
+                <div class="calendar-content">
+                  <span class="calendar-badge workshop">Workshop</span>
+                  <h3>Workshop Internacional de Inteligencia Artificial</h3>
+                  <p class="calendar-description">Taller práctico sobre aplicaciones de IA en la optimización de sistemas energéticos.</p>
+                  <div class="calendar-details">
+                    <p><i class="fas fa-clock"></i> 10:00 - 17:00</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Auditorio Principal, Campus Central</p>
+                    <p><i class="fas fa-user"></i> Dr. Javier Rodríguez y colaboradores internacionales</p>
+                  </div>
+                  <button class="calendar-btn">Más información <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </article>
+      
+              <!-- Evento 2 -->
+              <article class="calendar-item">
+                <div class="calendar-date">
+                  <div class="calendar-day">20</div>
+                  <div class="calendar-month">Abr</div>
+                  <div class="calendar-year">2025</div>
+                </div>
+                <div class="calendar-content">
+                  <span class="calendar-badge seminar">Seminario</span>
+                  <h3>Avances en Energía Solar</h3>
+                  <p class="calendar-description">Presentación de los últimos desarrollos en tecnología fotovoltaica.</p>
+                  <div class="calendar-details">
+                    <p><i class="fas fa-clock"></i> 16:00 - 18:00</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Sala de Conferencias A</p>
+                    <p><i class="fas fa-user"></i> Dra. María García</p>
+                  </div>
+                  <button class="calendar-btn">Más información <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </article>
+      
+              <!-- Evento 3 -->
+              <article class="calendar-item">
+                <div class="calendar-date">
+                  <div class="calendar-day">10</div>
+                  <div class="calendar-month">Jun</div>
+                  <div class="calendar-year">2025</div>
+                </div>
+                <div class="calendar-content">
+                  <span class="calendar-badge thesis">Defensa</span>
+                  <h3>Defensa de Tesis Doctoral</h3>
+                  <p class="calendar-description">Presentación de tesis sobre nuevos materiales compuestos para aplicaciones energéticas.</p>
+                  <div class="calendar-details">
+                    <p><i class="fas fa-clock"></i> 12:00</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Sala de Grados</p>
+                    <p><i class="fas fa-user"></i> Carlos Martínez (doctorando)</p>
+                  </div>
+                  <button class="calendar-btn">Más información <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </article>
+      
+              <!-- Publicación 1 -->
+              <article class="calendar-item">
+                <div class="calendar-date">
+                  <div class="calendar-day">15</div>
+                  <div class="calendar-month">Mar</div>
+                  <div class="calendar-year">2025</div>
+                </div>
+                <div class="calendar-content">
+                  <span class="calendar-badge publication">Publicación</span>
+                  <h3>Artículo en Nature Energy</h3>
+                  <p class="calendar-description">Nuestro estudio sobre materiales fotovoltaicos ha sido publicado.</p>
+                  <div class="calendar-details">
+                    <p><i class="fas fa-book-open"></i> Vol. 10, No. 3</p>
+                    <p><i class="fas fa-user"></i> Dra. Laura Gómez</p>
+                  </div>
+                  <button class="calendar-btn">Ver publicación <i class="fas fa-external-link-alt"></i></button>
+                </div>
+              </article>
+      
+              <!-- Publicación 2 -->
+              <article class="calendar-item">
+                <div class="calendar-date">
+                  <div class="calendar-day">28</div>
+                  <div class="calendar-month">Feb</div>
+                  <div class="calendar-year">2025</div>
+                </div>
+                <div class="calendar-content">
+                  <span class="calendar-badge book">Libro</span>
+                  <h3>Energías Renovables: Fundamentos</h3>
+                  <p class="calendar-description">Nuevo libro publicado por nuestro equipo de investigación.</p>
+                  <div class="calendar-details">
+                    <p><i class="fas fa-book"></i> Editorial Científica</p>
+                    <p><i class="fas fa-user"></i> Equipo completo</p>
+                  </div>
+                  <button class="calendar-btn">Ver detalles <i class="fas fa-external-link-alt"></i></button>
+                </div>
+              </article>
+      
+              <!-- Publicación 3 -->
+              <article class="calendar-item">
+                <div class="calendar-date">
+                  <div class="calendar-day">5</div>
+                  <div class="calendar-month">Jul</div>
+                  <div class="calendar-year">2025</div>
+                </div>
+                <div class="calendar-content">
+                  <span class="calendar-badge conference">Conferencia</span>
+                  <h3>IEEE PowerTech 2025</h3>
+                  <p class="calendar-description">Presentación de nuestros últimos avances en redes inteligentes.</p>
+                  <div class="calendar-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Berlín, Alemania</p>
+                    <p><i class="fas fa-user"></i> Dr. Antonio López</p>
+                  </div>
+                  <button class="calendar-btn">Ver resumen <i class="fas fa-external-link-alt"></i></button>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+  </div>
+
+
+    <!-- Suscripción -->
+    <section class="newsletter">
+      <h2><i class="fas fa-envelope"></i> Suscríbete a nuestro boletín</h2>
+      <p>Recibe las últimas noticias y eventos directamente en tu correo</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Tu correo electrónico">
+        <button type="submit">Suscribirse <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </section>
+
+  <script>
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      // Variables globales
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      const searchInput = document.getElementById('search-input');
+      const categoryFilter = document.getElementById('category-filter');
+      const dateFilter = document.getElementById('date-filter');
+      
+      // Función para cambiar de pestaña
+      function switchTab(tabId) {
+        // Actualizar botones de pestaña
+        tabButtons.forEach(button => {
+          if (button.dataset.tab === tabId) {
+            button.classList.add('active');
+          } else {
+            button.classList.remove('active');
+          }
+        });
+        
+        // Actualizar contenido de pestañas
+        tabContents.forEach(content => {
+          if (content.id === `${tabId}-content`) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      }
+      
+      // Event listeners para los botones de pestaña
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const tabId = this.dataset.tab;
+          switchTab(tabId);
+          
+          // Guardar la pestaña activa en localStorage
+          localStorage.setItem('activeTab', tabId);
+        });
+      });
+      
+      // Función para filtrar contenido
+      function filterContent() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const category = categoryFilter.value;
+        const date = dateFilter.value;
+        
+        // Determinar qué pestaña está activa
+        const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
+        const items = document.querySelectorAll(`#${activeTab}-content .news-card, #${activeTab}-content .event-card, #${activeTab}-content .pub-card`);
+        
+        items.forEach(item => {
+          const title = item.querySelector('h3').textContent.toLowerCase();
+          const text = item.textContent.toLowerCase();
+          const itemCategory = item.querySelector('.news-badge, .event-type, .pub-badge')?.textContent.toLowerCase() || '';
+          const itemDate = item.querySelector('.news-date, .event-date')?.textContent.toLowerCase() || '';
+          
+          // Aplicar filtros
+          const matchesSearch = title.includes(searchTerm) || text.includes(searchTerm);
+          const matchesCategory = category === 'todas' || itemCategory.includes(category);
+          let matchesDate = true;
+          
+          if (date !== 'todas') {
+            const today = new Date();
+            const itemDateObj = new Date(itemDate);
+            
+            if (date === 'hoy') {
+              matchesDate = itemDateObj.toDateString() === today.toDateString();
+            } else if (date === 'semana') {
+              const nextWeek = new Date();
+              nextWeek.setDate(today.getDate() + 7);
+              matchesDate = itemDateObj >= today && itemDateObj <= nextWeek;
+            } else if (date === 'mes') {
+              const nextMonth = new Date();
+              nextMonth.setMonth(today.getMonth() + 1);
+              matchesDate = itemDateObj >= today && itemDateObj <= nextMonth;
+            }
+          }
+          
+          // Mostrar u ocultar según los filtros
+          if (matchesSearch && matchesCategory && matchesDate) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+      
+      // Event listeners para los filtros
+      searchInput.addEventListener('input', filterContent);
+      categoryFilter.addEventListener('change', filterContent);
+      dateFilter.addEventListener('change', filterContent);
+      
+      // Restaurar pestaña activa desde localStorage
+      const savedTab = localStorage.getItem('activeTab') || 'noticias';
+      switchTab(savedTab);
+      
+      // Simular carga de datos (en un caso real sería una llamada API)
+      function simulateLoading() {
+        const loadingElements = document.querySelectorAll('.news-card, .event-card, .pub-card');
+        
+        loadingElements.forEach((element, index) => {
+          setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      }
+      
+      // Iniciar animación de carga
+      setTimeout(simulateLoading, 500);
+      
+      // Botones "Leer más" y "Más información"
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('read-more') || 
+            e.target.classList.contains('event-btn') || 
+            e.target.classList.contains('pub-btn')) {
+          // En una aplicación real, esto redirigiría a la página correspondiente
+          alert('En una aplicación real, esto llevaría a la página de detalle');
+          e.preventDefault();
+        }
+      });
+      
+      // Formulario de suscripción
+      const subscribeForm = document.querySelector('.subscribe-form');
+      subscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        
+        if (email && email.includes('@')) {
+          alert(`Gracias por suscribirte con el email: ${email}`);
+          emailInput.value = '';
+        } else {
+          alert('Por favor ingresa un email válido');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

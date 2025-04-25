@@ -1,0 +1,23 @@
+---
+// src/components/login.astro
+import Callaction from "@components/whoweare/Callaction.astro";
+import Recognintion from "@components/whoweare/Recognintion.astro";
+import Research from "@components/whoweare/Research.astro";
+import Vission from "@components/whoweare/Vission.astro";
+import Historymission from "@components/whoweare/Historymission.astro";
+import TextSection from "@components/TextSection.astro";
+import Pageheader from "@components/whoweare/Pageheader.astro";
+import Layout from "@layouts/Layout.astro";
+
+import "@css/whoweare.css";
+---
+
+<Layout>
+  <Pageheader />
+  <TextSection />
+  <Historymission />
+  <Vission />
+  <Research />
+  <Recognintion />
+  <Callaction />
+</Layout>
