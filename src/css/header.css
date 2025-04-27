@@ -9,8 +9,8 @@
   
   .icono_superior img {
     padding: 8px; /* Espaciado interno */
-    width: 70px; /* Ancho */
-    max-height:70px ; /* Altura */
+    width: 90px; /* Ancho */
+    max-height:90px ; /* Altura */
 }
   
   .header-container {
@@ -148,8 +148,8 @@
   
     .icono_superior img {
       padding: 8px; /* Espaciado interno */
-      width: 50px; /* Ancho */
-      max-height:50px ; /* Altura */
+      width: 70px; /* Ancho */
+      max-height:70px ; /* Altura */
     }
     .contaninermenor {
       justify-content: space-between; /* Distribuye el espacio entre elementos */

@@ -1,0 +1,104 @@
+---
+// Definir las propiedades que recibes
+export interface Props {
+  title: string;
+  date: string;
+  description: string;
+  tag: string;
+  img: {
+    src: string;
+    alt: string;
+  };
+}
+
+// Desestructurando props
+const { props } = Astro;
+const description = props.description.slice(0, 100); // Recorta la descripción a 100 caracteres
+---
+
+<section>
+  <div>
+    <span id="tag">{props.tag}</span>
+    <img src={props.img.src} alt={props.img.alt} />
+  </div>
+  <div id="content">
+    <article>
+      <h1>{props.title}</h1>
+      <span class="date-container">
+        <span class="calendar-icon">&#128197;</span> {/* Icono de calendario */}
+        <span>{props.date}</span> {/* Fecha */}
+      </span>
+      <p>{description}</p>
+    </article>
+    <button>
+      Leer más <span>&#8594;</span> {/* Flecha hacia la derecha */}
+    </button>
+  </div>
+</section>
+
+<style>
+  section {
+    width: 100%;
+    max-width: 24rem;
+    border-radius: 10px;
+    border: solid 1px gray;
+    overflow: hidden;
+  }
+
+  section div img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/0.6;
+  }
+
+  #tag {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 30px;
+    padding-block: 0.25rem;
+    padding-inline: 0.75rem;
+    margin: 0.2rem;
+  }
+
+  #content {
+    margin: 1rem;
+  }
+
+  #content article h1 {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+  #content article .date-container { /* Fecha */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: lighter;
+    color: black;
+    font-size: small;
+  }
+
+  /* Estilo del icono de calendario */
+  .calendar-icon {
+    font-size: 1.2rem; /* Tamaño del icono */
+    color: #6b7280; /* Gris */
+  }
+
+  button {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: solid 1px gray;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Efecto hover para el botón */
+  button:hover {
+    background-color: #f0f0f0;
+  }
+</style>
