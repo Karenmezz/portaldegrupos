@@ -33,6 +33,7 @@ body {
 /* Título y descripción */
 .login-title {
   font-size: 1.75rem;
+  color: black;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
