@@ -1,42 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
 import "@css/login.css";
 ---
 
-<Layout title="Iniciar sesión">
+<Layout title="Área de miembros">
   <main class="login-wrapper">
     <div class="login-container">
-      <div class="login-card">
+      <!-- 🔘 Botones arriba -->
+      <div class="toggle-buttons">
+        <button id="btnLogin" class="toggle-button">Iniciar sesión</button>
+        <button id="btnAccess" class="toggle-button">Solicitar acceso</button>
+      </div>
+
+      <!-- 🔐 FORMULARIO DE LOGIN -->
+      <div id="loginForm" class="login-card">
         <h1 class="login-title">Área de miembros</h1>
-        <p class="login-description">
-          Ingresa tus credenciales para acceder al área privada del grupo de investigación
-        </p>
+        <p class="login-description">Ingresa tus credenciales para acceder al área privada del grupo de investigación</p>
 
         <form>
           <div class="form-group">
             <label for="email">Correo electrónico</label>
             <div class="input-icon">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="tu.correo@universidad.es"
-                required
-              />
+              <input type="email" id="email" name="email" placeholder="tu.correo@universidad.es" required />
             </div>
           </div>
 
           <div class="form-group">
             <label for="password">Contraseña</label>
             <div class="input-icon">
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="••••••••"
-                required
-              />
+              <input type="password" id="password" name="password" placeholder="••••••••" required />
             </div>
             <a class="forgot-link" href="#">¿Olvidaste tu contraseña?</a>
           </div>
@@ -49,10 +41,61 @@ import "@css/login.css";
           <button type="submit" class="login-button">Iniciar sesión</button>
         </form>
 
-        <p class="login-note">
-          Acceso exclusivo para miembros del grupo de investigación
-        </p>
+        <p class="login-note">Acceso exclusivo para miembros del grupo de investigación</p>
+      </div>
+<!-- 📄 FORMULARIO DE SOLICITAR ACCESO -->
+<div id="accessForm" class="login-card" style="display: none;">
+  <h1 class="login-title">Solicitar acceso</h1>
+  <p class="login-description">Completa el formulario para solicitar acceso al área privada</p>
+
+  <form>
+    <div class="form-group">
+      <label for="fullname">Nombre completo</label>
+      <div class="input-icon">
+        <input type="text" id="fullname" name="fullname" placeholder="Nombre y apellidos" required />
       </div>
     </div>
+
+    <div class="form-group">
+      <label for="institutionalEmail">Correo institucional</label>
+      <div class="input-icon">
+        <input type="email" id="institutionalEmail" name="institutionalEmail" placeholder="tu.correo@universidad.es" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="department">Departamento o institución</label>
+      <div class="input-icon">
+        <input type="text" id="department" name="department" placeholder="Ej: Departamento de Física Aplicada" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="reason">Motivo de la solicitud</label>
+      <div class="input-icon">
+        <textarea id="reason" name="reason" class="textarea-large" placeholder="Describe brevemente el motivo por el que solicitas acceso" rows="3" required></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="login-button">Enviar solicitud</button>
+  </form>
+
+  <p class="login-note">Tu solicitud será revisada por el administrador del grupo</p>
+</div>
+
+    </div>
   </main>
+
+  <!-- 🧠 JavaScript plano -->
+  <script is:inline>
+    document.getElementById("btnLogin").addEventListener("click", () => {
+      document.getElementById("loginForm").style.display = "block";
+      document.getElementById("accessForm").style.display = "none";
+    });
+
+    document.getElementById("btnAccess").addEventListener("click", () => {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("accessForm").style.display = "block";
+    });
+  </script>
 </Layout>
