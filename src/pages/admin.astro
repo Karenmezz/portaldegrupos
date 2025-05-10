@@ -1,0 +1,164 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@css/admin.css";
+
+const secciones = {
+  quienesSomos: {
+    title: "Quiénes Somos",
+    text: "Somos un grupo multidisciplinar de investigadores dedicados a desarrollar soluciones innovadoras para los desafíos actuales en ciencia y tecnología.",
+    imageSrc: "/img/quienessomos.png"
+  },
+  investigacion: {
+    title: "Investigación",
+    text: "Estamos a la vanguardia en el desarrollo de proyectos de investigación en áreas clave de la ciencia.",
+    imageSrc: "/img/investigacion.png"
+  },
+  contactenos: {
+    title: "Contáctenos",
+    text: "Estamos disponibles para ayudarte con cualquier consulta. No dudes en ponerte en contacto con nosotros.",
+    imageSrc: "/img/contactenos.png"
+  },
+  actualidad: {
+    title: "Actualidad",
+    text: "Mantente informado sobre las últimas noticias y eventos relevantes en nuestra área de investigación.",
+    imageSrc: "/img/actualidad.png"
+  }
+};
+---
+
+<Layout title="Panel de Administración">
+  <div class="admin-container">
+    <div class="sidebar">
+      <nav class="menu">
+        <ul>
+          <li><a href="#contenido" onClick="goToSection('contenido')">Contenido</a></li>
+          <li><a href="#banners" onClick="goToSection('banners')">Banners</a></li>
+          <li><a href="#noticias" onClick="goToSection('noticias')">Noticias</a></li>
+          <li><a href="#publicaciones" onClick="goToSection('publicaciones')">Publicaciones</a></li>
+          <li><a href="#equipo" onClick="goToSection('equipo')">Equipo</a></li>
+          <li><a href="#eventos" onClick="goToSection('eventos')">Eventos</a></li>
+          <li><a href="#colaboraciones" onClick="goToSection('colaboraciones')">Colaboraciones</a></li>
+          <li><a href="#configuracion" onClick="goToSection('configuracion')">Configuración</a></li>
+          <li><a href="#cerrar" onClick="cerrarSesion()">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <main class="admin-wrapper">
+        <h1>Bienvenido al Panel de Administración</h1>
+        <p>Aquí puedes modificar el contenido de las secciones de tu sitio web.</p>
+
+        {Object.keys(secciones).map((seccion) => (
+          <section key={seccion} class="admin-section">
+            <h2>
+              <button
+                class="toggle-btn"
+                type="button"
+                onClick={`toggleForm('${seccion}')`}
+              >
+                Modificar Sección "{secciones[seccion].title}"
+              </button>
+            </h2>
+
+            <div id={`form-${seccion}`} class="section-form hidden">
+              <button type="button" class="close-btn" onClick={`toggleForm('${seccion}')`}>✕</button>
+
+              <form id={`admin-form-${seccion}`} onSubmit={`saveChanges(event, '${seccion}')`}>
+                <div class="form-group">
+                  <label for={`title-${seccion}`}>Título:</label>
+                  <input type="text" id={`title-${seccion}`} onInput={`updatePreview('${seccion}')`} />
+                </div>
+
+                <div class="form-group">
+                  <label for={`text-${seccion}`}>Texto:</label>
+                  <textarea id={`text-${seccion}`} onInput={`updatePreview('${seccion}')`}></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for={`imageSrc-${seccion}`}>URL de la Imagen:</label>
+                  <input type="text" id={`imageSrc-${seccion}`} onInput={`updatePreview('${seccion}')`} />
+                </div>
+
+                <div class="form-buttons">
+                  <button type="submit">Guardar Cambios</button>
+                  <button type="button" onClick={`resetToOriginal('${seccion}')`}>Restablecer al Original</button>
+                </div>
+              </form>
+            </div>
+
+            <h3>Vista Previa de la Sección "{secciones[seccion].title}"</h3>
+            <div class="preview-box">
+              <div class="page-header-text">
+                <h2 id={`preview-title-${seccion}`}>{secciones[seccion].title}</h2>
+                <p class="text-header" id={`preview-text-${seccion}`}>{secciones[seccion].text}</p>
+              </div>
+              <div class="page-header-image">
+                <img
+                  id={`preview-image-${seccion}`}
+                  src={secciones[seccion].imageSrc}
+                  alt={secciones[seccion].title}
+                  class="img-seccion"
+                />
+              </div>
+            </div>
+          </section>
+        ))}
+      </main>
+    </div>
+  </div>
+
+  <script client:load>
+    const seccionesOriginales = JSON.parse(JSON.stringify({ ...secciones }));
+
+    function toggleForm(seccion) {
+      const form = document.getElementById(`form-${seccion}`);
+      if (form) {
+        form.classList.toggle('hidden');
+      }
+    }
+
+    function updatePreview(seccion) {
+      const title = document.getElementById(`title-${seccion}`).value;
+      const text = document.getElementById(`text-${seccion}`).value;
+      const imageSrc = document.getElementById(`imageSrc-${seccion}`).value;
+
+      document.getElementById(`preview-title-${seccion}`).innerText = title;
+      document.getElementById(`preview-text-${seccion}`).innerText = text;
+      document.getElementById(`preview-image-${seccion}`).src = imageSrc;
+
+      const stored = JSON.parse(localStorage.getItem("adminData")) || {};
+      stored[seccion] = { title, text, imageSrc };
+      localStorage.setItem("adminData", JSON.stringify(stored));
+    }
+
+    function saveChanges(event, seccion) {
+      event.preventDefault();
+      alert("Cambios guardados en almacenamiento local.");
+    }
+
+    function resetToOriginal(seccion) {
+      const original = seccionesOriginales[seccion];
+      document.getElementById(`title-${seccion}`).value = original.title;
+      document.getElementById(`text-${seccion}`).value = original.text;
+      document.getElementById(`imageSrc-${seccion}`).value = original.imageSrc;
+      updatePreview(seccion);
+      alert("Sección restablecida a su contenido original.");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const stored = JSON.parse(localStorage.getItem("adminData"));
+      if (stored) {
+        Object.keys(stored).forEach((seccion) => {
+          const { title, text, imageSrc } = stored[seccion];
+          if (document.getElementById(`title-${seccion}`)) {
+            document.getElementById(`title-${seccion}`).value = title;
+            document.getElementById(`text-${seccion}`).value = text;
+            document.getElementById(`imageSrc-${seccion}`).value = imageSrc;
+            updatePreview(seccion);
+          }
+        });
+      }
+    });
+  </script>
+</Layout>

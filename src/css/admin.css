@@ -1,0 +1,182 @@
+/* Sidebar */
+.sidebar {
+    width: 150px;
+    height: 100vh; /* Que ocupe toda la altura */
+    background-color: #ddd;
+    color: white;
+    position: fixed; /* Fijo en la pantalla */
+    top: 0;
+    left: 0; /* Al lado izquierdo */
+    padding-top: 60px;
+    padding: 20px;
+    z-index: 999; /* Para que esté por encima de otros elementos */
+  }
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  color: #fff;
+  font-size: 36px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Menu */
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Botón para abrir el sidebar */
+.open-btn {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f39c12;
+  border: none;
+  color: white;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 250px; /* Para que el contenido no quede debajo del sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out; /* Para que se mueva suavemente */
+  }
+
+.main-content.shifted {
+  margin-left: 250px;
+}
+
+/* Contenedor de administración */
+.admin-wrapper {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.admin-wrapper.shifted {
+  margin-left: 250px;
+}
+
+/* Secciones de administración */
+.admin-section {
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Botón de alternar formularios */
+.toggle-btn {
+  background-color: #0070f3;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* Formularios */
+.section-form {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+}
+
+.section-form.hidden {
+  display: none;
+}
+
+/* Botón de cerrar formulario */
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: #d00;
+}
+
+/* Estilos adicionales */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.preview-box {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px dashed #ccc;
+}
+
+.img-seccion {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: black;
+}
+
+/* Menú */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 10px 0;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .menu li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  
