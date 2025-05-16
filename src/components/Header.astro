@@ -1,5 +1,8 @@
 ---
 import "@css/header.css";
+import Language from "@components/icons/Language.astro";
+import Menu from "@components/icons/Menu.astro";
+
 
 const sections = [
   { name: "Inicio", link: "/" },
@@ -15,12 +18,10 @@ const sections = [
 <header class="header">
   <div class="header-container">
     <div class="contaninermenor">
-      <!-- Contenedor menor para logo y título -->
       <div class="icono_superior">
         <img src="/logo-calumet.png" alt="Logo Calumet" />
       </div>
 
-      <!--- Título inicial y botón de menú móvil -->
       <div class="containertext">
         <a href="/" class="logo">
           <div class="content-grup">
@@ -32,7 +33,7 @@ const sections = [
     </div>
 
     <button class="menu-button" id="menu-button">
-      <span class="menu-icon">&#9776;</span>
+      <span class="menu-icon"><Menu/></span>
     </button>
 
     <!-------- -----Navegación -------->
@@ -50,7 +51,7 @@ const sections = [
     <div class="actions">
       <button class="language-button" id="language-button">
         <span class="language-text">ES</span>
-        <span class="language-icon">🌐</span>
+        <span class="language-icon"> <Language/></span>
       </button>
       <a href="/login" class="boton-ingresar">Iniciar Sesión</a>
     </button>

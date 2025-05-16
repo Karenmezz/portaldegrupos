@@ -1,104 +1,103 @@
 .header {
-    position: sticky; /* Fija el header en la parte superior */
-    top: 0; /* Lo coloca en la parte superior de la página */
-    z-index: 50; /* Asegura que el header esté por encima de otros elementos */
-    width: 100%; /* Ocupa todo el ancho de la página */
-    background-color: #fff; /* Fondo blanco */
-    border-bottom: 3px solid #e0e0e0; /* Borde inferior sutil */
+    position: sticky; 
+    top: 0; 
+    z-index: 50; 
+    width: 100%; 
+    background-color: #fff; 
+    border-bottom: 3px solid #e0e0e0; 
 }
   
   .icono_superior img {
-    padding: 8px; /* Espaciado interno */
-    width: 90px; /* Ancho */
-    max-height:90px ; /* Altura */
+    padding: 8px; 
+    width: 90px; 
+    max-height:90px ; 
 }
   
   .header-container {
-    display: flex; /* Usa flexbox para alinear elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: space-between; /* Distribuye el espacio entre elementos */
-    height: 80px; /* Altura del contenedor */
-    width: 100%; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    height: 80px; 
+    width: 100%; 
+    margin: 0 auto; 
 }
   
   .contaninermenor {
-    display: flex; /* Usa flexbox para alinear elementos */
-    height: 80px; /* Altura del contenedor */
+    display: flex; 
+    height: 80px; 
 }
   
   .containertext {
     /* ICONO UIS - CALUMET */
-    display: flex; /* Usa flexbox para alinear elementos */
-    align-items: center; /* Centra verticalmente los elementos */
+    display: flex; 
+    align-items: center; 
 }
   
-  
   .menu-button {
-    display: none; /* Oculta el botón en pantallas grandes */
-    background: none; /* Sin fondo */
-    border: none; /* Sin borde */
+    display: none; 
+    background: none; 
+    border: none; 
     margin-left: auto;
     margin-right: 1rem;
-    cursor: pointer; /* Cambia el cursor a una mano */
-    font-size: 30px; /* Tamaño del ícono */
-    color: #090000; /* Color del ícono */
+    cursor: pointer; 
+    font-size: 30px; 
+    color: #090000; 
 }
   
   .logo {
-    text-decoration: none; /* Sin subrayado */
+    text-decoration: none; 
 }
   
-  .content-grup { /* Texto Calumet*/
-    display: flex; /* Usa flexbox para alinear elementos */
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: flex-start; /* Alinea los elementos a la izquierda */
-    font-size: 20px; /* Tamaño del texto */
-    padding: 8px; /* Espaciado interno */
-    font-weight: bold; /* Texto en negrita */
-    color: #010000; /* Color del ícono */
+  .content-grup { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    font-size: 20px; 
+    padding: 8px; 
+    font-weight: bold; 
+    color: #010000; 
 }
   
-  .content-grup p { /* Texto Grupo de innovacion*/
-    font-weight: lighter; /* Texto en negrita */
-    font-size: 10px; /* Tamaño del texto */
-    color: rgb(12, 0, 0); /* Color del texto */
-    margin: 0.5rem 0 0; /* Margen superior */
+  .content-grup p { 
+    font-weight: lighter; 
+    font-size: 10px; 
+    color: rgb(12, 0, 0); 
+    margin: 0.5rem 0 0; 
 }
   
-  /* Navegación  Inicio*/
+  /*--------------------------- Navegación  Inicio---------------------------------*/
   .navigation {
-    display: flex; /* Usa flexbox para alinear elementos */
-    gap: 16px; /* Espacio entre elementos */
+    display: flex; 
+    gap: 16px; 
 }
   
   .secciones-pag {
-    text-decoration: none; /* Sin subrayado */
-    color: #b2b2ba; /* Color del texto */
-    font-size: 14px; /* Tamaño del texto */
-    transition: color 0.3s ease; /* Transición suave del color */
+    text-decoration: none; 
+    color: #b2b2ba; 
+    font-size: 14px; 
+    transition: color 0.3s ease; 
     text-align: center;
 }
   
   .secciones-pag:hover {
-    color: --primary-text-color; /* Cambia el color al pasar el mouse */
+    color: --primary-text-color; 
 }
   
-  /* Acciones (botones) */
+  /* -------------------------Acciones (botones) ----------------------*/
   .actions {
-    display: flex; /* Usa flexbox para alinear elementos */
-    gap: 8px; /* Espacio entre elementos */
-    align-items: center; /* Centra verticalmente los elementos */
+    display: flex; 
+    gap: 8px; 
+    align-items: center; 
 }
   
   .boton-ingresar {
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
-    border: none; /* Sin borde */
-    padding: 8px 16px; /* Espaciado interno */
-    font-size: 14px; /* Tamaño del texto */
-    cursor: pointer; /* Cambia el cursor a una mano */
-    border-radius: 4px; /* Bordes redondeados */
+    background-color: #000; 
+    color: #fff; 
+    border: none; 
+    padding: 8px 16px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 4px; 
     margin-right: 20PX;
 }
   
@@ -106,55 +105,55 @@
   background-color: #e0e0e0;
 }
   
-  /* Estilos para el botón de idioma */
+  /*---------------------- Estilos para el botón de idioma ----------------------------*/
   .language-button {
-  background-color: white; /* Fondo negro */
-  color: #c8c6c6; /* Texto blanco */
+  background-color: white; 
+  color: #c8c6c6; 
   border: 1px solid #e5e7eb;
-  padding: 6px 12px; /* Espaciado interno */
-  font-size: 14px; /* Tamaño del texto */
-  font-weight: 500; /* Texto en negrita */
-  border-radius: 6px; /* Bordes redondeados */
-  text-decoration: none; /* Sin subrayado */
-  transition: background-color 0.3s ease; /* Transición suave */}
+  padding: 6px 12px; 
+  font-size: 15px; 
+  font-weight: 500; 
+  border-radius: 6px; 
+  text-decoration: none; 
+  transition: background-color 0.3s ease; }
   
   .language-button:hover {
-  color: --primary-text-color; /* Cambia el color al pasar el mouse */
+  color: --primary-text-color; 
 }
   
 
-  /* Estilos para pantallas pequeñas */
+  /* ---------------------------Estilos para pantallas pequeñas -----------------------*/
   @media (max-width: 768px) {
     .menu-button {
-      display: block; /* Muestra el botón en pantallas pequeñas */
+      display: block; 
   }
   
     .navigation {
-      display: none; /* Oculta la navegación en pantallas pequeñas */
-      flex-direction: column; /* Coloca los elementos en columna */
-      position: absolute; /* Posiciona la navegación de manera absoluta */
-      top: 80px; /* Distancia desde la parte superior */
-      right: 0; /* Alinea a la derecha */
-      background-color: #fff; /* Fondo blanco */
-      width: 100%; /* Ocupa todo el ancho */
-      padding: 16px; /* Espaciado interno */
-      border-bottom: 1px solid #e0e0e0; /* Borde inferior */
+      display: none; 
+      flex-direction: column; 
+      position: absolute; 
+      top: 80px; 
+      right: 0; 
+      background-color: #fff; 
+      width: 100%; 
+      padding: 16px; 
+      border-bottom: 1px solid #e0e0e0; 
   }
   
     .navigation.open {
-      display: flex; /* Muestra la navegación cuando tiene la clase "open" */
+      display: flex; 
   }
   
     .actions {
-      display: none; /* Oculta los botones de acción en pantallas pequeñas */
+      display: none; 
   }
   
     .icono_superior img {
-      padding: 8px; /* Espaciado interno */
-      width: 70px; /* Ancho */
-      max-height:70px ; /* Altura */
+      padding: 8px; 
+      width: 70px;
+      max-height:70px ; 
     }
     .contaninermenor {
-      justify-content: space-between; /* Distribuye el espacio entre elementos */
+      justify-content: space-between; 
   }
 }

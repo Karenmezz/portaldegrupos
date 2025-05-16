@@ -1,5 +1,7 @@
 ---
-// Definir las propiedades que recibes
+import Calendar from "@components/icons/Calendar.astro";
+import ArrowLine from "@components/icons/ArrowLine.astro";
+
 export interface Props {
   title: string;
   date: string;
@@ -25,13 +27,13 @@ const description = props.description.slice(0, 100); // Recorta la descripción 
     <article>
       <h1>{props.title}</h1>
       <span class="date-container">
-        <span class="calendar-icon">&#128197;</span> {/* Icono de calendario */}
-        <span>{props.date}</span> {/* Fecha */}
+        <span class="calendar-icon"> <Calendar/></span> {/* Calendario */}
+        <span>{props.date}</span> {/*Fecha */}
       </span>
       <p>{description}</p>
     </article>
     <button>
-      Leer más <span>&#8594;</span> {/* Flecha hacia la derecha */}
+      Leer más <span> <ArrowLine/> </span> {/* Flecha */}
     </button>
   </div>
 </section>

@@ -61,7 +61,7 @@ a.btn {
   display: inline-block;   /* Permite que el ancho se ajuste al texto */
 }
 
-.fecha {
+.date {
   font-size: 12px; 
   color: white;
 }
@@ -127,7 +127,7 @@ a.btn:hover {
 }
 
 .fechanews {
-  font-size: 15px; 
+  font-size: 12px; 
   color: #666;
 }
 .section-title { 
@@ -276,17 +276,6 @@ a.newsbtn {
   font-size: 1rem;
   color: #666;
 }
-
-
-/* ----------------------------Publicaciones destacadas------------------- */
-
-
-
-
-
-
-
-
 
 /*-------------------- interesados en colaborar con nostros ------------------*/
 .banner1-content {

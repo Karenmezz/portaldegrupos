@@ -1,3 +1,6 @@
+---
+import Calendar from "@components/icons/Calendar.astro";
+---
 <section class="section">
   <div class="container">
     <h2 class="section-title">Noticias Recientes</h2>
@@ -5,6 +8,7 @@
       Mantente al día con las últimas novedades y avances de nuestro grupo de
       investigación.
     </p>
+
     <div class="news-grid">
       <div class="news-card">
         <img src="/img/NoticiaReciente1.png" alt="Noticia 1" />
@@ -13,7 +17,7 @@
             CONVOCATORIA ELECCIÓN DE REPRESENTANTE ESTUDIANTIL DE POSGRADO AL
             CONSEJO DE ESCUELA EISI
           </h3>
-          <div class="fechanews">📅<span class="fecha-hoy"></span></div>
+          <div class="fechanews"> <Calendar/> <span class="date-hoy"></span></div>
           <p>
             Teniendo en cuenta la resolución de rectoría N° 1073 de 2016,por la
             cual se establece el procedimiento para los procesos de elección de
@@ -30,8 +34,7 @@
         <img src="/img/NoticiasRecientes2.png" alt="Noticia 2" />
         <div class="news-card-content">
           <h3>APOYO ECONÓMICO PARA ASISTIR A EVENTOS</h3>
-          <div class="fechanews">📅<span class="fecha-hoy"></span></div>
-
+          <div class="fechanews"> <Calendar/> <span class="date-hoy"></span></div>
           <p>
             La Facultad de Ingenierías Fisicomecánicas le informa que aún se
             encuentra abierta la convocatoria para postularse y recibir apoyo
@@ -45,7 +48,7 @@
         <img src="/img/NoticiaReciente3.png" alt="Noticia 3" />
         <div class="news-card-content">
           <h3>RECUERDA ASISTIR AL SEGUIMIENTO ACADÉMICO</h3>
-          <div class="fechanews">📅<span class="fecha-hoy"></span></div>
+          <div class="fechanews"> <Calendar/> <span class="date-hoy"></span></div>
           <p>
             La Universidad Industrial de Santander ha implementado un
             acompañamiento y asesoramiento a los estudiantes de pregrado en los

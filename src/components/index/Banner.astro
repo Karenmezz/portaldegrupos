@@ -1,3 +1,6 @@
+---
+import Calendar from "@components/icons/Calendar.astro";
+---
 <section class="banner">
   <div class="background active">
     <img src="/img/Noticia1.png" alt="Imagen 1" />
@@ -9,7 +12,7 @@
         En cumplimiento de la Resolución No. 0171 del 12 de febrero de 2025,
         el Consejo de la Escuela de Ingeniería de Sistemas e Informática informa que, tras el cierre del periodo de inscripción de candidatos.
       </p>
-      <div class="fecha"><span>📅</span> <span class="fecha-hoy"></span></div>
+     <div class="date"> <Calendar/> <span class="date-hoy"></span></div>
       <a class="btn">Leer más</a>
     </div>
   </div>
@@ -23,7 +26,7 @@
         preinscripción hasta la consulta de resultados. Revisa la infografía
         para conocer los plazos y requisitos.
       </p>
-      <div class="fecha">📅</span> <span class="fecha-hoy"></span></div>
+      <div class="date"> <Calendar/> <span class="date-hoy"></span></div>
       <a class="btn">Leer más</a>
     </div>
   </div>
@@ -37,7 +40,7 @@
         Esta conferencia se desarrolló en Paris y contó con conferencistas destacados en IA, como: Yann LeCun (turing award), Yoshua Bengio
         (turing award), entre otros destacados investigadores de I.A.
       </p>
-      <div class="fecha">📅<span class="fecha-hoy"></span></div>
+      <div class="date"> <Calendar/> <span class="date-hoy"></span></div>
       <a class="btn">Leer más</a>
     </div>
   </div>
@@ -49,8 +52,8 @@
 </section>
 
 <script defer>
-  // Función para formatear la fecha como "15 Mar 2025"
-  function formatFecha() {
+  // Función para formatear la date como "15 Mar 2025"
+  function formatdate() {
     const meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
     const hoy = new Date();
     const dia = hoy.getDate();
@@ -106,11 +109,11 @@
 
   // Inicializar
   document.addEventListener('DOMContentLoaded', function() {
-    // Configurar fechas
-    const fechas = document.querySelectorAll('.fecha-hoy');
-    const fechaFormateada = formatFecha();
-    fechas.forEach(fecha => {
-      fecha.textContent = fechaFormateada;
+    // Configurar dates
+    const dates = document.querySelectorAll('.date-hoy');
+    const dateFormateada = formatdate();
+    dates.forEach(date => {
+      date.textContent = dateFormateada;
     });
     
     // Crear puntos indicadores
