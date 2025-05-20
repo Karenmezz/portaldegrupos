@@ -1,11 +1,17 @@
- 
+ ---
+:root {
+    --primary-white: white
+    --primary-black: black
+    --color-gray: gray
+  }
+---
 
   /* Estilos generales del footer */
   .footer {
-    background-color:  --primary-color;
+    background-color:  --primary-white;
     border-top: 1px solid #e0e0e0;
     padding: 40px 0;
-    color: --primary-text-color;
+    color:  --primary-black;
   }
 
   .container {

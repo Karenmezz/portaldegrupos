@@ -1,6 +1,7 @@
 ---
 import Calendar from "@components/icons/Calendar.astro";
 import ArrowLine from "@components/icons/ArrowLine.astro";
+import Button from "@/components/button/Button.astro";
 
 export interface Props {
   title: string;
@@ -17,7 +18,6 @@ export interface Props {
 const { props } = Astro;
 const description = props.description.slice(0, 100); // Recorta la descripción a 100 caracteres
 ---
-
 <section>
   <div>
     <span id="tag">{props.tag}</span>
@@ -32,9 +32,7 @@ const description = props.description.slice(0, 100); // Recorta la descripción 
       </span>
       <p>{description}</p>
     </article>
-    <button>
-      Leer más <span> <ArrowLine/> </span> {/* Flecha */}
-    </button>
+    <Button variant="large-white" href="#">Leer más <span><ArrowLine /></span></Button>    
   </div>
 </section>
 
@@ -85,22 +83,5 @@ const description = props.description.slice(0, 100); // Recorta la descripción 
   .calendar-icon {
     font-size: 1.2rem; /* Tamaño del icono */
     color: #6b7280; /* Gris */
-  }
-
-  button {
-    width: 100%;
-    background-color: white;
-    color: black;
-    border: solid 1px gray;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  /* Efecto hover para el botón */
-  button:hover {
-    background-color: #f0f0f0;
   }
 </style>

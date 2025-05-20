@@ -1,9 +1,15 @@
-/* Sidebar */
+---
+:root {
+    --primary-white: white
+    --primary-black: black
+    --color-gray: gray
+  }
+---
 .sidebar {
     width: 150px;
     height: 100vh; /* Que ocupe toda la altura */
-    background-color: #ddd;
-    color: white;
+    background-color: --color-gray;
+    color: --primary-white;
     position: fixed; /* Fijo en la pantalla */
     top: 0;
     left: 0; /* Al lado izquierdo */
@@ -17,7 +23,7 @@
 }
 
 .sidebar .close-btn {
-  color: #fff;
+  color: --primary-white;
   font-size: 36px;
   position: absolute;
   top: 10px;
@@ -38,7 +44,7 @@
 }
 
 .menu li a {
-  color: white;
+  color: --primary-white;
   text-decoration: none;
   font-size: 18px;
 }
@@ -54,7 +60,7 @@
   padding: 10px;
   background-color: #f39c12;
   border: none;
-  color: white;
+  color: --primary-white;
 }
 
 /* Contenido principal */
@@ -82,16 +88,16 @@
 /* Secciones de administración */
 .admin-section {
   margin-bottom: 2rem;
-  border: 1px solid #ddd;
+  border: 1px solid --color-gray;
   padding: 1rem;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: --primary-white;
 }
 
 /* Botón de alternar formularios */
 .toggle-btn {
   background-color: #0070f3;
-  color: white;
+  color: --primary-white;
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
@@ -101,10 +107,10 @@
 /* Formularios */
 .section-form {
   position: relative;
-  border: 1px solid #ccc;
+  border: 1px solid --color-gray;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: #fafafa;
+  background-color: --primary-white;
 }
 
 .section-form.hidden {
@@ -120,7 +126,7 @@
   background: transparent;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #555;
+  color: --primary-black;
 }
 
 .close-btn:hover {
@@ -133,10 +139,10 @@
 }
 
 .preview-box {
-  background-color: #f9f9f9;
+  background-color: --primary-white;
   padding: 1rem;
   margin-top: 1rem;
-  border: 1px dashed #ccc;
+  border: 1px dashed --color-gray;
 }
 
 .img-seccion {
@@ -145,7 +151,7 @@
 }
 
 h1 {
-  color: black;
+  color: --primary-black;
 }
 
 /* Menú */
@@ -159,7 +165,7 @@ h1 {
   }
   
   .menu li a {
-    color: white;
+    color: --primary-white;
     text-decoration: none;
     font-size: 18px;
   }

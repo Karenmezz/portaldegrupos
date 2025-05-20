@@ -60,8 +60,7 @@ h2 {
   font-size: 15px;
 }
 
-.history h2,
-.mission h2 {
+.history h2,.mission h2 {
   font-size: 2rem;
   margin-top: 20px;
 }
@@ -206,29 +205,6 @@ h2 {
   font-size: 1.1rem;
 }
 
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.cta-button {
-  background-color: #e0e0e0;
-  color: black;
-  padding: 10px 10px;
-  border-radius: 5px;
-  border: 1px solid --primary-text-color;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.cta-button.outline {
-  background-color: #e0e0e0;
-  border: 1px solid --primary-text-color;
-  color: --primary-text-color;
-}
-
-
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) { 
   .container {
@@ -245,12 +221,12 @@ h2 {
     padding: 0;
     background-color: --primary-color;
     color: --primary-text-color;
-    overflow-x: hidden; /* Previene scroll horizontal */
+    overflow-x: hidden; 
   }
 
   /*--------------------- Inicio Quienes Somos ---------------------*/
   h2 {
-    font-size: 24px; /* Tamaño más adecuado para móviles */
+    font-size: 24px; 
   }
   
   .page-header {
@@ -270,7 +246,7 @@ h2 {
   
   .page-header-image img {
     width: 100%;
-    border-radius: 10px; /* Radio más pequeño para móviles */
+    border-radius: 10px; 
   }
   
   .page-header-img {
@@ -293,8 +269,7 @@ h2 {
     font-size: 0.8rem;
   }
 
-  .history h2,
-  .mission h2 {
+  .history h2,.mission h2 {
     font-size: 1.5rem;
     margin-top: 15px;
   }
@@ -324,7 +299,7 @@ h2 {
   }
 
   .tabs {
-    flex-wrap: wrap; /* Permite que los tabs se envuelvan */
+    flex-wrap: wrap; 
     gap: 10px;
   }
 
@@ -334,11 +309,11 @@ h2 {
   }
 
   .grid {
-    grid-template-columns: 1fr; /* Una columna en móviles */
+    grid-template-columns: 1fr; 
   }
 
   .image img {
-    width: 100%; /* Imagen más adaptable */
+    width: 100%; 
     height: auto;
     max-width: 300px;
     margin: 0 auto;
@@ -375,7 +350,7 @@ h2 {
   }
 
   .cta-button {
-    width: 100%; /* Botones de ancho completo */
+    width: 100%; 
     max-width: 250px;
     padding: 12px;
   }

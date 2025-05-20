@@ -1,5 +1,6 @@
 ---
 import ContentSection from "@components/ContentSection.astro";
+import Button from "@/components/button/Button.astro";
 ---
 <ContentSection color="gray">
 <!---------- Llamada a la acción ----------->
@@ -11,8 +12,8 @@ import ContentSection from "@components/ContentSection.astro";
       colaboradores.
     </p>
     <div class="cta-buttons">
-      <a href="/oportunidades" class="cta-button">Ver oportunidades</a>
-      <a href="/contacto" class="cta-button outline">Contactar</a>
+      <Button variant="medium-white" href="#">Ver Oportunidades</Button> 
+      <Button variant="medium-white" href="#"> Contactar </Button>   
     </div>
   </div>
 </ContentSection>

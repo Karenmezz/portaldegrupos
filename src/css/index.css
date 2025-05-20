@@ -46,21 +46,6 @@
   align-items: flex-start; /* Alineación a la izquierda */
 }
 
-/* Botón "Leer más" */
-a.btn {
-  padding: 5px 10px;       /* Tamaño pequeño (ajustable) */
-  font-size: 12px;         /* Texto pequeño */
-  color: white;            /* Color del texto */
-  background-color: rgba(128, 128, 128, 0.3);
-  border: none;
-  border-radius: 3px;
-  text-decoration: none;
-  cursor: pointer;
-  margin-top: 10px;        /* Espacio entre el párrafo y el botón */
-  width: auto;             /* Ancho según su contenido (no ocupa el 100%) */
-  display: inline-block;   /* Permite que el ancho se ajuste al texto */
-}
-
 .date {
   font-size: 12px; 
   color: white;
@@ -141,19 +126,6 @@ a.btn:hover {
   text-align: center;
   color: black;
   margin-bottom: 40px;
-}
-
-a.newsbtn {
-  display: flex;
-  padding: 8px 20px;
-  width: 90%; /* Ocupará el 80% del contenedor padre */
-  background-color: white !important;
-  color: black !important;
-  text-decoration: none !important;
-  font-weight: 500;
-  border: 1px solid #2c3e50; /* Grosor | Tipo de línea | Color */
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .banner {
@@ -442,3 +414,4 @@ a.newsbtn {
     font-size: 40px; /* Tamaño para escritorio */
   }
 }
+

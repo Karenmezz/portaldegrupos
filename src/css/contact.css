@@ -1,8 +1,16 @@
+---
+:root {
+    --primary-white: white
+    --primary-black: black
+    --color-gray: gray
+  }
+---
+
 /* Estilos generales */
 body {
    font-family: Arial, sans-serif;
-    color: --primary-text-color;
-    background-color: white;
+    color: --primary-black;
+    background-color: --primary-white;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -11,7 +19,7 @@ body {
   .contact-form {
     max-width: 600px;
     margin: 2rem auto;
-    background-color: --primary-color;
+    background-color: --primary-white;
     padding: 2rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
@@ -20,7 +28,7 @@ body {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: --primary-text-color;
+    color: --primary-black;
   }
   
   .subtitle {
@@ -54,21 +62,21 @@ body {
   label {
     font-size: 0.9rem;
     font-weight: 500;
-    color: --primary-text-color;
+    color: --primary-black;
   }
   
   input, select {
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid --color-gray;
     border-radius: 4px;
     font-size: 1rem;
-    background-color: --primary-color;
-    color: --primary-text-color;
+    background-color: --primary-white;
+    color: --primary-black;
   }
   
   input:focus, select:focus {
     outline: none;
-    border-color: #999;
+    border-color: --color-gray;
   }
   
   /* Radio buttons */
@@ -88,8 +96,8 @@ body {
   
   /* Botón de enviar */
   .submit-btn {
-    background-color: --primary-text-color;
-    color: --primary-color;
+    background-color: --primary-black;
+    color: --primary-white;
     border: none;
     padding: 1rem;
     font-size: 1rem;
@@ -101,7 +109,7 @@ body {
   }
   
   .submit-btn:hover {
-    background-color: --primary-text-color;
+    background-color: --primary-black;
   }
   
   /* Responsive */
