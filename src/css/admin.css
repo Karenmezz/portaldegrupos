@@ -1,188 +1,136 @@
----
-:root {
-    --primary-white: white
-    --primary-black: black
-    --color-gray: gray
-  }
----
-.sidebar {
-    width: 150px;
-    height: 100vh; /* Que ocupe toda la altura */
-    background-color: --color-gray;
-    color: --primary-white;
-    position: fixed; /* Fijo en la pantalla */
-    top: 0;
-    left: 0; /* Al lado izquierdo */
-    padding-top: 60px;
-    padding: 20px;
-    z-index: 999; /* Para que esté por encima de otros elementos */
-  }
-
-.sidebar.open {
-  left: 0;
+h1{
+    color: black  
 }
 
-.sidebar .close-btn {
-  color: --primary-white;
-  font-size: 36px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Menu */
-.menu ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.menu li {
-  margin: 10px 0;
-}
-
-.menu li a {
-  color: --primary-white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.menu li a:hover {
-  text-decoration: underline;
-}
-
-/* Botón para abrir el sidebar */
-.open-btn {
-  font-size: 30px;
-  cursor: pointer;
-  padding: 10px;
-  background-color: #f39c12;
-  border: none;
-  color: --primary-white;
-}
-
-/* Contenido principal */
-.main-content {
-    margin-left: 250px; /* Para que el contenido no quede debajo del sidebar */
-    padding: 20px;
-    transition: margin-left 0.3s ease-in-out; /* Para que se mueva suavemente */
-  }
-
-.main-content.shifted {
-  margin-left: 250px;
-}
-
-/* Contenedor de administración */
-.admin-wrapper {
-  max-width: 800px;
+.container {
+  max-width: 1200px;
   margin: auto;
-  padding: 2rem;
 }
 
-.admin-wrapper.shifted {
-  margin-left: 250px;
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
 }
 
-/* Secciones de administración */
-.admin-section {
-  margin-bottom: 2rem;
-  border: 1px solid --color-gray;
+.dashboard-header p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+ 
+.alert-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
   padding: 1rem;
-  border-radius: 8px;
-  background-color: --primary-white;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
 }
 
-/* Botón de alternar formularios */
-.toggle-btn {
-  background-color: #0070f3;
-  color: --primary-white;
-  padding: 0.5rem 1rem;
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.left-controls,
+.right-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 0.75rem;
+}
+
+button.outline {
+  background: white;
+  border: 1px solid #d1d5db;
+}
+
+button.primary {
+  background-color: #2563eb;
+  color: white;
   border: none;
-  cursor: pointer;
+}
+
+button.small {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.tabs {
+  margin-top: 2rem;
+}
+
+.tab-list {
+  display: flex;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-/* Formularios */
-.section-form {
-  position: relative;
-  border: 1px solid --color-gray;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: --primary-white;
+.tab {
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  background: none;
+  cursor: pointer;
 }
 
-.section-form.hidden {
+.tab.active {
+  border-color: #2563eb;
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card-header h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.accordion-item {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.accordion-content {
+  padding-top: 1rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.hidden {
   display: none;
 }
-
-/* Botón de cerrar formulario */
-.close-btn {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  border: none;
-  background: transparent;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: --primary-black;
-}
-
-.close-btn:hover {
-  color: #d00;
-}
-
-/* Estilos adicionales */
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.preview-box {
-  background-color: --primary-white;
-  padding: 1rem;
-  margin-top: 1rem;
-  border: 1px dashed --color-gray;
-}
-
-.img-seccion {
-  max-width: 100%;
-  height: auto;
-}
-
-h1 {
-  color: --primary-black;
-}
-
-/* Menú */
-.menu ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .menu li {
-    margin: 10px 0;
-  }
-  
-  .menu li a {
-    color: --primary-white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .menu li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Estilos generales */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
-  
-  .container {
-    display: flex;
-    min-height: 100vh;
-  }
-
-  
