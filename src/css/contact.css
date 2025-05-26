@@ -1,12 +1,4 @@
----
-:root {
-    --primary-white: white
-    --primary-black: black
-    --color-gray: gray
-  }
----
 
-/* Estilos generales */
 body {
    font-family: Arial, sans-serif;
     color: --primary-black;

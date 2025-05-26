@@ -1,8 +1,8 @@
 ---
+// Header.astro
 import "@css/header.css";
 import Language from "@components/icons/Language.astro";
 import Menu from "@components/icons/Menu.astro";
-
 
 const sections = [
   { name: "Inicio", link: "/" },
@@ -10,8 +10,6 @@ const sections = [
   { name: "Investigacion", link: "/investigation" },
   { name: "Contactenos", link: "/contact" },
   { name: "Actualidad", link: "/present" },
-  { name: "Iniciar Sesión", link: "/login" },
-  
 ];
 ---
 
@@ -33,10 +31,10 @@ const sections = [
     </div>
 
     <button class="menu-button" id="menu-button">
-      <span class="menu-icon"><Menu/></span>
+      <span class="menu-icon"><Menu /></span>
     </button>
 
-    <!-------- -----Navegación -------->
+    <!-------- Navegación -------->
     <nav class="navigation" id="navigation">
       {
         sections.map((section) => (
@@ -45,22 +43,28 @@ const sections = [
           </a>
         ))
       }
+
+      <!-- Botón idioma versión móvil -->
+      <button class="language-button movil" id="language-button-mobile">
+        <span class="language-text">ES</span>
+        <span class="language-icon"><Language/></span>
+      </button>
+
+      <a href="/login" class="boton-ingresar movil">Iniciar Sesión</a>
     </nav>
 
-    <!-- ---Botón de Idioma y Botón de Iniciar Sesión ----->
+    <!-- Versión escritorio -->
     <div class="actions">
-      <button class="language-button" id="language-button">
+      <button class="language-button escritorio" id="language-button">
         <span class="language-text">ES</span>
-        <span class="language-icon"> <Language/></span>
+        <span class="language-icon"><Language/></span>
       </button>
-      <a href="/login" class="boton-ingresar">Iniciar Sesión</a>
-    </button>
+      <a href="/login" class="boton-ingresar escritorio">Iniciar Sesión</a>
     </div>
   </div>
 </header>
 
 <script>
-  // Script para alternar la visibilidad del menú en pantallas pequeñas
   const menuButton = document.getElementById("menu-button");
   const navigation = document.getElementById("navigation");
 
@@ -69,25 +73,16 @@ const sections = [
       navigation.classList.toggle("open");
     });
 
-    // Script para cambiar el idioma
-    const languageButton = document.getElementById("language-button");
-    const languageText = languageButton?.querySelector(".language-text");
+    const languageButtons = document.querySelectorAll(".language-button");
+    let currentLanguage = "ES";
 
-    let currentLanguage = "ES"; // Idioma inicial
-
-    languageButton?.addEventListener("click", () => {
-      // Cambia entre idiomas
-      if (languageText) {
-        if (currentLanguage === "ES") {
-          currentLanguage = "EN";
-          languageText.textContent = "EN";
-        } else {
-          currentLanguage = "ES";
-          languageText.textContent = "ES";
-        }
-      }
-
-      console.log(`Idioma cambiado a: ${currentLanguage}`);
+    languageButtons.forEach((button) => {
+      const textEl = button.querySelector(".language-text");
+      button.addEventListener("click", () => {
+        currentLanguage = currentLanguage === "ES" ? "EN" : "ES";
+        if (textEl) textEl.textContent = currentLanguage;
+        console.log(`Idioma cambiado a: ${currentLanguage}`);
+      });
     });
   }
 </script>

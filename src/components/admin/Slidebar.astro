@@ -1,0 +1,32 @@
+---
+import Admin from "src/components/admin/Admin";
+import "src/css/admin.css";
+---
+
+<aside>
+  <button class="active" data-section="section-contenido">Contenido</button>
+  <button data-section="section-banners">Banners</button>
+</aside>
+
+<script>
+  const botones = document.querySelectorAll('aside button');
+  const secciones = document.querySelectorAll('.main-section');
+
+  botones.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // Quitar clase 'active' de todos los botones
+      botones.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Ocultar todas las secciones
+      secciones.forEach(sec => sec.style.display = 'none');
+
+      // Mostrar la sección correspondiente
+      const idSeccion = btn.getAttribute('data-section');
+      const seccionMostrar = document.getElementById(idSeccion);
+      if (seccionMostrar) {
+        seccionMostrar.style.display = 'block';
+      }
+    });
+  });
+</script>

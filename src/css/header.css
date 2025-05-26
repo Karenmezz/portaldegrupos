@@ -1,159 +1,195 @@
 .header {
-    position: sticky; 
-    top: 0; 
-    z-index: 50; 
-    width: 100%; 
-    background-color: #fff; 
-    border-bottom: 3px solid #e0e0e0; 
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: --primary-white;
+  border-bottom: 3px solid #e0e0e0;
 }
-  
-  .icono_superior img {
-    padding: 8px; 
-    width: 90px; 
-    max-height:90px ; 
+
+.icono_superior img {
+  padding: 8px;
+  width: 90px;
+  max-height: 90px;
 }
-  
-  .header-container {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    height: 80px; 
-    width: 100%; 
-    margin: 0 auto; 
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  margin: 10 auto;
 }
-  
-  .contaninermenor {
-    display: flex; 
-    height: 80px; 
+
+.contaninermenor {
+  display: flex;
+  height: 80px;
 }
-  
-  .containertext {
-    /* ICONO UIS - CALUMET */
-    display: flex; 
-    align-items: center; 
+
+.containertext {
+  display: flex;
+  align-items: center;
 }
-  
-  .menu-button {
-    display: none; 
-    background: none; 
-    border: none; 
-    margin-left: auto;
-    margin-right: 1rem;
-    cursor: pointer; 
-    font-size: 30px; 
-    color: #090000; 
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  margin-left: auto;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-size: 30px;
+  color: #090000;
 }
-  
-  .logo {
-    text-decoration: none; 
+
+.logo {
+  text-decoration: none;
 }
-  
-  .content-grup { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    font-size: 20px; 
-    padding: 8px; 
-    font-weight: bold; 
-    color: #010000; 
+
+.content-grup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 20px;
+  padding: 8px;
+  font-weight: bold;
+  color: #010000;
 }
-  
-  .content-grup p { 
-    font-weight: lighter; 
-    font-size: 10px; 
-    color: rgb(12, 0, 0); 
-    margin: 0.5rem 0 0; 
+
+.content-grup p {
+  font-weight: lighter;
+  font-size: 10px;
+  color: rgb(12, 0, 0);
+  margin: 0.5rem 0 0;
 }
-  
-  /*--------------------------- Navegación  Inicio---------------------------------*/
-  .navigation {
-    display: flex; 
-    gap: 16px; 
+
+.navigation {
+  display: flex;
+  gap: 16px;
 }
-  
-  .secciones-pag {
-    text-decoration: none; 
-    color: #b2b2ba; 
-    font-size: 14px; 
-    transition: color 0.3s ease; 
-    text-align: center;
+
+.secciones-pag {
+  text-decoration: none;
+  color: #b2b2ba;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  text-align: center;
 }
-  
-  .secciones-pag:hover {
-    color: --primary-text-color; 
+
+.secciones-pag:hover {
+  color: --primary-black;
 }
-  
-  /* -------------------------Acciones (botones) ----------------------*/
-  .actions {
-    display: flex; 
-    gap: 8px; 
-    align-items: center; 
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-right: 30px;
 }
-  
-  .boton-ingresar {
-    background-color: #000; 
-    color: #fff; 
-    border: none; 
-    padding: 8px 16px; 
-    font-size: 14px; 
-    cursor: pointer; 
-    border-radius: 4px; 
-    margin-right: 20PX;
+
+.boton-ingresar {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
 }
-  
+
 .boton-ingresar:hover {
   background-color: #e0e0e0;
+  color: #000;
 }
-  
-  /*---------------------- Estilos para el botón de idioma ----------------------------*/
-  .language-button {
-  background-color: white; 
-  color: #c8c6c6; 
-  border: 1px solid #e5e7eb;
-  padding: 6px 12px; 
-  font-size: 15px; 
-  font-weight: 500; 
-  border-radius: 6px; 
-  text-decoration: none; 
-  transition: background-color 0.3s ease; }
-  
-  .language-button:hover {
-  color: --primary-text-color; 
-}
-  
 
-  /* ---------------------------Estilos para pantallas pequeñas -----------------------*/
-  @media (max-width: 768px) {
-    .menu-button {
-      display: block; 
+/* Idioma */
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: white;
+  color: #c8c6c6;
+  border: 1px solid #e5e7eb;
+  padding: 6px 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.language-button:hover {
+  color: --primary-black;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
   }
-  
-    .navigation {
-      display: none; 
-      flex-direction: column; 
-      position: absolute; 
-      top: 80px; 
-      right: 0; 
-      background-color: #fff; 
-      width: 100%; 
-      padding: 16px; 
-      border-bottom: 1px solid #e0e0e0; 
+
+  .navigation {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 1000;
   }
-  
-    .navigation.open {
-      display: flex; 
+
+  .navigation.open {
+    display: flex;
   }
-  
-    .actions {
-      display: none; 
+
+  .actions {
+    display: none;
   }
-  
-    .icono_superior img {
-      padding: 8px; 
-      width: 70px;
-      max-height:70px ; 
-    }
-    .contaninermenor {
-      justify-content: space-between; 
+
+  .boton-ingresar.movil {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    margin: 8px auto;
+    width: 80%;
+  }
+
+  .boton-ingresar.movil:hover {
+    background-color: #e0e0e0;
+    color: #000;
+  }
+
+  .language-button.movil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px auto;
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .icono_superior img {
+    padding: 8px;
+    width: 70px;
+    max-height: 70px;
+  }
+
+  .contaninermenor {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 769px) {
+  .boton-ingresar.movil,
+  .language-button.movil {
+    display: none;
   }
 }

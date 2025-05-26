@@ -15,7 +15,7 @@
 
 .banner-content h1 {
   font-size: 15px;
-  color: --primary-color;
+  color: --primary-white;
   margin-bottom: 10px;
 }
 
@@ -108,7 +108,7 @@ a.btn:hover {
 /*----------------------- Noticias recientes --------------------*/
 .section {
   padding: 20px 0;
-  background-color: --primary-color;
+  background-color: --primary-white;
 }
 
 .fechanews {
@@ -152,7 +152,7 @@ a.btn:hover {
 }
 
 .news-card {
-  background-color: --primary-color;
+  background-color: --primary-white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -188,7 +188,7 @@ a.btn:hover {
   display: inline-block;
   padding: 10px 20px;
   background-color: #c0c5c9;
-  color: --primary-color;
+  color: --primary-white;
   border-radius: 5px;
   text-align: center;
 }
@@ -232,7 +232,7 @@ a.btn:hover {
 }
 
 .stats-grid div {
-  background-color: --primary-color;
+  background-color: --primary-white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -241,7 +241,7 @@ a.btn:hover {
 .stats-grid div span {
   font-size: 2.5rem;
   font-weight: bold;
-  color: --primary-text-color;
+  color: --primary-black;
 }
 
 .stats-grid div p {
@@ -251,7 +251,7 @@ a.btn:hover {
 
 /*-------------------- interesados en colaborar con nostros ------------------*/
 .banner1-content {
-  color: --primary-text-color;
+  color: --primary-black;
 }
 
 .banner1-content h1 {
@@ -300,7 +300,7 @@ a.btn:hover {
       position: absolute; /* Posiciona la navegación de manera absoluta */
       top: 80px; /* Distancia desde la parte superior */
       right: 0; /* Alinea a la derecha */
-      background-color: --primary-color; /* Fondo blanco */
+      background-color: --primary-white; /* Fondo blanco */
       width: 100%; /* Ocupa todo el ancho */
       padding: 16px; /* Espaciado interno */
       border-bottom: 1px solid #e0e0e0; /* Borde inferior */
@@ -384,23 +384,23 @@ a.btn:hover {
   }
 
   .navigation {
-    display: none; /* Oculta la navegación en pantallas pequeñas */
+    display: none; 
     flex-direction: column; /* Coloca los elementos en columna */
     position: absolute; /* Posiciona la navegación de manera absoluta */
     top: 80px; /* Distancia desde la parte superior */
     right: 0; /* Alinea a la derecha */
-    background-color: --primary-color; /* Fondo blanco */
+    background-color: --primary-white; /* Fondo blanco */
     width: 100%; /* Ocupa todo el ancho */
     padding: 16px; /* Espaciado interno */
     border-bottom: 1px solid #e0e0e0; /* Borde inferior */
   }
 
   .navigation.open {
-    display: flex; /* Muestra la navegación cuando tiene la clase "open" */
+    display: flex; 
   }
 
   .actions {
-    display: none; /* Oculta los botones de acción en pantallas pequeñas */
+    display: none; 
   }
 
   .contaninermenor {
@@ -411,7 +411,7 @@ a.btn:hover {
 /* Media Query para pantallas GRANDES (escritorio) */
 @media (min-width: 992px) {
   .banner-content h1 {
-    font-size: 40px; /* Tamaño para escritorio */
+    font-size: 40px; 
   }
 }
 

@@ -1,12 +1,4 @@
- ---
-:root {
-    --primary-white: white
-    --primary-black: black
-    --color-gray: gray
-  }
----
 
-  /* Estilos generales del footer */
   .footer {
     background-color:  --primary-white;
     border-top: 1px solid #e0e0e0;
@@ -22,9 +14,14 @@
 
   .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);  gap: 15px;
     margin-bottom: 20px;
+  }
+
+  @media (max-width: 700px) {
+    .footer-grid {
+      grid-template-columns: 1fr; 
+    }
   }
 
   .footer h3 {
@@ -75,7 +72,8 @@
   }
 
   .footer-links a:hover {
-    color: #007bff;
+    color: black;
+    font-weight: bold;
   }
 
   .footer-bottom {

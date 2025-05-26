@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Detectar cambios
+  // Detectar cambios en inputs y textarea
   inputs.forEach(input => {
     input.addEventListener("input", () => {
       hasUnsavedChanges = true;
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Descartar
+  // Descartar cambios
   document.querySelector("button.outline.small:contains('Descartar')")?.addEventListener("click", () => {
     location.reload();
   });
@@ -56,6 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Mostrar solo primer tab
+  // Mostrar solo el primer tab por defecto
   tabContents.forEach((c, i) => (c.style.display = i === 0 ? "block" : "none"));
+  if (tabButtons.length > 0) {
+    tabButtons[0].classList.add("active");
+  }
 });
