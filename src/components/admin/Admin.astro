@@ -1,5 +1,5 @@
 ---
-import "src/css/admin.css";
+import "@css/admin.css";
 import Sliderbar from "src/components/admin/Slidebar.astro";
 ---
 
@@ -44,7 +44,7 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
               <h2>Secciones de la Página de Inicio</h2>
               <p>Edita el contenido de cada sección de la página principal.</p>
             </div>
-
+        <!-- Sección Hero / Banner Principal<-->
             <div class="accordion">
               <details class="accordion-item">
                 <summary>Sección Hero / Banner Principal</summary>
@@ -89,10 +89,56 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
                 </div>
               </details>
             </div>
-
-            <div class="accordion news">
+        <!-- Noticias Recientes-->
+             <div class="accordion">
               <details class="accordion-item">
                 <summary>Noticias Recientes</summary>
+                <div class="accordion-content">
+                  <label for="landing-hero-title">Título</label>
+                  <input
+                    id="landing-hero-title"
+                    value="Grupo de Investigación Universitaria"
+                  />
+
+                  <label for="landing-hero-subtitle">Subtítulo</label>
+                  <input
+                    id="landing-hero-subtitle"
+                    value="Dedicados a la investigación y desarrollo de soluciones innovadoras"
+                  />
+
+                  <label for="landing-hero-description">Descripción</label>
+                  <textarea id="landing-hero-description" rows="4">
+                    Somos un grupo multidisciplinar de investigadores dedicados
+                    a desarrollar soluciones innovadoras para los desafíos
+                    actuales en ciencia y tecnología.
+                  </textarea>
+
+                  <label>Botón de acción</label>
+                  <div class="button-row">
+                    <input
+                      id="landing-hero-button-label"
+                      value="Conocer más"
+                      class="w-50"
+                    />
+                    <input
+                      id="landing-hero-button-url"
+                      value="/quienes-somos"
+                      class="w-full"
+                      placeholder="URL"
+                    />
+                  </div>
+
+                  <div class="text-right">
+                    <button class="outline small">Editar HTML</button>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+        <!-- Linea de investigacion -->
+            <div class="accordion news">
+              <details class="accordion-item">
+                <summary>Líneas de Investigación</summary>
                 <div class="accordion-content">
                   <label for="landing-hero-title">Título de sección</label>
                   <input
@@ -317,4 +363,4 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
   </div>
 </main>
 <!-- Importamos el JS del admin -->
-<script type="module" src="/src/scripts/admin.js"></script>
+<script type="module" src="/scripts/admin.js"></script>

@@ -1,8 +1,6 @@
 ---
-// src/components/investigation/Events.astro
 import "@css/investigation.css";
 
-// Datos de ejemplo
 const noticias = [
   {
     id: 1,
@@ -29,11 +27,34 @@ const eventos = [
     categoria: "eventos"
   }
 ];
+
+const libros = [
+  { id: 1, titulo: "Inteligencia Artificial y Energía", fecha: "2024", contenido: "Explora aplicaciones de IA en energía renovable." },
+  { id: 2, titulo: "Optimización en Ingeniería", fecha: "2023", contenido: "Modelos matemáticos aplicados a sistemas complejos." },
+  { id: 3, titulo: "Redes Neuronales en Ingeniería", fecha: "2022", contenido: "Fundamentos y casos reales." },
+  { id: 4, titulo: "Simulación de Procesos Industriales", fecha: "2021", contenido: "Métodos de simulación y análisis de datos." },
+  { id: 5, titulo: "Gestión de Proyectos Tecnológicos", fecha: "2020", contenido: "Planeación y ejecución en contextos innovadores." }
+];
+
+const software = [
+  { id: 1, titulo: "OptiFlow", fecha: "2024", contenido: "Software para simulación de flujos industriales." },
+  { id: 2, titulo: "DataCleanX", fecha: "2023", contenido: "Herramienta de limpieza de datos de sensores." },
+  { id: 3, titulo: "AI-EnergyModel", fecha: "2022", contenido: "Predicción de consumo energético usando IA." },
+  { id: 4, titulo: "ProyManager", fecha: "2021", contenido: "Gestión de proyectos colaborativos." }
+];
+
+const trabajos = [
+  { id: 1, titulo: "Análisis de eficiencia energética en campus universitarios", fecha: "2024" , contenido: "Trabajo dirigido sobre optimización de consumo." },
+  { id: 2, titulo: "Desarrollo de prototipos IoT", fecha: "2024", contenido: "Integración de sensores y controladores." },
+  { id: 3, titulo: "Estudio de materiales renovables", fecha: "2023", contenido: "Investigación de propiedades mecánicas." },
+  { id: 4, titulo: "Diseño de sistemas híbridos solar-eólico", fecha: "2023", contenido: "Modelado y simulación computacional." },
+  { id: 5, titulo: "Optimización de redes eléctricas", fecha: "2022", contenido: "Trabajo en colaboración con empresa regional." },
+  { id: 6, titulo: "Evaluación de impacto ambiental en proyectos TIC", fecha: "2021", contenido: "Análisis de ciclo de vida de dispositivos." }
+];
 ---
 <div class="container">
-  <h1>Proyectos de Investigacion</h1>
-  
-  <!-- Barra de búsqueda y filtros -->
+  <h1>Proyectos de Investigación</h1>
+
   <div class="controls">
     <div class="search-bar">
       <input type="text" id="search-input" placeholder="Buscar noticias o eventos..." />
@@ -42,32 +63,64 @@ const eventos = [
     <div class="tabs">
       <button class="tab-button active" data-tab="noticias">Noticias</button>
       <button class="tab-button" data-tab="eventos">Eventos</button>
-      <button class="tab-button" data-tab="eventos">Libros</button>
-      <button class="tab-button" data-tab="eventos">Software</button>
-      <button class="tab-button" data-tab="eventos">Trabajo Dirigido</button>
+      <button class="tab-button" data-tab="libros">Libros</button>
+      <button class="tab-button" data-tab="software">Software</button>
+      <button class="tab-button" data-tab="trabajos">Trabajo Dirigido</button>
     </div>
   </div>
-  
-  <!-- Contenedor de noticias/eventos -->
+
   <div class="content">
     <div id="noticias-container" class="tab-content active">
-      {noticias.map(noticia => (
+      {noticias.map(n => (
         <div class="card">
-          <h2>{noticia.titulo}</h2>
-          <div class="date">{noticia.fecha}</div>
-          <p>{noticia.contenido}</p>
-          <a href="#" class="read-more" data-id={noticia.id}>Leer más</a>
+          <h2>{n.titulo}</h2>
+          <div class="date">{n.fecha}</div>
+          <p>{n.contenido}</p>
+          <a href="https://uis.edu.co/es/" target="_blank" class="read-more" data-id={n.id}>Leer más</a>
         </div>
       ))}
     </div>
-    
+
     <div id="eventos-container" class="tab-content">
-      {eventos.map(evento => (
+      {eventos.map(e => (
         <div class="card">
-          <h2>{evento.titulo}</h2>
-          <div class="date">{evento.fecha}</div>
-          <p>{evento.contenido}</p>
-          <a href="#" class="read-more" data-id={evento.id}>Leer más</a>
+          <h2>{e.titulo}</h2>
+          <div class="date">{e.fecha}</div>
+          <p>{e.contenido}</p>
+          <a href="https://uis.edu.co/es/" target="_blank" class="read-more" data-id={e.id}>Leer más</a>
+        </div>
+      ))}
+    </div>
+
+    <div id="libros-container" class="tab-content">
+      {libros.map(l => (
+        <div class="card">
+          <h2>{l.titulo}</h2>
+          <div class="date">{l.fecha}</div>
+          <p>{l.contenido}</p>
+          <a href="https://uis.edu.co/es/" target="_blank" class="read-more" data-id={l.id}>Leer más</a>
+        </div>
+      ))}
+    </div>
+
+    <div id="software-container" class="tab-content">
+      {software.map(s => (
+        <div class="card">
+          <h2>{s.titulo}</h2>
+          <div class="date">{s.fecha}</div>
+          <p>{s.contenido}</p>
+          <a href="https://uis.edu.co/es/" target="_blank" class="read-more" data-id={s.id}>Leer más</a>
+        </div>
+      ))}
+    </div>
+
+    <div id="trabajos-container" class="tab-content">
+      {trabajos.map(t => (
+        <div class="card">
+          <h2>{t.titulo}</h2>
+          <div class="date">{t.fecha}</div>
+          <p>{t.contenido}</p>
+          <a href="https://uis.edu.co/es/" target="_blank" class="read-more" data-id={t.id}>Leer más</a>
         </div>
       ))}
     </div>
@@ -75,49 +128,38 @@ const eventos = [
 </div>
 
 <script is:inline>
-  // JavaScript para manejar las pestañas y búsqueda
   document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-button');
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
-    
-    // Cambiar entre pestañas
+
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
         tabButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        
+
         document.querySelectorAll('.tab-content').forEach(content => {
           content.classList.remove('active');
         });
-        
+
         document.getElementById(`${button.dataset.tab}-container`).classList.add('active');
       });
     });
-    
-    // Función de búsqueda simplificada
+
     function buscar() {
       const termino = searchInput.value.toLowerCase();
       const activeTab = document.querySelector('.tab-button.active').dataset.tab;
       const cards = document.querySelectorAll(`#${activeTab}-container .card`);
-      
+
       cards.forEach(card => {
         const text = card.textContent.toLowerCase();
         card.style.display = text.includes(termino) ? 'block' : 'none';
       });
     }
-    
+
     searchButton.addEventListener('click', buscar);
     searchInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') buscar();
-    });
-    
-    // Simulación de "Leer más"
-    document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('read-more')) {
-        e.preventDefault();
-        alert(`Mostrar detalles completos del item con ID: ${e.target.dataset.id}`);
-      }
     });
   });
 </script>
