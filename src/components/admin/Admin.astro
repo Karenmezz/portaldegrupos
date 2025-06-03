@@ -6,7 +6,7 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
 <main class="container">
   <Sliderbar />
 
-  <!-- Sección Contenido-->
+  <!-- Sección Contenido -->
   <div id="section-contenido" class="main-section" style="display: block;">
     <div class="main-content">
       <header class="dashboard-header">
@@ -32,335 +32,62 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
       <section class="tabs">
         <!-- Navegación de pestañas -->
         <div class="tab-list">
-          <button class="tab active" data-tab="landing">Página de Inicio</button>
+          <button class="tab active" data-tab="landing">Inicio</button>
           <button class="tab" data-tab="about">Quiénes Somos</button>
-          <button class="tab" data-tab="seo">Metadatos SEO</button>
+          <button class="tab" data-tab="seo">Investigación</button>
+          <button class="tab" data-tab="servic">Servicios de Extensión</button>
+          <button class="tab" data-tab="integra">Integrantes</button>
+          <button class="tab" data-tab="actu">Actualidad</button>
+          <button class="tab" data-tab="contac">Contáctenos</button>
+          <button class="tab" data-tab="admin">Administrar Grupo</button>
         </div>
 
-        <!-- Página de Inicio -->
-        <div class="tab-content" id="tab-landing">
-          <div class="card">
-            <div class="card-header">
-              <h2>Secciones de la Página de Inicio</h2>
-              <p>Edita el contenido de cada sección de la página principal.</p>
-            </div>
-        <!-- Sección Hero / Banner Principal<-->
-            <div class="accordion">
-              <details class="accordion-item">
-                <summary>Sección Hero / Banner Principal</summary>
-                <div class="accordion-content">
-                  <label for="landing-hero-title">Título</label>
-                  <input
-                    id="landing-hero-title"
-                    value="Grupo de Investigación Universitaria"
-                  />
-
-                  <label for="landing-hero-subtitle">Subtítulo</label>
-                  <input
-                    id="landing-hero-subtitle"
-                    value="Dedicados a la investigación y desarrollo de soluciones innovadoras"
-                  />
-
-                  <label for="landing-hero-description">Descripción</label>
-                  <textarea id="landing-hero-description" rows="4">
-                    Somos un grupo multidisciplinar de investigadores dedicados
-                    a desarrollar soluciones innovadoras para los desafíos
-                    actuales en ciencia y tecnología.
-                  </textarea>
-
-                  <label>Botón de acción</label>
-                  <div class="button-row">
-                    <input
-                      id="landing-hero-button-label"
-                      value="Conocer más"
-                      class="w-50"
-                    />
-                    <input
-                      id="landing-hero-button-url"
-                      value="/quienes-somos"
-                      class="w-full"
-                      placeholder="URL"
-                    />
-                  </div>
-
-                  <div class="text-right">
-                    <button class="outline small">Editar HTML</button>
-                  </div>
-                </div>
-              </details>
-            </div>
-        <!-- Noticias Recientes-->
-             <div class="accordion">
-              <details class="accordion-item">
-                <summary>Noticias Recientes</summary>
-                <div class="accordion-content">
-                  <label for="landing-hero-title">Título</label>
-                  <input
-                    id="landing-hero-title"
-                    value="Grupo de Investigación Universitaria"
-                  />
-
-                  <label for="landing-hero-subtitle">Subtítulo</label>
-                  <input
-                    id="landing-hero-subtitle"
-                    value="Dedicados a la investigación y desarrollo de soluciones innovadoras"
-                  />
-
-                  <label for="landing-hero-description">Descripción</label>
-                  <textarea id="landing-hero-description" rows="4">
-                    Somos un grupo multidisciplinar de investigadores dedicados
-                    a desarrollar soluciones innovadoras para los desafíos
-                    actuales en ciencia y tecnología.
-                  </textarea>
-
-                  <label>Botón de acción</label>
-                  <div class="button-row">
-                    <input
-                      id="landing-hero-button-label"
-                      value="Conocer más"
-                      class="w-50"
-                    />
-                    <input
-                      id="landing-hero-button-url"
-                      value="/quienes-somos"
-                      class="w-full"
-                      placeholder="URL"
-                    />
-                  </div>
-
-                  <div class="text-right">
-                    <button class="outline small">Editar HTML</button>
-                  </div>
-                </div>
-              </details>
-            </div>
-
-        <!-- Linea de investigacion -->
-            <div class="accordion news">
-              <details class="accordion-item">
-                <summary>Líneas de Investigación</summary>
-                <div class="accordion-content">
-                  <label for="landing-hero-title">Título de sección</label>
-                  <input
-                    id="landing-hero-title"
-                    value="Grupo de Investigación Universitaria"
-                  />
-
-                  <label for="landing-hero-subtitle">Subtítulo</label>
-                  <input
-                    id="landing-hero-subtitle"
-                    value="Noticias Recientes"
-                  />
-
-                  <label for="landing-hero-description"
-                    >Descripción de sección</label
-                  >
-                  <textarea id="landing-hero-description" rows="4">
-                    Mantente al día con las últimas novedades y avances de
-                    nuestro grupo de investigación.
-                  </textarea>
-
-                  <label>Botón de acción</label>
-                  <div class="button-row">
-                    <input
-                      id="landing-hero-button-label"
-                      value="Conocer más"
-                      class="w-50"
-                    />
-                    <input
-                      id="landing-hero-button-url"
-                      value="/quienes-somos"
-                      class="w-full"
-                      placeholder="URL"
-                    />
-                  </div>
-
-                  <div class="text-right">
-                    <button class="outline small">Editar HTML</button>
-                  </div>
-                </div>
-              </details>
-            </div>
-
-            <div class="card-footer">
-              <button class="outline">Cancelar</button>
-              <button class="primary">Guardar cambios</button>
-            </div>
-          </div>
+        <!-- Contenido por pestañas -->
+        <div class="tab-content" id="contenido-landing" style="display: block;">
+          <h2>Contenido de Inicio</h2>
+          <textarea id="editor-landing">Bienvenido al sitio web...</textarea>
         </div>
 
-        <!-- Quiénes Somos -->
-        <div class="tab-content" id="tab-about">
-          <div class="card">
-            <div class="card-header">
-              <h2>Secciones Quiénes Somos</h2>
-              <p>Edita el contenido de cada sección de la página principal.</p>
-            </div>
-
-            <div class="accordion">
-              <details class="accordion-item">
-                <summary>Cabecera</summary>
-                <div class="accordion-content">
-                  <label for="about-hero-title">Título</label>
-                  <input
-                    id="about-hero-title"
-                    value="Grupo de Investigación Universitaria"
-                  />
-
-                  <label for="about-hero-subtitle">Subtítulo</label>
-                  <input
-                    id="about-hero-subtitle"
-                    value="Dedicados a la investigación y desarrollo de soluciones innovadoras"
-                  />
-
-                  <label for="about-hero-description">Descripción</label>
-                  <textarea id="about-hero-description" rows="4">
-                    Somos un grupo multidisciplinar de investigadores dedicados
-                    a desarrollar soluciones innovadoras para los desafíos
-                    actuales en ciencia y tecnología.
-                  </textarea>
-
-                  <label>Botón de acción</label>
-                  <div class="button-row">
-                    <input
-                      id="about-hero-button-label"
-                      value="Conocer más"
-                      class="w-50"
-                    />
-                    <input
-                      id="about-hero-button-url"
-                      value="/quienes-somos"
-                      class="w-full"
-                      placeholder="URL"
-                    />
-                  </div>
-
-                  <div class="text-right">
-                    <button class="outline small">🧑‍💻 Editar HTML</button>
-                  </div>
-                </div>
-              </details>
-            </div>
-
-            <div class="card-footer">
-              <button class="outline">Cancelar</button>
-              <button class="primary">Guardar cambios</button>
-            </div>
-          </div>
+        <div class="tab-content" id="contenido-about" style="display: none;">
+          <h2>Contenido Quiénes Somos</h2>
+          <textarea id="editor-about">Nuestra misión es...</textarea>
         </div>
 
-        <!-- Metadatos SEO -->
-        <div class="tab-content" id="tab-seo">
-          <div class="card">
-            <div class="card-header">
-              <h2>Metadatos SEO</h2>
-              <p>
-                Configura los metadatos para mejorar el posicionamiento en
-                buscadores.
-              </p>
-            </div>
-
-            <div class="accordion">
-              <div class="accordion-content">
-                <label for="seo-home-title">Título de la página</label>
-                <input
-                  id="seo-home-title"
-                  value="Grupo de Investigación Universitaria"
-                />
-                <small style="color: gray;"
-                  >Recomendado: 50-60 caracteres.</small
-                >
-
-                <label for="seo-home-description">Meta descripción</label>
-                <input
-                  id="seo-home-description"
-                  value="Dedicados a la investigación y desarrollo de soluciones innovadoras"
-                />
-
-                <label for="seo-home-content">Descripción</label>
-                <textarea id="seo-home-content" rows="4">
-                  Sitio web oficial del grupo de investigación universitaria
-                  dedicado a la innovación en energías renovables, inteligencia
-                  artificial, biotecnología y ciencia de materiales.
-                </textarea>
-
-                <label for="seo-home-keywords">Palabras clave</label>
-                <textarea id="seo-home-keywords" rows="4">
-                  investigación, universidad, energías renovables, inteligencia
-                  artificial, biotecnología
-                </textarea>
-              </div>
-
-              <div class="accordion-content">
-                <h3>Página Quiénes Somos</h3>
-
-                <label for="seo-about-title">Título de la página</label>
-                <input
-                  id="seo-about-title"
-                  value="Quiénes Somos | Grupo de Investigación Universitaria"
-                />
-                <small style="color: gray;"
-                  >Recomendado: 50-60 caracteres. Actual: 52 caracteres</small
-                >
-
-                <label for="seo-about-description">Meta descripción</label>
-                <input
-                  id="seo-about-description"
-                  value="Conoce al equipo de investigadores y la historia de nuestro grupo de investigación universitaria. Descubre nuestra misión, visión y valores."
-                />
-                <small style="color: gray;"
-                  >Recomendado: 150-160 caracteres.</small
-                >
-
-                <label for="seo-about-keywords">Palabras clave</label>
-                <textarea id="seo-about-keywords" rows="4">
-                  equipo investigación, historia grupo investigación, misión,
-                  visión, valores
-                </textarea>
-              </div>
-
-              <div class="accordion-content">
-                <h3>Configuración global</h3>
-
-                <label for="seo-global-site-name">Nombre del sitio</label>
-                <input
-                  id="seo-global-site-name"
-                  value="Grupo de Investigación Universitaria"
-                />
-
-                <label for="seo-global-site-url">URL del sitio</label>
-                <input
-                  id="seo-global-site-url"
-                  value="https://grupoinvestigacion.universidad.es"
-                />
-
-                <label for="seo-global-social-image"
-                  >Imagen por defecto para redes sociales</label
-                >
-                <input id="seo-global-social-image" type="file" />
-                <small style="color: gray;"
-                  >Tamaño recomendado: 1200x630px. Formato: JPG, PNG.</small
-                >
-              </div>
-            </div>
-
-            <div class="card-footer">
-              <button class="outline">Cancelar</button>
-              <button class="primary">Guardar cambios</button>
-            </div>
-          </div>
-        </div>
+        <!-- Agrega más divs según tus pestañas -->
       </section>
     </div>
   </div>
-
-  <!-- Sección BANNERS -->
-  <div id="section-banners" class="main-section2" style="display: none;">
-    <div class="main-content">
-      <h1>Gestión de Banners</h1>
-      <p>Administra los banners promocionales de tu sitio web.</p>
-    </div>
-  </div>
 </main>
-<!-- Importamos el JS del admin -->
-<script type="module" src="/scripts/admin.js"></script>
+
+<!-- CKEditor CDN -->
+<script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+
+<!-- Scripts de Tabs + CKEditor -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    // Cambiar entre tabs
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const tabId = tab.getAttribute('data-tab');
+        tabContents.forEach(content => content.style.display = 'none');
+
+        const selectedContent = document.getElementById(`contenido-${tabId}`);
+        if (selectedContent) selectedContent.style.display = 'block';
+      });
+    });
+
+    // Inicializar CKEditor para cada textarea por ID
+    const editorIds = ['landing', 'about']; // Agrega más IDs aquí si agregas más secciones
+
+    editorIds.forEach(id => {
+      ClassicEditor.create(document.querySelector(`#editor-${id}`))
+        .catch(error => console.error(error));
+    });
+  });
+</script>
