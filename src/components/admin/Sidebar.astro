@@ -1,0 +1,47 @@
+---
+import "@components/admin/Admin.astro";
+import "@css/admin.css";
+---
+
+<aside>
+  <a href="/admin/content">Contenido</A>
+  <a href="/admin/page-config">Configurar pagina</A>
+  <a >Administrar miembros</A>
+  <a >Habilitar menus</A>
+  <a >Cambio de diseño</A>
+</aside>
+
+<style>
+  aside {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    height: 100%;
+    width: 200px;
+    background-color: rgba(207, 205, 205, 0.616);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 100;
+  }
+
+  aside a {
+    background: none;
+    border: none;
+    color: black;
+    width: 100%;
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+  }
+
+  aside a:hover,
+  aside a.active {
+    background-color: white;
+  }
+</style>

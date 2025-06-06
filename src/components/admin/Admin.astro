@@ -1,11 +1,11 @@
 ---
 import "@css/admin.css";
-import Sliderbar from "src/components/admin/Slidebar.astro";
+import Sidebar from "src/components/admin/Sidebar.astro";
+import Banner from "src/components/admin/Banner.astro";
 ---
 
 <main class="container">
-  <Sliderbar />
-
+  <Sidebar />
   <!-- Sección Contenido -->
   <div id="section-contenido" class="main-section" style="display: block;">
     <div class="main-content">
@@ -16,13 +16,7 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
 
       <!-- Barra superior -->
       <section class="top-bar">
-        <div class="left-controls">
-          <select class="lang-select">
-            <option value="es" selected>Español</option>
-            <option value="en">English</option>
-          </select>
-          <button class="outline small">Vista previa</button>
-        </div>
+
         <div class="right-controls">
           <button class="outline small">Descartar</button>
           <button class="primary small">Guardar cambios</button>
@@ -53,11 +47,12 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
           <textarea id="editor-about">Nuestra misión es...</textarea>
         </div>
 
-        <!-- Agrega más divs según tus pestañas -->
       </section>
     </div>
   </div>
 </main>
+
+
 
 <!-- CKEditor CDN -->
 <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
@@ -91,3 +86,5 @@ import Sliderbar from "src/components/admin/Slidebar.astro";
     });
   });
 </script>
+
+

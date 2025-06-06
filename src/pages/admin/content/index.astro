@@ -1,0 +1,17 @@
+---
+import TabContainer from "@components/TabContainer.astro";
+import AdminLayout from "@layouts/AdminLayout.astro";
+---
+
+<AdminLayout>
+    <TabContainer 
+        items={[
+            { name: "Banner", url: "/admin/content/banners" },
+            { name: "Redes Sociales", url: "/admin/content/web-socials" }
+        ]} 
+    />
+</AdminLayout>
+
+
+
+
