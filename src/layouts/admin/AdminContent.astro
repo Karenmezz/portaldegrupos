@@ -1,6 +1,10 @@
 ---
+import AdminLayout from "@layouts/admin/AdminLayout.astro";
 import TabContainer from "@components/TabContainer.astro";
-import AdminLayout from "@layouts/AdminLayout.astro";
+
+export interface Props {
+    active: number;
+}
 ---
 
 <AdminLayout>
@@ -8,10 +12,8 @@ import AdminLayout from "@layouts/AdminLayout.astro";
         items={[
             { name: "Banner", url: "/admin/content/banners" },
             { name: "Redes Sociales", url: "/admin/content/web-socials" }
-        ]} 
+        ]}
+        active={Astro.props.active}
     />
+    <slot/>
 </AdminLayout>
-
-
-
-

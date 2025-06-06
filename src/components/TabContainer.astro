@@ -3,18 +3,19 @@ export interface Props {
     items: {
         name: string;
         url: string;
-    }[]
+    }[];
+    active: number
 }
 
-const { items } = Astro.props;
+const { items, active } = Astro.props;
 ---
 
 <div class="tab-container">
     <ul class="tab-list">
         {
-            items.map(item => 
+            items.map((item, index) => 
                 <li class="tab-item">
-                    <a href=`${item.url}` class="tab-link">{item.name}</a>
+                    <a href=`${item.url}` class=`tab-link ${index == active ? "active" : ""}`>{item.name}</a>
                 </li>
             )
         }
