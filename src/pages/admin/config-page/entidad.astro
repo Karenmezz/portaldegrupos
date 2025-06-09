@@ -1,0 +1,309 @@
+---
+import AdminConfig from "@layouts/admin/AdminConfig.astro";
+---
+
+<AdminConfig active={0}>
+  <div class="app-resources">
+    <!-- MySQL -->
+    <div class="app-card">
+      <div class="app-content">
+        <div class="app-info">
+          <div class="app-name">MySQL</div>
+          <div class="app-url">https://www.mysql.com/</div> </div>
+        <img src="/public/img/MYSQL.png" alt="MySQL" class="app-icon">
+      </div>
+      <div class="app-actions">
+        <button class="btn save">Guardar</button>
+        <button class="btn delete">Eliminar</button>
+      </div>
+    </div>
+    
+    <!-- jQuery -->
+    <div class="app-card">
+      <div class="app-content">
+        <div class="app-info">
+            <div class="app-name">jQuery</div>
+          <div class="app-url">https://jquery.com/</div>
+        </div>
+        <img src="/img/jquery.webp" alt="jQuery" class="app-icon">
+      </div>
+      <div class="app-actions">
+        <button class="btn save">Guardar</button>
+        <button class="btn delete">Eliminar</button>
+      </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <div class="app-card">
+      <div class="app-content">
+        <div class="app-info">
+          <div class="app-name">JavaScript</div>
+          <div class="app-url">https://www.javascript.com/</div>
+        </div>
+        <img src="/img/JavaScript.png" alt="JavaScript" class="app-icon">
+      </div>
+      <div class="app-actions">
+        <button class="btn save">Guardar</button>
+        <button class="btn delete">Eliminar</button>
+      </div>
+    </div>
+    
+    <!-- Java -->
+    <div class="app-card">
+      <div class="app-content">
+        <div class="app-info">
+        <div class="app-name">Java</div>
+        <div class="app-url">https://www.java.com/es/</div>
+        </div>
+        <img src="/img/Java.png" alt="Java" class="app-icon">
+      </div>
+      <div class="app-actions">
+        <button class="btn save">Guardar</button>
+        <button class="btn delete">Eliminar</button>
+      </div>
+    </div>
+    
+    <!-- Formulario para agregar (oculto inicialmente) -->
+    <div class="app-card add-form" id="addForm" style="display: none;">
+      <div class="app-content">
+        <div class="app-info">
+          <input type="url" class="app-url-input" placeholder="https://ejemplo.com">
+          <input type="text" class="app-name-input" placeholder="Nombre de la app">
+        </div>
+        <img src="/icons/default.png" alt="Nueva App" class="app-icon">
+      </div>
+      <div class="app-actions">
+        <button class="btn cancel">Cancelar</button>
+        <button class="btn confirm-add">Agregar</button>
+      </div>
+    </div>
+    
+    <!-- Botón para mostrar formulario -->
+    <button class="add-btn" id="showAddBtn">+ Agregar aplicación</button>
+  </div>
+</AdminConfig>
+
+<style>
+  .app-resources {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .app-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1e4e8;
+  }
+  
+  .app-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    flex-grow: 1;
+  }
+  
+  .app-info {
+    flex: 1;
+  }
+  
+  .app-url {
+    color: #0366d6;
+    font-size: 14px;
+    margin-bottom: 5px;
+    word-break: break-all;
+  }
+  
+  .app-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #24292e;
+  }
+  
+  .app-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-left: 15px;
+    border-radius: 8px;
+  }
+  
+  .app-actions {
+    display: flex;
+    border-top: 1px solid #e1e4e8;
+    padding: 10px 15px;
+    background: #f6f8fa;
+  }
+  
+  .btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .save {
+    background: #2ea44f;
+    color: white;
+    margin-right: 8px;
+  }
+  
+  .save:hover {
+    background: #2c974b;
+  }
+  
+  .delete {
+    background: #d73a49;
+    color: white;
+  }
+  
+  .delete:hover {
+    background: #cb2431;
+  }
+  
+  .add-btn {
+    grid-column: 1 / -1;
+    background: #f6f8fa;
+    border: 1px dashed #d1d5da;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 16px;
+    color: #0366d6;
+    cursor: pointer;
+    transition: all 0.2s;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .add-btn:hover {
+    background: #f3f4f6;
+    border-color: #0366d6;
+  }
+  
+  .add-form {
+    display: none;
+  }
+  
+  .app-url-input,
+  .app-name-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .cancel {
+    background: #6a737d;
+    color: white;
+    margin-right: 8px;
+  }
+  
+  .cancel:hover {
+    background: #5a6268;
+  }
+  
+  .confirm-add {
+    background: #0366d6;
+    color: white;
+  }
+  
+  .confirm-add:hover {
+    background: #035fc7;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const showAddBtn = document.getElementById('showAddBtn');
+    const addForm = document.getElementById('addForm');
+    
+    // Mostrar formulario de agregar
+    showAddBtn.addEventListener('click', function() {
+      addForm.style.display = 'flex';
+      this.style.display = 'none';
+      addForm.querySelector('.app-url-input').focus();
+    });
+    
+    // Cancelar agregar
+    addForm.querySelector('.cancel').addEventListener('click', function() {
+      addForm.style.display = 'none';
+      showAddBtn.style.display = 'block';
+      addForm.querySelector('.app-url-input').value = '';
+      addForm.querySelector('.app-name-input').value = '';
+    });
+    
+    // Confirmar agregar
+    addForm.querySelector('.confirm-add').addEventListener('click', function() {
+      const url = addForm.querySelector('.app-url-input').value;
+      const name = addForm.querySelector('.app-name-input').value;
+      
+      if (!url || !name) {
+        alert('Por favor complete ambos campos');
+        return;
+      }
+      
+      // Crear nueva tarjeta
+      const newCard = document.createElement('div');
+      newCard.className = 'app-card';
+      newCard.innerHTML = `
+        <div class="app-content">
+          <div class="app-info">
+            <div class="app-url">${url}</div>
+            <div class="app-name">${name}</div>
+          </div>
+          <img src="/icons/default.png" alt="${name}" class="app-icon">
+        </div>
+        <div class="app-actions">
+          <button class="btn save">Guardar</button>
+          <button class="btn delete">Eliminar</button>
+        </div>
+      `;
+      
+      // Insertar antes del botón de agregar
+      document.querySelector('.app-resources').insertBefore(newCard, showAddBtn);
+      
+      // Agregar eventos
+      newCard.querySelector('.delete').addEventListener('click', function() {
+        if (confirm('¿Eliminar esta aplicación?')) {
+          newCard.remove();
+        }
+      });
+      
+      newCard.querySelector('.save').addEventListener('click', function() {
+        alert('Cambios guardados');
+      });
+      
+      // Resetear y ocultar formulario
+      addForm.querySelector('.app-url-input').value = '';
+      addForm.querySelector('.app-name-input').value = '';
+      addForm.style.display = 'none';
+      showAddBtn.style.display = 'block';
+    });
+    
+    // Eventos para tarjetas existentes
+    document.querySelectorAll('.delete').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (confirm('¿Eliminar esta aplicación?')) {
+          this.closest('.app-card').remove();
+        }
+      });
+    });
+    
+    document.querySelectorAll('.save').forEach(btn => {
+      btn.addEventListener('click', function() {
+        alert('Cambios guardados');
+      });
+    });
+  });
+</script>

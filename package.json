@@ -9,6 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.2"
+    "@ckeditor/ckeditor5-build-classic": "^41.4.2",
+    "astro": "^5.5.2",
+    "ckeditor4": "^4.25.1",
+    "preact": "^10.26.8"
   }
 }

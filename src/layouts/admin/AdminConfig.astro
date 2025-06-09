@@ -8,7 +8,7 @@ export interface Props {
 ---
 
 <AdminLayout>
-    <h1>Gestión de Contenido</h1>
+    <h1>Administración de página principal</h1>
     <p>Edita el contenido de las principales páginas del sitio web.</p>
      
    <!-- Navegación de botones -->
@@ -21,14 +21,9 @@ export interface Props {
 
     <TabContainer 
         items={[
-            { name: "Inicio", url: "/admin/content/landing" },
-            { name: "Quienes Somos", url: "/admin/content/about" },
-            { name: "Investigación", url: "/admin/content/seo" },
-            { name: "Servicios de Extensión", url: "/admin/content/servic" },
-            { name: "Integrantes", url: "/admin/content/integra" },
-            { name: "Actualidad", url: "/admin/content/actu" },
-            { name: "Contáctenos", url: "/admin/content/contac" },
-            { name: "Administrar Grupo", url: "/admin/content/admin" }
+            { name: "Banner", url: "/admin/config-page/banner" },
+            { name: "Redes Sociales", url: "/admin/config-page/news" },
+            { name: "Entidades afines y/o Patrocinadores", url: "/admin/config-page/entidad" },
             
         ]}
         active={Astro.props.active}

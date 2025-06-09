@@ -23,69 +23,43 @@ const { items, active } = Astro.props;
 </div>
 
 <style>
-    .tab-container {
-        font-size: 0.875rem;
-        font-weight: 500;
-        text-align: center;
-        color: #6b7280;
-        border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .tab-list {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: -1px;
-        padding: 0;
-        list-style: none;
-    }
-    
-    .tab-item {
-        margin-right: 0.5rem;
-    }
-    
-    .tab-link {
-        display: inline-block;
-        padding: 1rem;
-        border-bottom: 2px solid transparent;
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        text-decoration: none;
-        color: inherit;
-    }
-    
-    .tab-link:hover {
-        color: #4b5563;
-        border-bottom-color: #d1d5db;
-    }
-    
-    .tab-link.active {
-        color: #2563eb;
-        border-bottom-color: #2563eb;
-    }
-    
-    .tab-link.disabled {
-        color: #9ca3af;
-        cursor: not-allowed;
-    }
-    
-   
-    @media (prefers-color-scheme: dark) {
-        .tab-container {
-            color: #9ca3af;
-            border-bottom-color: #374151;
-        }
-        
-        .tab-link:hover {
-            color: #d1d5db;
-        }
-        
-        .tab-link.active {
-            color: #3b82f6;
-            border-bottom-color: #3b82f6;
-        }
-        
-        .tab-link.disabled {
-            color: #6b7280;
-        }
-    }
+.tab-container {
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+.tab-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tab-item {
+    margin-bottom: -1px; /* para que active quede encima */
+}
+
+.tab-link {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-radius: 0.25rem 0.25rem 0 0;
+    color: #495057;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.tab-link:hover {
+    background-color: #dfe3e6;
+}
+
+.tab-link.active {
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    color: #212529;
+    font-weight: 500;
+}
+
 </style>

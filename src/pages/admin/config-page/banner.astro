@@ -1,0 +1,379 @@
+---
+import AdminConfig from "@layouts/admin/AdminConfig.astro";
+---
+
+<AdminConfig active={0}>
+  
+  <div class="banners-container">
+    <!-- Banner 1 -->
+    <div class="banner-form" id="banner-1">
+      <div class="banner-image">
+        <img src="/img/uis.jpg" alt="Banner UIS" class="banner-preview" />
+        <button type="button" class="change-button">Cambiar imagen</button>
+        <input type="file" class="banner-upload" accept="image/*" style="display: none;" />
+      </div>
+  
+      <div class="banner-settings">
+        <div class="form-group">
+          <label>Texto principal</label>
+          <input type="text" class="form-input" value="Universidad Industrial de Santander" />
+        </div>
+  
+        <div class="form-group">
+          <label>Texto secundario</label>
+          <input type="text" class="form-input" value="Educación de Calidad" />
+        </div>
+  
+        <div class="form-group">
+          <label>Nombre Botón</label>
+          <input type="text" class="form-input" value="Ver más" />
+        </div>
+  
+        <div class="form-group">
+          <label>Url</label>
+          <input type="url" class="form-input" value="https://www.uis.edu.co/webUIS/es/index.jsp" />
+        </div>
+  
+        <div class="form-group visibility-toggle">
+          <label>Estado</label>
+          <div class="toggle-container">
+            <span class="toggle-label">Visible</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Oculto</span>
+          </div>
+        </div>
+  
+        <div class="form-actions">
+          <button type="button" class="btn-save">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner 2 -->
+    <div class="banner-form" id="banner-2">
+      <div class="banner-image">
+        <img src="/img/uis.jpg" alt="Banner UIS" class="banner-preview" />
+        <button type="button" class="change-button">Cambiar imagen</button>
+        <input type="file" class="banner-upload" accept="image/*" style="display: none;" />
+      </div>
+  
+      <div class="banner-settings">
+        <div class="form-group">
+          <label>Texto principal</label>
+          <input type="text" class="form-input" value="Universidad Industrial de Santander" />
+        </div>
+  
+        <div class="form-group">
+          <label>Texto secundario</label>
+          <input type="text" class="form-input" value="Investigación e Innovación" />
+        </div>
+  
+        <div class="form-group">
+          <label>Nombre Botón</label>
+          <input type="text" class="form-input" value="Conoce más" />
+        </div>
+  
+        <div class="form-group">
+          <label>Url</label>
+          <input type="url" class="form-input" value="https://www.uis.edu.co/webUIS/es/academia/investigacion.jsp" />
+        </div>
+  
+        <div class="form-group visibility-toggle">
+          <label>Estado</label>
+          <div class="toggle-container">
+            <span class="toggle-label">Visible</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Oculto</span>
+          </div>
+        </div>
+  
+        <div class="form-actions">
+          <button type="button" class="btn-save">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner 3 -->
+    <div class="banner-form" id="banner-3">
+      <div class="banner-image">
+        <img src="/img/uis.jpg" alt="Banner UIS" class="banner-preview" />
+        <button type="button" class="change-button">Cambiar imagen</button>
+        <input type="file" class="banner-upload" accept="image/*" style="display: none;" />
+      </div>
+  
+      <div class="banner-settings">
+        <div class="form-group">
+          <label>Texto principal</label>
+          <input type="text" class="form-input" value="Universidad Industrial de Santander" />
+        </div>
+  
+        <div class="form-group">
+          <label>Texto secundario</label>
+          <input type="text" class="form-input" value="Campus y Facultades" />
+        </div>
+  
+        <div class="form-group">
+          <label>Nombre Botón</label>
+          <input type="text" class="form-input" value="Explorar" />
+        </div>
+  
+        <div class="form-group">
+          <label>Url</label>
+          <input type="url" class="form-input" value="https://www.uis.edu.co/webUIS/es/academia/facultades.jsp" />
+        </div>
+  
+        <div class="form-group visibility-toggle">
+          <label>Estado</label>
+          <div class="toggle-container">
+            <span class="toggle-label">Visible</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Oculto</span>
+          </div>
+        </div>
+  
+        <div class="form-actions">
+          <button type="button" class="btn-save">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .banners-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    .banner-form {
+      display: flex;
+      gap: 2rem;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner-image {
+      position: relative;
+      width: 50%;
+      min-height: 300px;
+      border: 1px dashed #ccc;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-image img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+
+    .change-button {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .change-button:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .banner-settings {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #333;
+      font-size: 0.9rem;
+    }
+
+    .form-input {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #333;
+      width: 100%;
+    }
+
+    /* Estilos del toggle switch */
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toggle-label {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2ecc71;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(30px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .btn-save {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 1rem;
+    }
+
+    .btn-save:hover {
+      background: #0052a3;
+    }
+  </style>
+</AdminConfig>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Configuración para los 3 banners
+    document.querySelectorAll('.banner-form').forEach((banner, index) => {
+      const bannerId = banner.id;
+      const changeBtn = banner.querySelector<HTMLButtonElement>('.change-button');
+      const fileInput = banner.querySelector<HTMLInputElement>('.banner-upload');
+      const imgPreview = banner.querySelector<HTMLImageElement>('.banner-preview');
+      const saveBtn = banner.querySelector<HTMLButtonElement>('.btn-save');
+      const visibilityToggle = banner.querySelector<HTMLInputElement>('.switch input');
+      
+      // Verificar que todos los elementos existen
+      if (!changeBtn || !fileInput || !imgPreview || !saveBtn || !visibilityToggle) {
+        console.error('No se encontraron todos los elementos necesarios');
+        return;
+      }
+      
+      // Manejar cambio de imagen
+      changeBtn.addEventListener('click', () => fileInput.click());
+      
+      fileInput.addEventListener('change', function(e: Event) {
+        const target = e.target as HTMLInputElement;
+        if (target.files && target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(event: ProgressEvent<FileReader>) {
+            if (event.target?.result) {
+              imgPreview.src = event.target.result as string;
+              imgPreview.style.display = 'block';
+            }
+          }
+          
+          reader.readAsDataURL(target.files[0]);
+        }
+      });
+      
+      // Manejar visibilidad
+      visibilityToggle.addEventListener('change', function(this: HTMLInputElement) {
+        console.log(`Banner ${index + 1} ahora está: ${this.checked ? 'Visible' : 'Oculto'}`);
+      });
+      
+      // Manejar guardado
+      saveBtn.addEventListener('click', function() {
+        const inputs = banner.querySelectorAll<HTMLInputElement>('.form-input');
+        if (inputs.length < 4) {
+          console.error('No se encontraron todos los inputs necesarios');
+          return;
+        }
+        
+        const bannerData = {
+          id: bannerId,
+          image: imgPreview.src,
+          mainText: inputs[0].value,
+          secondaryText: inputs[1].value,
+          buttonText: inputs[2].value,
+          url: inputs[3].value,
+          isVisible: visibilityToggle.checked
+        };
+        
+        console.log('Datos guardados:', bannerData);
+        alert(`Configuración del Banner ${index + 1} guardada correctamente`);
+      });
+    });
+  });
+</script>
+C:\Users\KarenTatiana\OneDrive\Desktop\PRUEBA2\src\pages\admin\page-config.astro

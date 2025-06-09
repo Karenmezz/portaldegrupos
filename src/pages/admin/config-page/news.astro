@@ -1,0 +1,400 @@
+---
+import AdminConfig from "@layouts/admin/AdminConfig.astro";
+---
+
+<AdminConfig active={0}>
+<div class="admin-panel">
+    <div class="table-responsive">
+      <table class="social-media-table">
+        <thead>
+          <tr class="table-header">
+            <th class="col-name">Nombre</th>
+            <th class="col-url">Enlace (URL)</th>
+            <th class="col-status">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Facebook -->
+          <tr class="social-item">
+            <td class="social-name">Facebook</td>
+            <td class="social-url">
+              <input type="url" class="url-input" value="https://www.facebook.com/GrupoCalumet/" placeholder="Ingresa la URL">
+            </td>
+            <td class="social-status">
+              <label class="status-toggle">
+                <input type="checkbox" class="toggle-input" checked>
+                <span class="toggle-slider">
+                  <span class="toggle-text on">Visible</span>
+                  <span class="toggle-text off">Oculto</span>
+                </span>
+              </label>
+            </td>
+          </tr>
+          
+          <!-- Twitter -->
+          <tr class="social-item">
+            <td class="social-name">Twitter</td>
+            <td class="social-url">
+              <input type="url" class="url-input" value="https://twitter.com/uis?lang=es" placeholder="Ingresa la URL">
+            </td>
+            <td class="social-status">
+              <label class="status-toggle">
+                <input type="checkbox" class="toggle-input" checked>
+                <span class="toggle-slider">
+                  <span class="toggle-text on">Visible</span>
+                  <span class="toggle-text off">Oculto</span>
+                </span>
+              </label>
+            </td>
+          </tr>
+          
+          <!-- Instagram -->
+          <tr class="social-item">
+            <td class="social-name">Instagram</td>
+            <td class="social-url">
+              <input type="url" class="url-input" value="https://www.instagram.com/uis/?hi=es-la" placeholder="Ingresa la URL">
+            </td>
+            <td class="social-status">
+              <label class="status-toggle">
+                <input type="checkbox" class="toggle-input" checked>
+                <span class="toggle-slider">
+                  <span class="toggle-text on">Visible</span>
+                  <span class="toggle-text off">Oculto</span>
+                </span>
+              </label>
+            </td>
+          </tr>
+          
+          <!-- Google+ -->
+          <tr class="social-item">
+            <td class="social-name">Google+</td>
+            <td class="social-url">
+              <input type="url" class="url-input" placeholder="Ingresa la URL">
+            </td>
+            <td class="social-status">
+              <label class="status-toggle">
+                <input type="checkbox" class="toggle-input">
+                <span class="toggle-slider">
+                  <span class="toggle-text on">Visible</span>
+                  <span class="toggle-text off">Oculto</span>
+                </span>
+              </label>
+            </td>
+          </tr>
+          
+          <!-- LinkedIn -->
+          <tr class="social-item">
+            <td class="social-name">LinkedIn</td>
+            <td class="social-url">
+              <input type="url" class="url-input" placeholder="Ingresa la URL">
+            </td>
+            <td class="social-status">
+              <label class="status-toggle">
+                <input type="checkbox" class="toggle-input">
+                <span class="toggle-slider">
+                  <span class="toggle-text on">Visible</span>
+                  <span class="toggle-text off">Oculto</span>
+                </span>
+              </label>
+            </td>
+          </tr>
+          
+          <!-- YouTube -->
+          <tr class="social-item">
+            <td class="social-name">YouTube</td>
+            <td class="social-url">
+              <input type="url" class="url-input" value="https://www.youtube.com/channel/UCoJ8HJ27tIF" placeholder="Ingresa la URL">
+            </td>
+            <td class="social-status">
+              <label class="status-toggle">
+                <input type="checkbox" class="toggle-input" checked>
+                <span class="toggle-slider">
+                  <span class="toggle-text on">Visible</span>
+                  <span class="toggle-text off">Oculto</span>
+                </span>
+              </label>
+            </td>
+          </tr>
+          
+          <!-- WhatsApp -->
+          <tr class="social-item">
+            <td class="social-name">WhatsApp</td>
+            <td class="social-url">
+              <input type="url" class="url-input" placeholder="Ingresa la URL">
+            </td>
+            <td class="social-status">
+              <label class="status-toggle">
+                <input type="checkbox" class="toggle-input">
+                <span class="toggle-slider">
+                  <span class="toggle-text on">Visible</span>
+                  <span class="toggle-text off">Oculto</span>
+                </span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="action-buttons">
+      <button type="button" class="btn save-btn">
+        <i class="icon-save"></i> Guardar cambios
+      </button>
+      <button type="button" class="btn cancel-btn">
+        <i class="icon-cancel"></i> Cancelar
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Estilos generales */
+  .admin-panel {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    max-width: 13000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .panel-title {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  /* Estilos de la tabla */
+  .table-responsive {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-media-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+  
+  .table-header {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table-header th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #495057;
+  }
+  
+  .social-item {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+  }
+  
+  .social-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .social-item td {
+    padding: 15px;
+    vertical-align: middle;
+  }
+  
+  /* Estilos de las celdas */
+  .social-name {
+    font-weight: 500;
+    color: #2c3e50;
+    min-width: 120px;
+  }
+  
+  .url-input {
+    width: 90%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+  }
+  
+  .url-input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  }
+  
+  /* Estilos del toggle switch mejorado */
+  .status-toggle {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .toggle-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-slider {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 34px;
+    background-color: #d3d6da;
+    border-radius: 34px;
+    transition: all 0.4s;
+    overflow: hidden;
+  }
+  
+  .toggle-input:checked + .toggle-slider {
+    background-color: #2ecc71;
+  }
+  
+  .toggle-slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: all 0.4s;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .toggle-input:checked + .toggle-slider:before {
+    transform: translateX(56px);
+  }
+  
+  .toggle-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s;
+  }
+  
+  .toggle-text.on {
+    left: 12px;
+    opacity: 0;
+  }
+  
+  .toggle-text.off {
+    right: 12px;
+    opacity: 1;
+  }
+  
+  .toggle-input:checked + .toggle-slider .toggle-text.on {
+    opacity: 1;
+  }
+  
+  .toggle-input:checked + .toggle-slider .toggle-text.off {
+    opacity: 0;
+  }
+  
+  /* Estilos de los botones */
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .save-btn {
+    background-color: #0066cc;
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background-color: #0052a3;
+  }
+  
+  .cancel-btn {
+    background-color: #f1f1f1;
+    color: #555;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #ddd;
+  }
+  
+  .icon-save, .icon-cancel {
+    font-size: 1rem;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Selección de elementos
+    const saveBtn = document.querySelector('.save-btn');
+    const cancelBtn = document.querySelector('.cancel-btn');
+    
+    // Función para recopilar datos
+    function getSocialMediaData() {
+      const socialData = [];
+      
+      document.querySelectorAll('.social-item').forEach(item => {
+        const name = item.querySelector('.social-name').textContent;
+        const url = item.querySelector('.url-input').value;
+        const isActive = item.querySelector('.toggle-input').checked;
+        
+        socialData.push({
+          platform: name.trim(),
+          url: url.trim(),
+          active: isActive
+        });
+      });
+      
+      return socialData;
+    }
+    
+    // Evento para guardar
+    saveBtn?.addEventListener('click', function() {
+      const data = getSocialMediaData();
+      console.log('Datos a guardar:', data);
+      
+      // Aquí iría la lógica para enviar los datos al servidor
+      // fetch('/api/social-media', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(data)
+      // })
+      // .then(response => response.json())
+      // .then(data => {
+      //   alert('Configuración guardada con éxito');
+      // });
+      
+      alert('Configuración guardada con éxito (simulación)');
+    });
+    
+    // Evento para cancelar
+    cancelBtn?.addEventListener('click', function() {
+      if(confirm('¿Desea descartar los cambios realizados?')) {
+        location.reload(); // Esto es solo un ejemplo
+      }
+    });
+  });
+</script>
+</AdminCofig>
